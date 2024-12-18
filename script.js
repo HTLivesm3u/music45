@@ -9,7 +9,7 @@ const playlist = [
   {
     title: "Song Title 2",
     artist: "Artist Name 2",
-    src: "song2.mp3",
+    src: "music/song2.mp3",
     cover: "cover2.jpg",
   },
   {

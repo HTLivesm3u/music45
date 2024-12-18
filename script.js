@@ -1,6 +1,6 @@
 // Song playlist data
 const playlist = [
-  {
+{
     title: "ekati ekati ghabarlis na",
     artist: "Anjali Kulkarni",
     src: "music/song1.mp3",
@@ -54,13 +54,9 @@ playPauseBtn.addEventListener("click", () => {
   isPlaying = !isPlaying;
 });
 
-// Play the next song
+// Play the next song manually
 nextBtn.addEventListener("click", () => {
-  currentSongIndex = (currentSongIndex + 1) % playlist.length; // Loop back to the first song
-  loadSong(playlist[currentSongIndex]);
-  if (isPlaying) {
-    audio.play(); // Automatically play the next song if already playing
-  }
+  playNextSong();
 });
 
 // Play the previous song
@@ -72,6 +68,22 @@ prevBtn.addEventListener("click", () => {
     audio.play(); // Automatically play the previous song if already playing
   }
 });
+
+// Automatically play the next song when the current one ends
+audio.addEventListener("ended", () => {
+  playNextSong();
+});
+
+// Play the next song function
+function playNextSong() {
+  currentSongIndex = (currentSongIndex + 1) % playlist.length; // Loop back to the first song
+  loadSong(playlist[currentSongIndex]);
+  if (isPlaying) {
+    audio.play(); // Automatically play the next song if already playing
+  } else {
+    playPauseBtn.textContent = "▶️"; // Ensure play icon is updated
+  }
+}
 
 // Search for a song or artist
 searchBtn.addEventListener("click", () => {

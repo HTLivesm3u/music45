@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Music Player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .player {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .player audio {
+            width: 100%;
+            margin-top: 20px;
+        }
+        .song-list {
+            margin-top: 20px;
+        }
+        .song-list button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #444;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .song-list button:hover {
+            background-color: #555;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .song-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Music Player</h1>
+    </header>
+    <div class="container">
+        <div class="player">
+            <h2>Now Playing</h2>
+            <p id="current-song">Select a song to play</p>
+            <img id="song-img" class="song-img" src="https://i1.sndcdn.com/artworks-000168698253-tr3h9a-t500x500.jpg" alt="Song Image">
+            <audio id="audio-player" controls>
+                <source id="audio-source" src="/music/song1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="song-list">
+            <h3>Playlist</h3>
+            <!-- Place your song files and images in the same directory as this HTML file or update the paths below -->
+            <button onclick="playSong('/music/song1.mp3', 'Song 1', 'https://i.scdn.co/image/ab67616d00001e023c9eacdaea1e08ed52b3c0cd')">Song 1</button>
+            <button onclick="playSong('/music/song2.mp3', 'Song 2', 'images/song2.jpg')">Song 2</button>
+            <button onclick="playSong('/music/song3.mp3', 'govyachya kinaryavar', '/music/song33.jpg')">govyachya kinaryavar</button>
+        </div>
+    </div>
+    <!-- <footer>
+        <p>&copy; 2024 My Music Player. All rights reserved.</p>
+    </footer> -->
+    <script>
+        function playSong(file, title, img) {
+            const audioPlayer = document.getElementById('audio-player');
+            const audioSource = document.getElementById('audio-source');
+            const currentSong = document.getElementById('current-song');
+            const songImg = document.getElementById('song-img');
+
+            audioSource.src = file;
+            audioPlayer.load();
+            audioPlayer.play();
+            currentSong.textContent = `Now Playing: ${title}`;
+            songImg.src = img;
+        }
+    </script>
+</body>
+</html>

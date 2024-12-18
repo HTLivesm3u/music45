@@ -4,7 +4,7 @@ const playlist = [
     title: "ekati ekati ghabarlis na",
     artist: "Anjali Kulkarni",
     src: "music/song1.mp3",
-    cover: "cover1.jpg",
+    cover: "https://c.saavncdn.com/993/Aai-Aaj-Khup-Kahi-Sangaychay-Marathi-2022-20220709110626-500x500.jpg",
   },
   {
     title: "Song Title 2",

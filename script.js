@@ -1,8 +1,8 @@
 // Song playlist data
 const playlist = [
   {
-    title: "Song Title 1",
-    artist: "Artist Name 1",
+    title: "ekati ekati ghabarlis na",
+    artist: "Anjali Kulkarni",
     src: "music/song1.mp3",
     cover: "cover1.jpg",
   },

@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MY Music</title>
+  <title>Spotify Music Banner</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="music-banner">
     <div class="cover">
-      <img src="https://c.saavncdn.com/993/Aai-Aaj-Khup-Kahi-Sangaychay-Marathi-2022-20220709110626-500x500.jpg" alt="Album Cover">
+      <img id="cover-image" src="cover1.jpg" alt="Album Cover">
     </div>
     <div class="song-details">
-      <h2>Song Title</h2>
-      <p>Artist Name</p>
+      <h2 id="song-title">Song Title 1</h2>
+      <p id="artist-name">Artist Name 1</p>
     </div>
     <div class="controls">
       <button class="control-btn" id="prev">⏮️</button>
@@ -21,7 +21,10 @@
       <button class="control-btn" id="next">⏭️</button>
     </div>
   </div>
-     <audio id="audio"></audio>
+
+  <!-- Audio Tag -->
+  <audio id="audio"></audio>
+
   <script src="script.js"></script>
 </body>
 </html>

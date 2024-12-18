@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <style>
-  body{background-color: yellow}, 
-   <<button type="color"></button>
-/*     img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-top: 20px;
-        } */
-  </style>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>my music </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify Music Banner</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <img src="https://i1.sndcdn.com/artworks-000168698253-tr3h9a-t500x500.jpg">
-  <audio controls>
-  <source src="song1.mp3" type="audio/mpeg">
-</audio>
+  <div class="music-banner">
+    <div class="cover">
+      <img src="https://c.saavncdn.com/993/Aai-Aaj-Khup-Kahi-Sangaychay-Marathi-2022-20220709110626-500x500.jpg" alt="Album Cover">
+    </div>
+    <div class="song-details">
+      <h2>Song Title</h2>
+      <p>Artist Name</p>
+    </div>
+    <div class="controls">
+      <button class="control-btn" id="prev">⏮️</button>
+      <button class="control-btn play" id="play-pause">▶️</button>
+      <button class="control-btn" id="next">⏭️</button>
+    </div>
+  </div>
+     <audio id="audio" src="song.mp3"></audio>
+  <script src="script.js"></script>
 </body>
-
 </html>

@@ -3,7 +3,7 @@ const playlist = [
   {
     title: "Song Title 1",
     artist: "Artist Name 1",
-    src: "music/song1.mp3",
+    src="music/song1.mp3",
     cover: "cover1.jpg",
   },
   {

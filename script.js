@@ -28,6 +28,8 @@ const prevBtn = document.getElementById("prev");
 const songTitle = document.getElementById("song-title");
 const artistName = document.getElementById("artist-name");
 const coverImage = document.getElementById("cover-image");
+const searchBar = document.getElementById("search-bar");
+const searchBtn = document.getElementById("search-btn");
 
 let currentSongIndex = 0; // Start with the first song
 let isPlaying = false;
@@ -68,6 +70,26 @@ prevBtn.addEventListener("click", () => {
   loadSong(playlist[currentSongIndex]);
   if (isPlaying) {
     audio.play(); // Automatically play the previous song if already playing
+  }
+});
+
+// Search for a song or artist
+searchBtn.addEventListener("click", () => {
+  const query = searchBar.value.toLowerCase().trim(); // Get the search query
+  const songIndex = playlist.findIndex(
+    (song) =>
+      song.title.toLowerCase().includes(query) ||
+      song.artist.toLowerCase().includes(query)
+  );
+
+  if (songIndex !== -1) {
+    currentSongIndex = songIndex; // Update the current song index
+    loadSong(playlist[currentSongIndex]);
+    if (isPlaying) {
+      audio.play(); // Automatically play the searched song if already playing
+    }
+  } else {
+    alert("No matching song found!");
   }
 });
 

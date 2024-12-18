@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .music-banner {
+    display: flex;
+    align-items: center;
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+  }
+  
+  .cover img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+  
+  .song-details {
+    flex: 1;
+  }
+  
+  .song-details h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .song-details p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #b3b3b3;
+  }
+  
+  .controls {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .control-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .control-btn.play {
+    font-size: 24px;
+  }
+  
+  .control-btn:hover {
+    color: #1db954;
+  }

@@ -7,10 +7,10 @@ const playlist = [
     cover: "https://c.saavncdn.com/993/Aai-Aaj-Khup-Kahi-Sangaychay-Marathi-2022-20220709110626-500x500.jpg",
   },
   {
-    title: "Song Title 2",
-    artist: "Artist Name 2",
+    title: "AAI",
+    artist: "Yogita Koli,Pravin Koli",
     src: "music/song2.mp3",
-    cover: "cover2.jpg",
+    cover: "https://c.saavncdn.com/621/Aai-Marathi-2022-20220505134712-500x500.jpg",
   },
   {
     title: "Song Title 3",

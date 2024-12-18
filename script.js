@@ -13,8 +13,8 @@ const playlist = [
     cover: "https://c.saavncdn.com/621/Aai-Marathi-2022-20220505134712-500x500.jpg",
   },
   {
-    title: "Song Title 3",
-    artist: "Artist Name 3",
+    title: "govyachya kinaryavar",
+    artist: "pravin koli",
     src: "music/song3.mp3",
     cover: "music/song33.jpg",
   },

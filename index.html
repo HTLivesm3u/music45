@@ -7,11 +7,17 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="search-container">
+<!--   <div class="search-container">
     <input type="text" id="search-bar" placeholder="Search for a song or artist..." />
     <button id="search-btn">🔍</button>
   </div>
-
+ -->
+  <form autocomplete="off" action="/action_page.php">
+  <div class="autocomplete" style="width:300px;">
+    <input id="myInput" type="text" name="myCountry" placeholder="Country">
+  </div>
+  <input type="submit">
+</form>
   <div class="music-banner">
     <div class="cover">
       <img id="cover-image" src="cover1.jpg" alt="Album Cover">

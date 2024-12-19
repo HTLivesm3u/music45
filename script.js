@@ -207,6 +207,81 @@ searchBtn.addEventListener("click", () => {
     alert("No matching song found!");
   }
 });
+
+let isShuffle = false;
+
+// Toggle Shuffle Mode
+document.getElementById("shuffle-btn").addEventListener("click", () => {
+  isShuffle = !isShuffle;
+  document.getElementById("shuffle-btn").classList.toggle("active", isShuffle);
+  if (isShuffle) {
+    playlist = shuffleArray(playlist);
+  } else {
+    playlist = resetPlaylistOrder(); // Restore original playlist order
+  }
+});
+
+// Shuffle helper function
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+  }
+  return array;
+}
+
+function resetPlaylistOrder() {
+  return [
+    // Reset with the original order of the playlist
+    { title: "Song Title 1", artist: "Artist Name 1", src: "song1.mp3", cover: "cover1.jpg" },
+    { title: "Song Title 2", artist: "Artist Name 2", src: "song2.mp3", cover: "cover2.jpg" },
+    { title: "Song Title 3", artist: "Artist Name 3", src: "song3.mp3", cover: "cover3.jpg" },
+  ];
+}
+let isRepeat = false;
+
+// Toggle Repeat Mode
+document.getElementById("repeat-btn").addEventListener("click", () => {
+  isRepeat = !isRepeat;
+  document.getElementById("repeat-btn").classList.toggle("active", isRepeat);
+
+  if (isRepeat) {
+    audio.loop = true; // Loop the current song
+  } else {
+    audio.loop = false; // Disable looping
+  }
+});
+
+// When a song ends, check for repeat behavior
+audio.addEventListener("ended", () => {
+  if (isRepeat) {
+    // If repeat mode is on, play the same song again
+    audio.play();
+  } else if (!isShuffle) {
+    playNextSong(); // Move to next song if shuffle is off
+  }
+});
+let likedSongs = new Set();
+
+// Toggle Like
+document.getElementById("like-btn").addEventListener("click", () => {
+  const currentSong = playlist[currentSongIndex];
+  if (likedSongs.has(currentSong.title)) {
+    likedSongs.delete(currentSong.title);
+    document.getElementById("like-btn").textContent = "❤️"; // Unmark as liked
+  } else {
+    likedSongs.add(currentSong.title);
+    document.getElementById("like-btn").textContent = "💖"; // Mark as liked
+  }
+});
+
+// Example: Displaying liked songs (could be added as a feature)
+function displayLikedSongs() {
+  console.log("Liked Songs:", Array.from(likedSongs).join(", "));
+}
+
+
+
 // Update lock screen media information
 function updateMediaSession(song) {
   if ('mediaSession' in navigator) {

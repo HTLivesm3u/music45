@@ -42,6 +42,40 @@ function loadSong(song) {
   artistName.textContent = song.artist;
   coverImage.src = song.cover;
 }
+// Elements for progress bar and timer
+const progressBar = document.getElementById("progress-bar");
+const progress = document.getElementById("progress");
+const currentTimeEl = document.getElementById("current-time");
+const durationEl = document.getElementById("duration");
+
+// Update progress bar and time
+audio.addEventListener("timeupdate", () => {
+  const { currentTime, duration } = audio;
+  const progressPercent = (currentTime / duration) * 100;
+  progress.style.width = `${progressPercent}%`;
+
+  // Update current time and duration
+  currentTimeEl.textContent = formatTime(currentTime);
+  durationEl.textContent = formatTime(duration);
+});
+
+// Format time (mm:ss)
+function formatTime(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+  return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
+}
+
+// Seek functionality (click on the progress bar)
+progressBar.addEventListener("click", (e) => {
+  const width = progressBar.clientWidth;
+  const clickX = e.offsetX;
+  const duration = audio.duration;
+
+  // Set the audio's current time
+  audio.currentTime = (clickX / width) * duration;
+});
+
 // Play or pause the song
 playPauseBtn.addEventListener("click", () => {
   if (isPlaying) {

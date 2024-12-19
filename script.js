@@ -17,7 +17,14 @@ const playlist = [
     artist: "pravin koli",
     src: "music/song3.mp3",
     cover: "music/song33.jpg",
-  },
+      { 
+      title: "Jo Tum Mere Ho",
+    artist: "Anuv Jain",
+    src: "music/Jo Tum Mere Ho.mp3",
+    cover: "https://c.saavncdn.com/401/Jo-Tum-Mere-Ho-Hindi-2024-20240731053953-500x500.jpg",
+
+      
+      }
      
 ];
 

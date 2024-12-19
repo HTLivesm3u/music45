@@ -147,17 +147,17 @@ audio.addEventListener("ended", () => {
   playNextSong();
 });
 
-// Play or pause the song
-playPauseBtn.addEventListener("click", () => {
-  if (isPlaying) {
-    audio.pause();
-    playPauseBtn.textContent = "▶️"; // Change to play icon
-  } else {
-    audio.play();
-    playPauseBtn.textContent = "⏸️"; // Change to pause icon
-  }
-  isPlaying = !isPlaying;
-});
+// // Play or pause the song
+// playPauseBtn.addEventListener("click", () => {
+//   if (isPlaying) {
+//     audio.pause();
+//     playPauseBtn.textContent = "▶️"; // Change to play icon
+//   } else {
+//     audio.play();
+//     playPauseBtn.textContent = "⏸️"; // Change to pause icon
+//   }
+//   isPlaying = !isPlaying;
+// });
 
 
 // Search for a song or artist

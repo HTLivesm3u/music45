@@ -99,26 +99,26 @@ progressBar.addEventListener("click", (e) => {
   audio.currentTime = (clickX / width) * duration;
 });
 
-// // Play or pause the song
-// playPauseBtn.addEventListener("click", () => {
-//   if (isPlaying) {
-//     audio.pause();
-//     playPauseBtn.textContent = "▶️"; // Change to play icon
-//   } else {
-//     audio.play();
-//     playPauseBtn.textContent = "⏸️"; // Change to pause icon
-//   }
-//   isPlaying = !isPlaying;
-// });
+// Play or pause the song
+playPauseBtn.addEventListener("click", () => {
+  if (isPlaying) {
+    audio.pause();
+    playPauseBtn.textContent = "▶️"; // Change to play icon
+  } else {
+    audio.play();
+    playPauseBtn.textContent = "⏸️"; // Change to pause icon
+  }
+  isPlaying = !isPlaying;
+});
 
-// // Play the next song
-// nextBtn.addEventListener("click", () => {
-//   currentSongIndex = (currentSongIndex + 1) % playlist.length; // Loop back to the first song
-//   loadSong(playlist[currentSongIndex]);
-//   if (isPlaying) {
-//     audio.play(); // Automatically play the next song if already playing
-//   }
-// });
+// Play the next song
+nextBtn.addEventListener("click", () => {
+  currentSongIndex = (currentSongIndex + 1) % playlist.length; // Loop back to the first song
+  loadSong(playlist[currentSongIndex]);
+  if (isPlaying) {
+    audio.play(); // Automatically play the next song if already playing
+  }
+});
 
 // // Play the previous song
 // prevBtn.addEventListener("click", () => {
@@ -131,33 +131,33 @@ progressBar.addEventListener("click", (e) => {
 // });
 
 
-// Play the next song automatically
-function playNextSong() {
-  currentSongIndex = (currentSongIndex + 1) % playlist.length; // Loop back to the first song if at the end
-  loadSong(playlist[currentSongIndex]); // Load the new song
+// // Play the next song automatically
+// function playNextSong() {
+//   currentSongIndex = (currentSongIndex + 1) % playlist.length; // Loop back to the first song if at the end
+//   loadSong(playlist[currentSongIndex]); // Load the new song
 
-  // Play the song immediately
-  audio.play();
-  isPlaying = true;
-  playPauseBtn.textContent = '⏸️'; // Update button to pause icon
-}
+//   // Play the song immediately
+//   audio.play();
+//   isPlaying = true;
+//   playPauseBtn.textContent = '⏸️'; // Update button to pause icon
+// }
 
-// Automatically play the next song when the current one ends
-audio.addEventListener("ended", () => {
-  playNextSong();
-});
+// // Automatically play the next song when the current one ends
+// audio.addEventListener("ended", () => {
+//   playNextSong();
+// });
 
-// Play or pause the song
-playPauseBtn.addEventListener("click", () => {
-  if (isPlaying) {
-    audio.pause();
-    playPauseBtn.textContent = "▶️"; // Change to play icon
-  } else {
-    audio.play();
-    playPauseBtn.textContent = "⏸️"; // Change to pause icon
-  }
-  isPlaying = !isPlaying;
-});
+// // Play or pause the song
+// playPauseBtn.addEventListener("click", () => {
+//   if (isPlaying) {
+//     audio.pause();
+//     playPauseBtn.textContent = "▶️"; // Change to play icon
+//   } else {
+//     audio.play();
+//     playPauseBtn.textContent = "⏸️"; // Change to pause icon
+//   }
+//   isPlaying = !isPlaying;
+// });
 
 
 // Search for a song or artist

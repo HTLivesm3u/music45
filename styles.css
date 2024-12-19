@@ -36,3 +36,24 @@ body {
 #search-btn:hover {
   background-color: #1ed760;
 }
+
+.controls {
+  display: flex;
+  gap: 10px;
+}
+
+.control-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.control-btn.play {
+  font-size: 24px;
+}
+
+.control-btn:hover {
+  color: #1db954;
+}

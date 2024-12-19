@@ -172,7 +172,7 @@ body {
     width: 50px;
     height: 50px;
   }
-/*   .progress-container {
+  .progress-container {
   width: 100%;
   max-width: 400px;
   height: 10px;
@@ -188,5 +188,5 @@ body {
   height: 100%;
   background-color: #1db954;
   transition: width 0.1s linear;
-} */
+}
 }

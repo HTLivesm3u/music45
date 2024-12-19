@@ -21,7 +21,7 @@ const playlist = [
       {
     title: "tamdicamdi",
     artist: "koli",
-    src: "Direct Link: https://drive.google.com/uc?id=1jPDWmlNy7Td8goPwzPT-tC-kilwC2oSO&export=download
+    src: "https://drive.google.com/uc?id=1jPDWmlNy7Td8goPwzPT-tC-kilwC2oSO&export=download
 ",
     cover: "music/song33.jpg",
   },

@@ -143,6 +143,35 @@ body {
 .play:hover {
   background-color: #1ed760;
 }
+/* Style for control buttons */
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  background-color: #444;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1db954;
+}
+
+button:disabled {
+  background-color: #888;
+}
+
+button.active {
+  background-color: #1ed760;
+}
 
 /* Responsive Design */
 @media (max-width: 480px) {

@@ -43,6 +43,23 @@ function loadSong(song) {
   coverImage.src = song.cover;
 }
 
+// Elements
+const progressBar = document.getElementById("progress-bar");
+const audio = document.getElementById("audio");
+
+// Update the progress bar as the audio plays
+audio.addEventListener("timeupdate", () => {
+  const progressPercent = (audio.currentTime / audio.duration) * 100;
+  progressBar.style.width = `${progressPercent}%`;
+});
+
+// Seek functionality (click to change position)
+document.querySelector(".progress-container").addEventListener("click", (event) => {
+  const containerWidth = event.currentTarget.offsetWidth;
+  const clickX = event.offsetX;
+  const newTime = (clickX / containerWidth) * audio.duration;
+  audio.currentTime = newTime;
+});
 // Play or pause the song
 playPauseBtn.addEventListener("click", () => {
   if (isPlaying) {
@@ -98,20 +115,3 @@ searchBtn.addEventListener("click", () => {
 loadSong(playlist[currentSongIndex]);
 
 
-// Elements
-// const progressBar = document.getElementById("progress-bar");
-// const audio = document.getElementById("audio");
-
-// Update the progress bar as the audio plays
-// audio.addEventListener("timeupdate", () => {
-//   const progressPercent = (audio.currentTime / audio.duration) * 100;
-//   progressBar.style.width = `${progressPercent}%`;
-// });
-
-// Seek functionality (click to change position)
-// document.querySelector(".progress-container").addEventListener("click", (event) => {
-//   const containerWidth = event.currentTarget.offsetWidth;
-//   const clickX = event.offsetX;
-//   const newTime = (clickX / containerWidth) * audio.duration;
-//   audio.currentTime = newTime;
-// });

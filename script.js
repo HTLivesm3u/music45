@@ -18,6 +18,12 @@ const playlist = [
     src: "music/song3.mp3",
     cover: "music/song33.jpg",
   },
+      {
+    title: "tamdicamdi",
+    artist: "koli",
+    src: "https://drive.google.com/file/d/1jPDWmlNy7Td8goPwzPT-tC-kilwC2oSO/view?usp=drive_link",
+    cover: "music/song33.jpg",
+  },
 ];
 
 // Elements

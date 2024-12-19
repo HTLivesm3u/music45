@@ -30,7 +30,6 @@ const artistName = document.getElementById("artist-name");
 const coverImage = document.getElementById("cover-image");
 const searchBar = document.getElementById("search-bar");
 const searchBtn = document.getElementById("search-btn");
-const suggestionsList = document.getElementById("suggestions-list");
 
 let currentSongIndex = 0; // Start with the first song
 let isPlaying = false;
@@ -55,9 +54,13 @@ playPauseBtn.addEventListener("click", () => {
   isPlaying = !isPlaying;
 });
 
-// Play the next song manually
+// Play the next song
 nextBtn.addEventListener("click", () => {
-  playNextSong();
+  currentSongIndex = (currentSongIndex + 1) % playlist.length; // Loop back to the first song
+  loadSong(playlist[currentSongIndex]);
+  if (isPlaying) {
+    audio.play(); // Automatically play the next song if already playing
+  }
 });
 
 // Play the previous song
@@ -70,61 +73,9 @@ prevBtn.addEventListener("click", () => {
   }
 });
 
-// Automatically play the next song when the current one ends
-audio.addEventListener("ended", () => {
-  playNextSong();
-});
-
-// Play the next song function
-function playNextSong() {
-  currentSongIndex = (currentSongIndex + 1) % playlist.length; // Loop back to the first song
-  loadSong(playlist[currentSongIndex]);
-  if (isPlaying) {
-    audio.play(); // Automatically play the next song if already playing
-  } else {
-    playPauseBtn.textContent = "▶️"; // Ensure play icon is updated
-  }
-}
-
 // Search for a song or artist
-searchBar.addEventListener("input", () => {
-  const query = searchBar.value.toLowerCase().trim();
-  suggestionsList.innerHTML = ""; // Clear previous suggestions
-
-  if (query) {
-    // Find matching songs
-    const matches = playlist.filter(
-      (song) =>
-        song.title.toLowerCase().includes(query) ||
-        song.artist.toLowerCase().includes(query)
-    );
-
-    // Display suggestions
-    matches.forEach((song) => {
-      const suggestionItem = document.createElement("li");
-      suggestionItem.textContent = `${song.title} - ${song.artist}`;
-      suggestionItem.addEventListener("click", () => {
-        // Load the selected song
-        const index = playlist.findIndex(
-          (s) => s.title === song.title && s.artist === song.artist
-        );
-        currentSongIndex = index;
-        loadSong(song);
-        if (isPlaying) {
-          audio.play(); // Play immediately if already playing
-        }
-        searchBar.value = ""; // Clear search bar
-        suggestionsList.innerHTML = ""; // Clear suggestions
-      });
-      suggestionsList.appendChild(suggestionItem);
-    });
-  }
-});
-
 searchBtn.addEventListener("click", () => {
-  const query = searchBar.value.toLowerCase().trim();
-  if (!query) return;
-
+  const query = searchBar.value.toLowerCase().trim(); // Get the search query
   const songIndex = playlist.findIndex(
     (song) =>
       song.title.toLowerCase().includes(query) ||
@@ -132,17 +83,14 @@ searchBtn.addEventListener("click", () => {
   );
 
   if (songIndex !== -1) {
-    currentSongIndex = songIndex;
+    currentSongIndex = songIndex; // Update the current song index
     loadSong(playlist[currentSongIndex]);
     if (isPlaying) {
-      audio.play();
+      audio.play(); // Automatically play the searched song if already playing
     }
   } else {
     alert("No matching song found!");
   }
-
-  searchBar.value = ""; // Clear search bar
-  suggestionsList.innerHTML = ""; // Clear suggestions
 });
 
 // Load the first song on page load

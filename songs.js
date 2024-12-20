@@ -7,6 +7,11 @@ export const songs = [
     cover: "https://c.saavncdn.com/401/Jo-Tum-Mere-Ho-Hindi-2024-20240731053953-500x500.jpg",
      },
   {
+    title: "Apna Bana Le",
+    artist: "Sachin-Jigar, Arijit Singh, Amitabh Bhattacharya",
+    src:"music"
+  }
+  {
     title: "ekati ekati ghabarlis na",
     artist: "Anjali Kulkarni",
     src: "music/song1.mp3",

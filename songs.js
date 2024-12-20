@@ -9,7 +9,8 @@ export const songs = [
   {
     title: "Apna Bana Le",
     artist: "Sachin-Jigar, Arijit Singh, Amitabh Bhattacharya",
-    src:"music"
+    src:"music/Apna Bana Le.mp3",
+    cover:"https://c.saavncdn.com/815/Bhediya-Hindi-2023-20230927155213-500x500.jpg",
   }
   {
     title: "ekati ekati ghabarlis na",

@@ -42,12 +42,12 @@ export const songs = [
     src:"https://aac.saavncdn.com/994/2e6b47719cea3e7c9f971a3f1ddc9b0a_160.mp4",
     cover:"https://c.saavncdn.com/994/Tamasha-Hindi-2015-500x500.jpg",
   },
-  // {
-  //   title: "ekati ekati ghabarlis na",
-  //   artist: "Anjali Kulkarni",
-  //   src: "music/song1.mp3",
-  //   cover: "https://c.saavncdn.com/875/Chintoo-Marathi-2012-20200122070309-500x500.jpg",
-  // },
+  {
+    title: "ekati ekati ghabarlis na",
+    artist: "Anjali Kulkarni",
+     src: "music/Husn - Anuv Jain.m4a",
+     cover: "https://c.saavncdn.com/875/Chintoo-Marathi-2012-20200122070309-500x500.jpg",
+   },
   // {
   //   title: "AAI",
   //   artist: "Yogita Koli,Pravin Koli",

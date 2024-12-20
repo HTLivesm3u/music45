@@ -1,7 +1,6 @@
-import { songs } from './songs.js';
-
 // Song playlist data
-// const playlist = songs 
+import { songs } from './songs.js';
+const playlist = songs;
 
 // Elements
 const audio = document.getElementById("audio");

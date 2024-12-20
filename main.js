@@ -1,5 +1,6 @@
 // Playlist data (replace with your own data or import it)
-const playlist = [{ 
+const playlist = [
+      { 
       title: "Jo Tum Mere Ho",
     artist: "Anuv Jain",
     src: "music/Jo Tum Mere Ho.mp3",

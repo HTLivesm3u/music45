@@ -48,12 +48,12 @@ export const songs = [
      src: "music/Husn - Anuv Jain.m4a",
      cover: "https://c.saavncdn.com/875/Chintoo-Marathi-2012-20200122070309-500x500.jpg",
    },
-  // {
-  //   title: "AAI",
-  //   artist: "Yogita Koli,Pravin Koli",
-  //   src: "music/song2.mp3",
-  //   cover: "https://c.saavncdn.com/621/Aai-Marathi-2022-20220505134712-500x500.jpg",
-  // },
+   {
+    title: "AAI",
+     artist: "Yogita Koli,Pravin Koli",
+     src: "music/song2.mp3",
+     cover: "https://c.saavncdn.com/621/Aai-Marathi-2022-20220505134712-500x500.jpg",
+  },
   // {
   //   title: "govyachya kinaryavar",
   //   artist: "pravin koli",

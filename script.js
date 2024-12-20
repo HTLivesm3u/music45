@@ -35,6 +35,7 @@ const artistName = document.getElementById("artist-name");
 const coverImage = document.getElementById("cover-image");
 const searchBar = document.getElementById("search-bar");
 const searchBtn = document.getElementById("search-btn");
+const suggestionsList = document.getElementById("suggestions-list");
 
 let currentSongIndex = 0; // Start with the first song
 let isPlaying = false;

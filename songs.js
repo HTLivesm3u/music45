@@ -51,7 +51,7 @@ export const songs = [
    {
     title: "AAI",
      artist: "Yogita Koli,Pravin Koli",
-     src: "music/song2.mp3",
+     src: "music/Aai - Pravin Koli, Yogita Koli, Deeya Wadkar, Myra Vaikul, Ankita Raut.m4a",
      cover: "https://c.saavncdn.com/621/Aai-Marathi-2022-20220505134712-500x500.jpg",
   },
   // {

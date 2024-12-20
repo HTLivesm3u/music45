@@ -208,12 +208,12 @@ function shuffleArray(array) {
   return array;
 }
 
+const originalPlaylist = [...songs]; // Keep the original playlist
+
 function resetPlaylistOrder() {
-  return [
-    // Reset with the original order of the playlist
-       playlist
-  ];
+  return [...originalPlaylist];
 }
+
 let isRepeat = false;
 
 // Toggle Repeat Mode

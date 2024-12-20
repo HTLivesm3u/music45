@@ -26,7 +26,22 @@ function loadSong(song) {
   // playPauseBtn.textContent = "⏸️";
   // updateMediaSession(song); // Optional: Update media session for lock screen
 }
+// Elements for progress bar and timer
+const progressBar = document.getElementById("progress-bar");
+const progress = document.getElementById("progress");
+const currentTimeEl = document.getElementById("current-time");
+const durationEl = document.getElementById("duration");
 
+// Update progress bar and time
+audio.addEventListener("timeupdate", () => {
+  const { currentTime, duration } = audio;
+  const progressPercent = (currentTime / duration) * 100;
+  progress.style.width = `${progressPercent}%`;
+
+  // Update current time and duration
+  currentTimeEl.textContent = formatTime(currentTime);
+  durationEl.textContent = formatTime(duration);
+});
 // Play or pause the song
 playPauseBtn.addEventListener("click", () => {
   if (isPlaying) {

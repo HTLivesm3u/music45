@@ -24,6 +24,12 @@ export const songs = [
     src:"https://aac.saavncdn.com/436/13795b7aa2e87393366162b9e6a6fe88_160.mp4",
     cover:"https://c.saavncdn.com/436/Husn-Hindi-2023-20231129054140-500x500.jpg",
   },
+  {
+    title:"Heeriye",
+    artist:"Arijit Singh",
+    src:"https://aac.saavncdn.com/022/a192e8d320ea5630db314d04fedf0aa5_160.mp4",
+    cover:"https://c.saavncdn.com/022/Heeriye-feat-Arijit-Singh-Hindi-2023-20230928050405-500x500.jpg",
+  },
   // {
   //   title: "ekati ekati ghabarlis na",
   //   artist: "Anjali Kulkarni",

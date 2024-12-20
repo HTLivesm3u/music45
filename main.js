@@ -35,6 +35,7 @@ function loadSong(song) {
   songTitle.textContent = song.title;
   artistName.textContent = song.artist;
   coverImage.src = song.cover;
+  updateMediaSession(song); // Update lock screen metadata
 }
 
 // Play or pause functionality
@@ -118,66 +119,6 @@ document.getElementById("repeat-btn").addEventListener("click", () => {
   document.getElementById("repeat-btn").classList.toggle("active", isRepeat);
 });
 
-// Search for a song and show suggestions
-searchBar.addEventListener("input", () => {
-  const query = searchBar.value.toLowerCase().trim();
-  suggestionsList.innerHTML = ""; // Clear previous suggestions
-
-  if (query) {
-    // Find matching songs
-    const matches = songs.filter(
-      (song) =>
-        song.title.toLowerCase().includes(query) ||
-        song.artist.toLowerCase().includes(query)
-    );
-
-    // Display suggestions
-    matches.forEach((song) => {
-      const suggestionItem = document.createElement("li");
-      suggestionItem.textContent = `${song.title} - ${song.artist}`;
-      suggestionItem.addEventListener("click", () => {
-        // Load the selected song
-        const index = songs.findIndex(
-          (s) => s.title === song.title && s.artist === song.artist
-        );
-        currentSongIndex = index;
-        loadSong(song);
-        if (isPlaying) {
-          audio.play(); // Play immediately if already playing
-        }
-        searchBar.value = ""; // Clear search bar
-        suggestionsList.innerHTML = ""; // Clear suggestions
-      });
-      suggestionsList.appendChild(suggestionItem);
-    });
-  }
-});
-
-// Search Button Click
-searchBtn.addEventListener("click", () => {
-  const query = searchBar.value.toLowerCase().trim();
-  if (!query) return;
-
-  const songIndex = songs.findIndex(
-    (song) =>
-      song.title.toLowerCase().includes(query) ||
-      song.artist.toLowerCase().includes(query)
-  );
-
-  if (songIndex !== -1) {
-    currentSongIndex = songIndex;
-    loadSong(songs[currentSongIndex]);
-    if (isPlaying) {
-      audio.play();
-    }
-  } else {
-    alert("No matching song found!");
-  }
-
-  searchBar.value = ""; // Clear search bar
-  suggestionsList.innerHTML = ""; // Clear suggestions
-});
-
 // Update lock screen media information
 function updateMediaSession(song) {
   if ('mediaSession' in navigator) {
@@ -206,23 +147,66 @@ function updateMediaSession(song) {
       playPauseBtn.textContent = '▶️';
     });
     navigator.mediaSession.setActionHandler('nexttrack', playNextSong);
-    navigator.mediaSession.setActionHandler('previoustrack', () => {
-      currentSongIndex =
-        (currentSongIndex - 1 + playlist.length) % playlist.length;
-      loadSong(playlist[currentSongIndex]);
-      if (isPlaying) audio.play();
-    });
+    navigator.mediaSession.setActionHandler('previoustrack', playPrevSong);
   }
 }
 
-// Update lock screen metadata when a new song loads
-function loadSong(song) {
-  audio.src = song.src;
-  songTitle.textContent = song.title;
-  artistName.textContent = song.artist;
-  coverImage.src = song.cover;
-  updateMediaSession(song); // Update lock screen metadata
-}
+// Search for a song and show suggestions
+searchBar.addEventListener("input", () => {
+  const query = searchBar.value.toLowerCase().trim();
+  suggestionsList.innerHTML = ""; // Clear previous suggestions
+
+  if (query) {
+    const matches = songs.filter(
+      (song) =>
+        song.title.toLowerCase().includes(query) ||
+        song.artist.toLowerCase().includes(query)
+    );
+
+    matches.forEach((song) => {
+      const suggestionItem = document.createElement("li");
+      suggestionItem.textContent = `${song.title} - ${song.artist}`;
+      suggestionItem.addEventListener("click", () => {
+        const index = songs.findIndex(
+          (s) => s.title === song.title && s.artist === song.artist
+        );
+        currentSongIndex = index;
+        loadSong(song);
+        if (isPlaying) {
+          audio.play();
+        }
+        searchBar.value = "";
+        suggestionsList.innerHTML = "";
+      });
+      suggestionsList.appendChild(suggestionItem);
+    });
+  }
+});
+
+// Search Button Click
+searchBtn.addEventListener("click", () => {
+  const query = searchBar.value.toLowerCase().trim();
+  if (!query) return;
+
+  const songIndex = songs.findIndex(
+    (song) =>
+      song.title.toLowerCase().includes(query) ||
+      song.artist.toLowerCase().includes(query)
+  );
+
+  if (songIndex !== -1) {
+    currentSongIndex = songIndex;
+    loadSong(songs[currentSongIndex]);
+    if (isPlaying) {
+      audio.play();
+    }
+  } else {
+    alert("No matching song found!");
+  }
+
+  searchBar.value = "";
+  suggestionsList.innerHTML = "";
+});
 
 // Load the first song on page load
 loadSong(songs[currentSongIndex]);

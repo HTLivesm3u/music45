@@ -21,10 +21,10 @@ function loadSong(song) {
   songTitle.textContent = song.title;
   artistName.textContent = song.artist;
   coverImage.src = song.cover;
-  audio.play();
-  isPlaying = true;
-  playPauseBtn.textContent = "⏸️";
-  updateMediaSession(song); // Optional: Update media session for lock screen
+  // audio.play();
+  // isPlaying = true;
+  // playPauseBtn.textContent = "⏸️";
+  // updateMediaSession(song); // Optional: Update media session for lock screen
 }
 
 // Play or pause the song

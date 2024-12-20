@@ -14,6 +14,10 @@ const prevBtn = document.getElementById("prev");
 const songTitle = document.getElementById("song-title");
 const artistName = document.getElementById("artist-name");
 const coverImage = document.getElementById("cover-image");
+const progressBar = document.getElementById("progress-bar");
+const progress = document.getElementById("progress");
+const currentTimeEl = document.getElementById("current-time");
+const durationEl = document.getElementById("duration");
 
 // Load a song
 function loadSong(song) {

@@ -18,6 +18,9 @@ const progressBar = document.getElementById("progress-bar");
 const progress = document.getElementById("progress");
 const currentTimeEl = document.getElementById("current-time");
 const durationEl = document.getElementById("duration");
+const searchBar = document.getElementById("search-bar");
+const searchBtn = document.getElementById("search-btn");
+const suggestionsList = document.getElementById("suggestions-list");
 
 // Utility function to format time
 function formatTime(seconds) {
@@ -115,7 +118,65 @@ document.getElementById("repeat-btn").addEventListener("click", () => {
   document.getElementById("repeat-btn").classList.toggle("active", isRepeat);
 });
 
+// Search for a song and show suggestions
+searchBar.addEventListener("input", () => {
+  const query = searchBar.value.toLowerCase().trim();
+  suggestionsList.innerHTML = ""; // Clear previous suggestions
 
+  if (query) {
+    // Find matching songs
+    const matches = songs.filter(
+      (song) =>
+        song.title.toLowerCase().includes(query) ||
+        song.artist.toLowerCase().includes(query)
+    );
+
+    // Display suggestions
+    matches.forEach((song) => {
+      const suggestionItem = document.createElement("li");
+      suggestionItem.textContent = `${song.title} - ${song.artist}`;
+      suggestionItem.addEventListener("click", () => {
+        // Load the selected song
+        const index = songs.findIndex(
+          (s) => s.title === song.title && s.artist === song.artist
+        );
+        currentSongIndex = index;
+        loadSong(song);
+        if (isPlaying) {
+          audio.play(); // Play immediately if already playing
+        }
+        searchBar.value = ""; // Clear search bar
+        suggestionsList.innerHTML = ""; // Clear suggestions
+      });
+      suggestionsList.appendChild(suggestionItem);
+    });
+  }
+});
+
+// Search Button Click
+searchBtn.addEventListener("click", () => {
+  const query = searchBar.value.toLowerCase().trim();
+  if (!query) return;
+
+  const songIndex = songs.findIndex(
+    (song) =>
+      song.title.toLowerCase().includes(query) ||
+      song.artist.toLowerCase().includes(query)
+  );
+
+  if (songIndex !== -1) {
+    currentSongIndex = songIndex;
+    loadSong(songs[currentSongIndex]);
+    if (isPlaying) {
+      audio.play();
+    }
+  } else {
+    alert("No matching song found!");
+  }
+
+  searchBar.value = ""; // Clear search bar
+  suggestionsList.innerHTML = ""; // Clear suggestions
+});
 
 // Load the first song on page load
 loadSong(songs[currentSongIndex]);

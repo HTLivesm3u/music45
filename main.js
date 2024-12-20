@@ -178,5 +178,51 @@ searchBtn.addEventListener("click", () => {
   suggestionsList.innerHTML = ""; // Clear suggestions
 });
 
+// Update lock screen media information
+function updateMediaSession(song) {
+  if ('mediaSession' in navigator) {
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: song.title,
+      artist: song.artist,
+      artwork: [
+        { src: song.cover, sizes: '96x96', type: 'image/png' },
+        { src: song.cover, sizes: '128x128', type: 'image/png' },
+        { src: song.cover, sizes: '192x192', type: 'image/png' },
+        { src: song.cover, sizes: '256x256', type: 'image/png' },
+        { src: song.cover, sizes: '384x384', type: 'image/png' },
+        { src: song.cover, sizes: '512x512', type: 'image/png' },
+      ],
+    });
+
+    // Handle media session actions (play, pause, next, previous)
+    navigator.mediaSession.setActionHandler('play', () => {
+      audio.play();
+      isPlaying = true;
+      playPauseBtn.textContent = '⏸️';
+    });
+    navigator.mediaSession.setActionHandler('pause', () => {
+      audio.pause();
+      isPlaying = false;
+      playPauseBtn.textContent = '▶️';
+    });
+    navigator.mediaSession.setActionHandler('nexttrack', playNextSong);
+    navigator.mediaSession.setActionHandler('previoustrack', () => {
+      currentSongIndex =
+        (currentSongIndex - 1 + playlist.length) % playlist.length;
+      loadSong(playlist[currentSongIndex]);
+      if (isPlaying) audio.play();
+    });
+  }
+}
+
+// Update lock screen metadata when a new song loads
+function loadSong(song) {
+  audio.src = song.src;
+  songTitle.textContent = song.title;
+  artistName.textContent = song.artist;
+  coverImage.src = song.cover;
+  updateMediaSession(song); // Update lock screen metadata
+}
+
 // Load the first song on page load
 loadSong(songs[currentSongIndex]);

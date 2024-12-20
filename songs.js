@@ -30,6 +30,12 @@ export const songs = [
     src:"https://aac.saavncdn.com/022/a192e8d320ea5630db314d04fedf0aa5_160.mp4",
     cover:"https://c.saavncdn.com/022/Heeriye-feat-Arijit-Singh-Hindi-2023-20230928050405-500x500.jpg",
   },
+  {
+    title:"Choo Lo",
+    artist:"Arijit Singh",
+    src:"https://aac.saavncdn.com/111/09c5dba8ec03665a9a679e19338917a6_160.mp4",
+    cover:"https://c.saavncdn.com/111/Aalas-Ka-Pedh-Hindi-2015-20231005005130-500x500.jpg",
+  },
   // {
   //   title: "ekati ekati ghabarlis na",
   //   artist: "Anjali Kulkarni",

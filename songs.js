@@ -36,6 +36,12 @@ export const songs = [
     src:"https://aac.saavncdn.com/111/09c5dba8ec03665a9a679e19338917a6_160.mp4",
     cover:"https://c.saavncdn.com/111/Aalas-Ka-Pedh-Hindi-2015-20231005005130-500x500.jpg",
   },
+  {
+    title:"Agar Tum Saath Ho",
+    artist:"Alka Yagnik,Arijit Singh",
+    src:"https://aac.saavncdn.com/994/2e6b47719cea3e7c9f971a3f1ddc9b0a_160.mp4",
+    cover:"https://c.saavncdn.com/994/Tamasha-Hindi-2015-500x500.jpg",
+  },
   // {
   //   title: "ekati ekati ghabarlis na",
   //   artist: "Anjali Kulkarni",

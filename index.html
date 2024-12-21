@@ -1,20 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Player</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Music Player</title>
+  <link rel="icon" type="image/webp" href="music/musiclogo.webp">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Search Container -->
-    <div class="search-container">
-        <input type="text" id="search-bar" placeholder="Search songs...">
-        <button id="search-btn">Search</button>
-        <ul id="suggestions-list"></ul>
-    </div>
+<div class="search-container">
+  <input type="text" id="search-bar" placeholder="Search for a song or artist..." />
+  <button id="search-btn">🔍</button>
+  <ul id="suggestions-list"></ul>
+</div>
 
-    <!-- Playlist Display Section -->
+<div class="music-banner">
+  <div class="cover">
+    <img id="cover-image" src="cover1.jpg" alt="Album Cover">
+  </div>
+  <div class="song-details">
+    <h2 id="song-title">Song Title 1</h2>
+    <p id="artist-name">Artist Name 1</p>
+  </div>
+
+  <div class="progress-container">
+    <span id="current-time">0:00</span>
+    <div id="progress-bar">
+      <div id="progress"></div>
+    </div>
+    <span id="duration">0:00</span>
+  </div>
+ <!-- Playlist Display Section -->
     <div id="playlist-container">
         <div id="playlist-name">Hindi Playlist</div>
         <div id="image-container">
@@ -27,29 +43,22 @@
             </div>
         </div>
     </div>
+  <div class="controls">
+    <button id="prev" class="control-btn">⏮️</button>
+    <button id="play-pause" class="control-btn play">▶️</button>
+    <button id="next" class="control-btn">⏭️</button>
+  </div>
 
-    <!-- Music Controls -->
-    <div class="controls">
-        <button id="prev" class="control-button">Previous</button>
-        <button id="play-pause" class="control-button">▶️</button>
-        <button id="next" class="control-button">Next</button>
-    </div>
+ <!-- Replace the Like button with Download button -->
+<div class="secondary-controls">
+  <button id="shuffle-btn">🔀</button>
+  <button id="repeat-btn">🔁</button>
+  <button id="download-btn">⬇️</button> <!-- New Download Button -->
+</div>
 
-    <div>
-        <span id="song-title">Song Title</span> - <span id="artist-name">Artist</span>
-    </div>
+</div>
 
-    <div>
-        <span id="current-time">0:00</span> / <span id="duration">0:00</span>
-    </div>
-
-    <div id="progress-bar" style="width: 100%; background: #f0f0f0; cursor: pointer; height: 10px; border-radius: 5px;">
-        <div id="progress" style="width: 0; height: 100%; background: #00bcd4; border-radius: 5px;"></div>
-    </div>
-
-    <!-- Audio Player -->
-    <audio id="audio" preload="auto"></audio>
-
-    <script type="module" src="main.js"></script>
+<audio id="audio"></audio>
+<script type="module" src="main.js"></script>
 </body>
 </html>

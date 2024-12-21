@@ -67,6 +67,80 @@ body {
   background-color: #333;
 }
 
+/* Playlist Container */
+#playlist-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+#image-container {
+  position: relative;
+  display: block;
+}
+
+#cover-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.playlist-buttons {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.control-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.control-button:hover {
+  background-color: #1db954;
+}
+
+/* Music Controls */
+.controls {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  background-color: #444;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1db954;
+}
+
+button.active {
+  background-color: #1ed760;
+}
+
+button:disabled {
+  background-color: #888;
+}
+
 /* Progress Bar */
 .progress-container {
   width: 100%;
@@ -100,43 +174,6 @@ body {
   color: #bbb;
 }
 
-/* Controls */
-.controls {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-button {
-  padding: 10px;
-  font-size: 18px;
-  border: none;
-  background-color: #444;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #1db954;
-}
-
-button.active {
-  background-color: #1ed760;
-}
-
-.control-button {
-  padding: 10px;
-  margin: 5px;
-  cursor: pointer;
-}
-
-button:disabled {
-  background-color: #888;
-}
-
 /* Responsive Design */
 @media (max-width: 480px) {
   #search-bar {
@@ -148,7 +185,16 @@ button:disabled {
     padding: 8px 12px;
   }
 
+  .playlist-buttons {
+    top: 5%;
+    left: 5%;
+    right: 5%;
+    flex-direction: column;
+    gap: 5px;
+  }
+
   button {
     font-size: 16px;
+    padding: 8px 12px;
   }
 }

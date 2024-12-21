@@ -1,3 +1,4 @@
+
 /* General Styles */
 body {
   font-family: Arial, sans-serif;
@@ -10,18 +11,14 @@ body {
   padding: 10px;
 }
 
-.container {
-  width: 100%;
-  max-width: 400px;
-}
-
 /* Search Container */
 .search-container {
   width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
 }
 
 #search-bar {
@@ -31,30 +28,36 @@ body {
   border: none;
   border-radius: 5px;
   outline: none;
+  margin-bottom: 5px;
 }
 
 #search-btn {
-  margin-top: 10px;
-  width: 100%;
-  padding: 10px;
+  padding: 10px 15px;
   font-size: 16px;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
   background-color: #1db954;
   color: white;
-  cursor: pointer;
+  width: 100%;
 }
 
+#search-btn:hover {
+  background-color: #1ed760;
+}
+
+/* Suggestions List */
 #suggestions-list {
   list-style: none;
   padding: 0;
   margin: 5px 0 0;
-  width: 100%;
-  max-height: 150px; /* Limit height for mobile */
-  overflow-y: auto; /* Scrollable for longer lists */
   background-color: #1c1c1c;
   border: 1px solid #444;
   border-radius: 5px;
+  max-width: 400px;
+  color: white;
+  position: absolute;
+  z-index: 10;
 }
 
 #suggestions-list li {
@@ -66,21 +69,56 @@ body {
   background-color: #333;
 }
 
-/* Music Player */
+/* Progress Bar */
+.progress-container {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+#progress-bar {
+  flex: 1;
+  height: 5px;
+  background-color: #444;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+#progress {
+  width: 0%;
+  height: 100%;
+  background-color: #1db954;
+  transition: width 0.1s linear;
+}
+
+#current-time,
+#duration {
+  font-size: 14px;
+  color: #bbb;
+}
+
+/* Music Banner */
 .music-banner {
   width: 100%;
   max-width: 400px;
-  background-color: #222;
-  padding: 15px;
-  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #222;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .cover img {
   width: 100%;
   max-width: 300px;
+  height: auto;
   border-radius: 10px;
   margin-bottom: 15px;
 }
@@ -101,84 +139,110 @@ body {
   margin: 0;
 }
 
+/* Controls */
 .controls {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .control-btn {
-  flex: 1;
-  font-size: 18px;
-  padding: 10px;
-  background-color: #444;
+  font-size: 20px;
+  background: none;
+  border: none;
   color: white;
-  border-radius: 5px;
-  text-align: center;
   cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.control-btn:hover {
+  background-color: #333;
 }
 
 .play {
-  font-size: 20px;
   background-color: #1db954;
   color: white;
-  padding: 10px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
 }
 
-.progress-container {
-  width: 100%;
-  max-width: 400px;
+.play:hover {
+  background-color: #1ed760;
+}
+/* /* Style for control buttons */
+.controls {
   display: flex;
-  align-items: center;
   gap: 10px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
-#progress-bar {
-  flex: 1;
-  height: 5px;
+button {
+  padding: 10px;
+  font-size: 18px;
+  border: none;
   background-color: #444;
+  color: white;
   border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-#progress {
-  height: 100%;
+button:hover {
   background-color: #1db954;
 }
 
-/* Lock Screen */
-#lock-screen {
-  position: fixed;
-  bottom: 0;
+button:disabled {
+  background-color: #888;
+}
+
+button.active {
+  background-color: #1ed760;
+}
+ */
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: space-around;
   width: 100%;
-  max-width: 400px;
-  padding: 15px;
-  background-color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 10px; /* Add spacing between primary and secondary controls */
+}
+
+.secondary-controls {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 10px; /* Space above secondary controls */
+}
+
+button {
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  background-color: #444;
   color: white;
-  text-align: center;
-  display: none; /* Hidden by default */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-#lock-cover {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 10px;
-  border-radius: 10px;
+button:hover {
+  background-color: #1db954;
 }
 
-#lock-song-title {
-  font-size: 16px;
-  margin: 0;
+button.active {
+  background-color: #1ed760;
 }
 
-#lock-artist-name {
-  font-size: 14px;
-  color: #bbb;
-}
-
-/* Responsive Adjustments */
+/* Responsive Design */
 @media (max-width: 480px) {
   #search-bar {
     font-size: 14px;
@@ -186,25 +250,7 @@ body {
 
   #search-btn {
     font-size: 14px;
-    padding: 8px 10px;
-  }
-
-  #progress-bar {
-    height: 4px;
-  }
-
-  .control-btn {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  .play {
-    font-size: 16px;
-    padding: 8px;
-  }
-
-  #suggestions-list {
-    max-height: 100px; /* Smaller suggestion box for mobile */
+    padding: 8px 12px;
   }
 
   .song-details h2 {
@@ -214,4 +260,49 @@ body {
   .song-details p {
     font-size: 14px;
   }
+
+  .control-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .play {
+    width: 50px;
+    height: 50px;
+  }
+  /* Progress Bar */
+.progress-container {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+#progress-bar {
+  flex: 1;
+  height: 5px;
+  background-color: #444;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+#progress {
+  width: 0%;
+  height: 100%;
+  background-color: #1db954;
+  transition: width 0.1s linear;
+}
+
+#current-time,
+#duration {
+  font-size: 14px;
+  color: #bbb;
+}
+
+
 }

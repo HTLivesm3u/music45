@@ -77,7 +77,7 @@ export const marathiSongs = [{
     title:"Deva Tujhya Gaabhaaryaalaa",
     artist:"Adarsh Shinde, Kirti Killedar, Anandi Joshi",
     src:"music/Deva Tujhya Gaabhaaryaalaa - Adarsh Shinde, Kirti Killedar, Anandi Joshi.m4a",
-    cover:"https://c.saavncdn.com/708/Duniyadari-Marathi-2013-20241119160647-500x500.jpg",
+    cover:"https://i.scdn.co/image/ab67616d0000aa54d1bc2feb42a7ee92d51d0eee",
   },
   {
     title:"Dewak Kalji Re",

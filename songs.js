@@ -1,5 +1,5 @@
 // songs.js
-export const songs = [
+export const hindiSongs = [
   {
     title: "Tum Hi Ho",
     artist: "Arijit Singh",

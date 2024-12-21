@@ -1,5 +1,5 @@
 // main.js
-import { hindiSongs, englishSongs, marathiSongs } from './songs.js';
+import { hindiSongs, englishSongs, marathiSongs} from './songs.js';
 
 let currentSongIndex = 0; // Start with the first song
 let isPlaying = false;
@@ -55,11 +55,11 @@ function togglePlayPause() {
 // Play the next song
 function playNextSong() {
   if (isShuffle) {
-    currentSongIndex = Math.floor(Math.random() * currentSongs.length);
+    currentSongIndex = Math.floor(Math.random() * songs.length);
   } else {
-    currentSongIndex = (currentSongIndex + 1) % currentSongs.length;
+    currentSongIndex = (currentSongIndex + 1) % songs.length;
   }
-  loadSong(currentSongs[currentSongIndex]);
+  loadSong(songs[currentSongIndex]);
   if (isPlaying) {
     audio.play();
   }
@@ -68,8 +68,8 @@ function playNextSong() {
 // Play the previous song
 function playPrevSong() {
   currentSongIndex =
-    (currentSongIndex - 1 + currentSongs.length) % currentSongs.length;
-  loadSong(currentSongs[currentSongIndex]);
+    (currentSongIndex - 1 + songs.length) % songs.length;
+  loadSong(songs[currentSongIndex]);
   if (isPlaying) {
     audio.play();
   }
@@ -98,35 +98,117 @@ progressBar.addEventListener("click", (e) => {
 // Automatically play the next song when the current one ends
 audio.addEventListener("ended", () => {
   if (isRepeat) {
-    loadSong(currentSongs[currentSongIndex]);
-    audio.play();
+    audio.play(); // Replay the current song
   } else {
     playNextSong();
   }
 });
 
-// Search functionality
-searchBtn.addEventListener("click", () => {
-  const query = searchBar.value.trim().toLowerCase();
-  const results = currentSongs.filter((song) =>
-    song.title.toLowerCase().includes(query) || song.artist.toLowerCase().includes(query)
-  );
-  displaySearchResults(results);
+// Add event listeners for buttons
+playPauseBtn.addEventListener("click", togglePlayPause);
+nextBtn.addEventListener("click", playNextSong);
+prevBtn.addEventListener("click", playPrevSong);
+
+// Shuffle and Repeat functionality
+document.getElementById("shuffle-btn").addEventListener("click", () => {
+  isShuffle = !isShuffle;
+  document.getElementById("shuffle-btn").classList.toggle("active", isShuffle);
 });
 
-// Display search suggestions
-function displaySearchResults(results) {
-  suggestionsList.innerHTML = "";
-  results.forEach((result) => {
-    const li = document.createElement("li");
-    li.textContent = `${result.title} - ${result.artist}`;
-    li.addEventListener("click", () => {
-      loadSong(result);
-      audio.play();
+document.getElementById("repeat-btn").addEventListener("click", () => {
+  isRepeat = !isRepeat;
+  document.getElementById("repeat-btn").classList.toggle("active", isRepeat);
+});
+
+// Update lock screen media information
+function updateMediaSession(song) {
+  if ('mediaSession' in navigator) {
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: song.title,
+      artist: song.artist,
+      artwork: [
+        { src: song.cover, sizes: '96x96', type: 'image/png' },
+        { src: song.cover, sizes: '128x128', type: 'image/png' },
+        { src: song.cover, sizes: '192x192', type: 'image/png' },
+        { src: song.cover, sizes: '256x256', type: 'image/png' },
+        { src: song.cover, sizes: '384x384', type: 'image/png' },
+        { src: song.cover, sizes: '512x512', type: 'image/png' },
+      ],
     });
-    suggestionsList.appendChild(li);
-  });
+
+    // Handle media session actions (play, pause, next, previous)
+    navigator.mediaSession.setActionHandler('play', () => {
+      audio.play();
+      isPlaying = true;
+      playPauseBtn.textContent = '⏸️';
+    });
+    navigator.mediaSession.setActionHandler('pause', () => {
+      audio.pause();
+      isPlaying = false;
+      playPauseBtn.textContent = '▶️';
+    });
+    navigator.mediaSession.setActionHandler('nexttrack', playNextSong);
+    navigator.mediaSession.setActionHandler('previoustrack', playPrevSong);
+  }
 }
+
+// Search for a song and show suggestions
+searchBar.addEventListener("input", () => {
+  const query = searchBar.value.toLowerCase().trim();
+  suggestionsList.innerHTML = ""; // Clear previous suggestions
+
+  if (query) {
+    const matches = songs.filter(
+      (song) =>
+        song.title.toLowerCase().includes(query) ||
+        song.artist.toLowerCase().includes(query)
+    );
+
+    matches.forEach((song) => {
+      const suggestionItem = document.createElement("li");
+      suggestionItem.textContent = `${song.title} - ${song.artist}`;
+      suggestionItem.addEventListener("click", () => {
+        const index = songs.findIndex(
+          (s) => s.title === song.title && s.artist === song.artist
+        );
+        currentSongIndex = index;
+        loadSong(song);
+        if (isPlaying) {
+          audio.play();
+        }
+        searchBar.value = "";
+        suggestionsList.innerHTML = "";
+      });
+      suggestionsList.appendChild(suggestionItem);
+    });
+  }
+});
+
+// Search Button Click
+searchBtn.addEventListener("click", () => {
+  const query = searchBar.value.toLowerCase().trim();
+  if (!query) return;
+
+  const songIndex = songs.findIndex(
+    (song) =>
+      song.title.toLowerCase().includes(query) ||
+      song.artist.toLowerCase().includes(query)
+  );
+
+  if (songIndex !== -1) {
+    currentSongIndex = songIndex;
+    loadSong(songs[currentSongIndex]);
+    if (isPlaying) {
+      audio.play();
+    }
+  } else {
+    alert("No matching song found!");
+  }
+
+  searchBar.value = "";
+  suggestionsList.innerHTML = "";
+});
+
 
 // Playlist selection buttons
 document.getElementById("hindi-btn").addEventListener("click", () => {
@@ -144,12 +226,18 @@ document.getElementById("marathi-btn").addEventListener("click", () => {
   loadSong(currentSongs[0]);
 });
 
-// Initial song load
-loadSong(currentSongs[currentSongIndex]);
 
-// Play/Pause button listener
-playPauseBtn.addEventListener("click", togglePlayPause);
 
-// Next/Previous buttons listener
-nextBtn.addEventListener("click", playNextSong);
-prevBtn.addEventListener("click", playPrevSong);
+// Add event listener for the download button
+document.getElementById("download-btn").addEventListener("click", () => {
+  const currentSong = songs[currentSongIndex]; // Get the current song
+  const link = document.createElement("a");
+  link.href = currentSong.src;  // Set the link to the song's source
+  link.download = currentSong.title + " - " + currentSong.artist + ".mp3"; // Set the filename for download
+  document.body.appendChild(link); // Append link to body
+  link.click(); // Trigger the download
+  document.body.removeChild(link); // Remove the link after the click
+});
+
+// Load the first song on page load
+loadSong(songs[currentSongIndex]);

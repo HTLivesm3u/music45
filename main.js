@@ -37,6 +37,10 @@ function loadSong(song) {
   artistName.textContent = song.artist;
   coverImage.src = song.cover;
   updateMediaSession(song); // Update lock screen metadata
+  if (isPlaying) {
+    audio.play();
+    playPauseBtn.textContent = "⏸️"; // Update play button to pause
+  }
 }
 
 // Play or pause functionality
@@ -60,9 +64,6 @@ function playNextSong() {
     currentSongIndex = (currentSongIndex + 1) % currentSongs.length;
   }
   loadSong(currentSongs[currentSongIndex]);
-  if (isPlaying) {
-    audio.play();
-  }
 }
 
 // Play the previous song
@@ -70,9 +71,6 @@ function playPrevSong() {
   currentSongIndex =
     (currentSongIndex - 1 + currentSongs.length) % currentSongs.length;
   loadSong(currentSongs[currentSongIndex]);
-  if (isPlaying) {
-    audio.play();
-  }
 }
 
 // Update progress bar
@@ -214,6 +212,8 @@ document.getElementById("hindi-btn").addEventListener("click", () => {
   currentSongs = hindiSongs;
   currentSongIndex = 0; // Reset index to 0 (start with first song)
   loadSong(currentSongs[currentSongIndex]);
+  isPlaying = true; // Set the state to playing
+  playPauseBtn.textContent = "⏸️"; // Set button to pause icon
   audio.play(); // Auto-play the first song
 });
 
@@ -221,6 +221,8 @@ document.getElementById("english-btn").addEventListener("click", () => {
   currentSongs = englishSongs;
   currentSongIndex = 0; // Reset index to 0 (start with first song)
   loadSong(currentSongs[currentSongIndex]);
+  isPlaying = true; // Set the state to playing
+  playPauseBtn.textContent = "⏸️"; // Set button to pause icon
   audio.play(); // Auto-play the first song
 });
 
@@ -228,6 +230,8 @@ document.getElementById("marathi-btn").addEventListener("click", () => {
   currentSongs = marathiSongs;
   currentSongIndex = 0; // Reset index to 0 (start with first song)
   loadSong(currentSongs[currentSongIndex]);
+  isPlaying = true; // Set the state to playing
+  playPauseBtn.textContent = "⏸️"; // Set button to pause icon
   audio.play(); // Auto-play the first song
 });
 

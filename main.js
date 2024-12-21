@@ -1,11 +1,10 @@
-// main.js
-import { hindiSongs, englishSongs, marathiSongs} from './songs.js';
+import { hindiSongs, englishSongs, marathiSongs } from './songs.js';
 
 let currentSongIndex = 0; // Start with the first song
 let isPlaying = false;
 let isShuffle = false;
 let isRepeat = false;
-let currentSongs = hindiSongs;
+let currentSongs = hindiSongs; // Default playlist is Hindi
 
 // HTML Elements
 const audio = document.getElementById("audio");
@@ -56,11 +55,11 @@ function togglePlayPause() {
 // Play the next song
 function playNextSong() {
   if (isShuffle) {
-    currentSongIndex = Math.floor(Math.random() * songs.length);
+    currentSongIndex = Math.floor(Math.random() * currentSongs.length);
   } else {
-    currentSongIndex = (currentSongIndex + 1) % songs.length;
+    currentSongIndex = (currentSongIndex + 1) % currentSongs.length;
   }
-  loadSong(songs[currentSongIndex]);
+  loadSong(currentSongs[currentSongIndex]);
   if (isPlaying) {
     audio.play();
   }
@@ -69,8 +68,8 @@ function playNextSong() {
 // Play the previous song
 function playPrevSong() {
   currentSongIndex =
-    (currentSongIndex - 1 + songs.length) % songs.length;
-  loadSong(songs[currentSongIndex]);
+    (currentSongIndex - 1 + currentSongs.length) % currentSongs.length;
+  loadSong(currentSongs[currentSongIndex]);
   if (isPlaying) {
     audio.play();
   }
@@ -159,7 +158,7 @@ searchBar.addEventListener("input", () => {
   suggestionsList.innerHTML = ""; // Clear previous suggestions
 
   if (query) {
-    const matches = songs.filter(
+    const matches = currentSongs.filter(
       (song) =>
         song.title.toLowerCase().includes(query) ||
         song.artist.toLowerCase().includes(query)
@@ -169,7 +168,7 @@ searchBar.addEventListener("input", () => {
       const suggestionItem = document.createElement("li");
       suggestionItem.textContent = `${song.title} - ${song.artist}`;
       suggestionItem.addEventListener("click", () => {
-        const index = songs.findIndex(
+        const index = currentSongs.findIndex(
           (s) => s.title === song.title && s.artist === song.artist
         );
         currentSongIndex = index;
@@ -190,7 +189,7 @@ searchBtn.addEventListener("click", () => {
   const query = searchBar.value.toLowerCase().trim();
   if (!query) return;
 
-  const songIndex = songs.findIndex(
+  const songIndex = currentSongs.findIndex(
     (song) =>
       song.title.toLowerCase().includes(query) ||
       song.artist.toLowerCase().includes(query)
@@ -198,7 +197,7 @@ searchBtn.addEventListener("click", () => {
 
   if (songIndex !== -1) {
     currentSongIndex = songIndex;
-    loadSong(songs[currentSongIndex]);
+    loadSong(currentSongs[currentSongIndex]);
     if (isPlaying) {
       audio.play();
     }
@@ -210,26 +209,28 @@ searchBtn.addEventListener("click", () => {
   suggestionsList.innerHTML = "";
 });
 
-
 // Playlist selection buttons
 document.getElementById("hindi-btn").addEventListener("click", () => {
   currentSongs = hindiSongs;
-  loadSong(currentSongs[0]);
+  currentSongIndex = 0; // Reset index
+  loadSong(currentSongs[currentSongIndex]);
 });
 
 document.getElementById("english-btn").addEventListener("click", () => {
   currentSongs = englishSongs;
-  loadSong(currentSongs[0]);
+  currentSongIndex = 0; // Reset index
+  loadSong(currentSongs[currentSongIndex]);
 });
 
 document.getElementById("marathi-btn").addEventListener("click", () => {
   currentSongs = marathiSongs;
-  loadSong(currentSongs[0]);
+  currentSongIndex = 0; // Reset index
+  loadSong(currentSongs[currentSongIndex]);
 });
 
 // Add event listener for the download button
-document.getElementById("download-btn").addEventListener("click", () => {
-  const currentSong = songs[currentSongIndex]; // Get the current song
+downloadBtn.addEventListener("click", () => {
+  const currentSong = currentSongs[currentSongIndex]; // Get the current song
   const link = document.createElement("a");
   link.href = currentSong.src;  // Set the link to the song's source
   link.download = currentSong.title + " - " + currentSong.artist + ".mp3"; // Set the filename for download
@@ -239,4 +240,4 @@ document.getElementById("download-btn").addEventListener("click", () => {
 });
 
 // Load the first song on page load
-loadSong(songs[currentSongIndex]);
+loadSong(currentSongs[currentSongIndex]);

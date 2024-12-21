@@ -1,17 +1,42 @@
 // songs.js
 export const hindiSongs = [
-  {
-    title: "Tum Hi Ho",
-    artist: "Arijit Singh",
-    src: "music/Agar Tum Saath Ho - Alka Yagnik, Arijit Singh.m4a",
-    cover: "https://c.saavncdn.com/430/Aashiqui-2-Hindi-2013-500x500.jpg",
-  },
- { 
+  { 
    title: "Aankhon Mein Doob Jaane Ko",
    artist: "Sandesh Shandilya",
    src: "music/Aankhon Mein Doob Jaane Ko - THE 9TEEN, Sandesh Shandilya.m4a",
  cover: "https://c.saavncdn.com/730/Aankhon-Mein-Doob-Jaane-Ko-Hindi-2024-20240816183310-500x500.jpg" },
-];
+ {
+     title:"Agar Tum Saath Ho",
+     artist:"Alka Yagnik,Arijit Singh",
+     src:"music/Agar Tum Saath Ho - Alka Yagnik, Arijit Singh.m4a",
+    cover:"https://c.saavncdn.com/994/Tamasha-Hindi-2015-500x500.jpg",
+     },
+    {
+    title: "Apna Bana Le",
+    artist: "Sachin-Jigar, Arijit Singh, Amitabh Bhattacharya",
+    src:"https://aac.saavncdn.com/815/483a6e118e8108cbb3e5cd8701674f32_96.mp4",
+    cover:"https://c.saavncdn.com/815/Bhediya-Hindi-2023-20230927155213-500x500.jpg",
+  },
+    {
+    title: "Arjan Vailly",
+    artist: "Manan Bhardwaj, Bhupinder Babbal",
+    src:"music/Arjan Vailly (From  ANIMAL ) - Manan Bhardwaj, Bhupinder Babbal.m4a",
+    cover:"https://c.saavncdn.com/092/ANIMAL-Hindi-2023-20231124191036-500x500.jpg",
+  },
+  {
+    title:"Chaleya",
+    artist:"Anirudh Ravichander, Arijit Singh, Shilpa Rao, Kumaar",
+    src:"music/Chaleya (From  Jawan ) - Anirudh Ravichander, Arijit Singh, Shilpa Rao, Kumaar.m4a",
+    cover:"https://c.saavncdn.com/026/Chaleya-From-Jawan-Hindi-2023-20230814014337-500x500.jpg",
+  },
+  {
+    title:"",
+    artist:"",
+    src:"",
+    cover"",
+  },
+  
+ ];
 
 export const englishSongs = [
   {
@@ -46,12 +71,7 @@ export const marathiSongs = [{
 //     src: "music/Jo Tum Mere Ho.mp3",
 //     cover: "https://c.saavncdn.com/401/Jo-Tum-Mere-Ho-Hindi-2024-20240731053953-500x500.jpg",
 //      },
-//   {
-//     title: "Apna Bana Le",
-//     artist: "Sachin-Jigar, Arijit Singh, Amitabh Bhattacharya",
-//     src:"https://aac.saavncdn.com/815/483a6e118e8108cbb3e5cd8701674f32_96.mp4",
-//     cover:"https://c.saavncdn.com/815/Bhediya-Hindi-2023-20230927155213-500x500.jpg",
-//   },
+
 
 
 //   {
@@ -72,13 +92,7 @@ export const marathiSongs = [{
 //     src:"https://aac.saavncdn.com/111/09c5dba8ec03665a9a679e19338917a6_160.mp4",
 //     cover:"https://c.saavncdn.com/111/Aalas-Ka-Pedh-Hindi-2015-20231005005130-500x500.jpg",
 //   },
-//   {
-//     title:"Agar Tum Saath Ho",
-//     artist:"Alka Yagnik,Arijit Singh",
-//     src:"music/Agar Tum Saath Ho - Alka Yagnik, Arijit Singh.m4a",
-//     cover:"https://c.saavncdn.com/994/Tamasha-Hindi-2015-500x500.jpg",
   
-//     },
 //   {
 //     title: "ekati ekati ghabarlis na",
 //     artist: "Anjali Kulkarni",

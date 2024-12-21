@@ -39,9 +39,10 @@ export const songs = [
   {
     title:"Agar Tum Saath Ho",
     artist:"Alka Yagnik,Arijit Singh",
-    src:"https://aac.saavncdn.com/994/2e6b47719cea3e7c9f971a3f1ddc9b0a_160.mp4",
-    cover:"https://c.saavncdn.com/994/Tamasha-Hindi-2015-500x500.jpg",
-  },
+    src:"music/Agar Tum Saath Ho - Alka Yagnik, Arijit Singh.m4a",
+    cover:"music/Agar Tum Saath Ho - Alka Yagnik, Arijit Singh.m4a",
+  // https://c.saavncdn.com/994/Tamasha-Hindi-2015-500x500.jpg
+    },
   {
     title: "ekati ekati ghabarlis na",
     artist: "Anjali Kulkarni",

@@ -6,12 +6,11 @@ export const hindiSongs = [
     src: "music/Agar Tum Saath Ho - Alka Yagnik, Arijit Singh.m4a",
     cover: "https://c.saavncdn.com/430/Aashiqui-2-Hindi-2013-500x500.jpg",
   },
-   { 
-       title: "Jo Tum Mere Ho",
-     artist: "Anuv Jain",
-     src: "music/Jo Tum Mere Ho.mp3",
-     cover: "https://c.saavncdn.com/401/Jo-Tum-Mere-Ho-Hindi-2024-20240731053953-500x500.jpg",
-    },
+// { 
+//   title: "Aankhon Mein Doob Jaane Ko",
+//   artist: "Sandesh Shandilya",
+//   src: "https://aac.saavncdn.com/730/b7bc5718c8eb6a4afcb7bd1f44d2c9ca_160.mp4",
+//   cover: "https://c.saavncdn.com/730/Aankhon-Mein-Doob-Jaane-Ko-Hindi-2024-20240816183310-500x500.jpg" },
 ];
 
 export const englishSongs = [
@@ -55,11 +54,7 @@ export const marathiSongs = [
 //     src:"https://aac.saavncdn.com/815/483a6e118e8108cbb3e5cd8701674f32_96.mp4",
 //     cover:"https://c.saavncdn.com/815/Bhediya-Hindi-2023-20230927155213-500x500.jpg",
 //   },
-// { 
-//   title: "Aankhon Mein Doob Jaane Ko",
-//   artist: "Sandesh Shandilya",
-//   src: "https://aac.saavncdn.com/730/b7bc5718c8eb6a4afcb7bd1f44d2c9ca_160.mp4",
-//   cover: "https://c.saavncdn.com/730/Aankhon-Mein-Doob-Jaane-Ko-Hindi-2024-20240816183310-500x500.jpg" },
+
 
 //   {
 //     title:"Husn",
@@ -98,6 +93,12 @@ export const marathiSongs = [
 //      src: "music/Aai - Pravin Koli, Yogita Koli, Deeya Wadkar, Myra Vaikul, Ankita Raut.m4a",
 //      cover: "https://c.saavncdn.com/621/Aai-Marathi-2022-20220505134712-500x500.jpg",
 //   },
+// { 
+//        title: "Jo Tum Mere Ho",
+//      artist: "Anuv Jain",
+//      src: "music/Jo Tum Mere Ho.mp3",
+//      cover: "https://c.saavncdn.com/401/Jo-Tum-Mere-Ho-Hindi-2024-20240731053953-500x500.jpg",
+//     },
 //   {
 //      title: "govyachya kinaryavar",
 //      artist: "pravin koli",

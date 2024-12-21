@@ -40,12 +40,17 @@ export const hindiSongs = [
 
 export const englishSongs = [
   {
+    title: "7 Years",
+    artist: "Lukas Graham",
+    src: "music/7 Years - Lukas Graham.m4a",
+    cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVXQO3G2SrZQQ8Ghxj3i2LY8s4mNYC_XnI0NfYqrYiOdRh2G7lLfBaeH8&s=10",
+  },  
+  {
     title: "Blue",
     artist: "yung kai",
     src: "music/blue - yung kai.m4a",
     cover: "https://c.saavncdn.com/399/shades-of-blue-English-2024-20241105054633-500x500.jpg",
   },
-  // Add more songs
 ];
 
 export const marathiSongs = [{

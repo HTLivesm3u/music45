@@ -37,10 +37,10 @@ function updateSongDetails() {
   artistName.textContent = song.artist;
   coverImage.src = song.cover;
   audio.src = song.src;
-  audio.play();
-  isPlaying = true;
-  playPauseBtn.textContent = "⏸️"; // Pause icon
-  updateProgress();
+  // audio.play();
+  // isPlaying = true;
+  // playPauseBtn.textContent = "⏸️"; // Pause icon
+  // updateProgress();
 }
 
 // Toggle play/pause

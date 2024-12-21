@@ -15,8 +15,8 @@ export const hindiSongs = [
 
 export const englishSongs = [
   {
-    title: "Shape of You",
-    artist: "Ed Sheeran",
+    title: "Blue",
+    artist: "yung kai",
     src: "music/blue - yung kai.m4a",
     cover: "https://c.saavncdn.com/399/shades-of-blue-English-2024-20241105054633-500x500.jpg",
   },

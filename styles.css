@@ -76,11 +76,9 @@ body {
   margin-bottom: 20px;
 }
 
-/* Cover Image */
 #image-container {
   position: relative;
   display: block;
-  margin-bottom: 20px; /* Added space between cover image and playlist buttons */
 }
 
 #cover-image {
@@ -88,10 +86,9 @@ body {
   border-radius: 10px;
 }
 
-/* Playlist Buttons (Placed lower down) */
 .playlist-buttons {
   position: absolute;
-  bottom: 10%;  /* Move buttons to the bottom of the container */
+  top: 10%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;

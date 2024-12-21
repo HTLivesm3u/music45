@@ -14,40 +14,37 @@
   <ul id="suggestions-list"></ul>
 </div>
 
-
-  <div class="music-banner">
-    <div class="cover">
-      <img id="cover-image" src="cover1.jpg" alt="Album Cover">
-    </div>
-    <div class="song-details">
-      <h2 id="song-title">Song Title 1</h2>
-      <p id="artist-name">Artist Name 1</p>
-    </div>
-<div class="progress-container">
-  <span id="current-time">0:00</span>
-  <div id="progress-bar">
-    <div id="progress"></div>
+<div class="music-banner">
+  <div class="cover">
+    <img id="cover-image" src="cover1.jpg" alt="Album Cover">
   </div>
-  <span id="duration">0:00</span>
-<div class="controls">
-  <button id="prev">⏮️</button>
-  <button id="play-pause">▶️</button>
-  <button id="next">⏭️</button>
+  <div class="song-details">
+    <h2 id="song-title">Song Title 1</h2>
+    <p id="artist-name">Artist Name 1</p>
+  </div>
+
+  <div class="progress-container">
+    <span id="current-time">0:00</span>
+    <div id="progress-bar">
+      <div id="progress"></div>
+    </div>
+    <span id="duration">0:00</span>
+  </div>
+
+  <div class="controls">
+    <button id="prev" class="control-btn">⏮️</button>
+    <button id="play-pause" class="control-btn play">▶️</button>
+    <button id="next" class="control-btn">⏭️</button>
+  </div>
+
+  <div class="secondary-controls">
+    <button id="shuffle-btn">🔀</button>
+    <button id="repeat-btn">🔁</button>
+    <button id="like-btn">❤️</button>
+  </div>
 </div>
 
-<div class="secondary-controls">
-  <button id="shuffle-btn">🔀</button>
-  <button id="repeat-btn">🔁</button>
-  <button id="like-btn">❤️</button>
-</div>
-
-
-
-
-  <!-- Audio Tag -->
-  <audio id="audio"></audio>
-
+<audio id="audio"></audio>
 <script type="module" src="main.js"></script>
-</script>
 </body>
 </html>

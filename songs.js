@@ -29,12 +29,12 @@ export const hindiSongs = [
     src:"music/Chaleya (From  Jawan ) - Anirudh Ravichander, Arijit Singh, Shilpa Rao, Kumaar.m4a",
     cover:"https://c.saavncdn.com/026/Chaleya-From-Jawan-Hindi-2023-20230814014337-500x500.jpg",
   },
-  {
-    title:"",
-    artist:"",
-    src:"",
-    cover"",
-  },
+  // {
+  //   title:"",
+  //   artist:"",
+  //   src:"",
+  //   cover"",
+  // },
   
  ];
 

@@ -6,7 +6,12 @@ export const hindiSongs = [
     src: "music/Agar Tum Saath Ho - Alka Yagnik, Arijit Singh.m4a",
     cover: "https://c.saavncdn.com/430/Aashiqui-2-Hindi-2013-500x500.jpg",
   },
-  // Add more songs
+   { 
+       title: "Jo Tum Mere Ho",
+     artist: "Anuv Jain",
+     src: "music/Jo Tum Mere Ho.mp3",
+     cover: "https://c.saavncdn.com/401/Jo-Tum-Mere-Ho-Hindi-2024-20240731053953-500x500.jpg",
+    },
 ];
 
 export const englishSongs = [
@@ -26,12 +31,7 @@ export const marathiSongs = [
     src: "music/Aai - Pravin Koli, Yogita Koli, Deeya Wadkar, Myra Vaikul, Ankita Raut.m4a",
     cover: "https://c.saavncdn.com/399/shades-of-blue-English-2024-20241105054633-500x500.jpg",
   },
-   {
-    title: "Zingaat2",
-    artist: "Ajay-Atul",
-    src: "music/Aai - Pravin Koli, Yogita Koli, Deeya Wadkar, Myra Vaikul, Ankita Raut.m4a",
-    cover: "https://c.saavncdn.com/399/shades-of-blue-English-2024-20241105054633-500x500.jpg",
-  },
+  
 ];
 
 

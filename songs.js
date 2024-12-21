@@ -6,11 +6,11 @@ export const hindiSongs = [
     src: "music/Agar Tum Saath Ho - Alka Yagnik, Arijit Singh.m4a",
     cover: "https://c.saavncdn.com/430/Aashiqui-2-Hindi-2013-500x500.jpg",
   },
-// { 
-//   title: "Aankhon Mein Doob Jaane Ko",
-//   artist: "Sandesh Shandilya",
-//   src: "https://aac.saavncdn.com/730/b7bc5718c8eb6a4afcb7bd1f44d2c9ca_160.mp4",
-//   cover: "https://c.saavncdn.com/730/Aankhon-Mein-Doob-Jaane-Ko-Hindi-2024-20240816183310-500x500.jpg" },
+ { 
+   title: "Aankhon Mein Doob Jaane Ko",
+   artist: "Sandesh Shandilya",
+   src: "https://aac.saavncdn.com/730/b7bc5718c8eb6a4afcb7bd1f44d2c9ca_160.mp4",
+ cover: "https://c.saavncdn.com/730/Aankhon-Mein-Doob-Jaane-Ko-Hindi-2024-20240816183310-500x500.jpg" },
 ];
 
 export const englishSongs = [

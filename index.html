@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Search Container -->
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search songs...">
+        <button id="search-btn">Search</button>
+        <ul id="suggestions-list"></ul>
+    </div>
+
+    <!-- Playlist Display Section -->
+    <div id="playlist-container">
+        <div id="playlist-name">Hindi Playlist</div>
+        <img id="cover-image" src="path/to/default/image.jpg" alt="Cover Image">
+    </div>
+
+    <!-- Playlist Selection Buttons -->
+    <div>
+        <button id="hindi-btn" class="control-button">Hindi</button>
+        <button id="english-btn" class="control-button">English</button>
+        <button id="marathi-btn" class="control-button">Marathi</button>
+    </div>
+
+    <!-- Music Controls -->
+    <div class="controls">
+        <button id="prev" class="control-button">Previous</button>
+        <button id="play-pause" class="control-button">▶️</button>
+        <button id="next" class="control-button">Next</button>
+    </div>
+
+    <div>
+        <span id="song-title">Song Title</span> - <span id="artist-name">Artist</span>
+    </div>
+
+    <div>
+        <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+    </div>
+
+    <div id="progress-bar" style="width: 100%; background: #f0f0f0; cursor: pointer; height: 10px; border-radius: 5px;">
+        <div id="progress" style="width: 0; height: 100%; background: #00bcd4; border-radius: 5px;"></div>
+    </div>
+
+    <!-- Audio Player -->
+    <audio id="audio" preload="auto"></audio>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>

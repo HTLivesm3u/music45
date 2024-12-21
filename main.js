@@ -212,20 +212,23 @@ searchBtn.addEventListener("click", () => {
 // Playlist selection buttons
 document.getElementById("hindi-btn").addEventListener("click", () => {
   currentSongs = hindiSongs;
-  currentSongIndex = 0; // Reset index
+  currentSongIndex = 0; // Reset index to 0 (start with first song)
   loadSong(currentSongs[currentSongIndex]);
+  audio.play(); // Auto-play the first song
 });
 
 document.getElementById("english-btn").addEventListener("click", () => {
   currentSongs = englishSongs;
-  currentSongIndex = 0; // Reset index
+  currentSongIndex = 0; // Reset index to 0 (start with first song)
   loadSong(currentSongs[currentSongIndex]);
+  audio.play(); // Auto-play the first song
 });
 
 document.getElementById("marathi-btn").addEventListener("click", () => {
   currentSongs = marathiSongs;
-  currentSongIndex = 0; // Reset index
+  currentSongIndex = 0; // Reset index to 0 (start with first song)
   loadSong(currentSongs[currentSongIndex]);
+  audio.play(); // Auto-play the first song
 });
 
 // Add event listener for the download button

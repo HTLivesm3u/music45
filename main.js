@@ -22,10 +22,6 @@ const searchBar = document.getElementById("search-bar");
 const searchBtn = document.getElementById("search-btn");
 const suggestionsList = document.getElementById("suggestions-list");
 const downloadBtn = document.getElementById("download-btn");
-const lockScreen = document.getElementById("lock-screen"); // Lock screen element
-const lockSongTitle = document.getElementById("lock-song-title");
-const lockArtistName = document.getElementById("lock-artist-name");
-const lockCoverImage = document.getElementById("lock-cover");
 
 // Utility function to format time
 function formatTime(seconds) {
@@ -41,15 +37,6 @@ function updateSongDetails() {
   artistName.textContent = song.artist;
   coverImage.src = song.cover;
   audio.src = song.src;
-
-  // Update lock screen details
-  lockSongTitle.textContent = song.title;
-  lockArtistName.textContent = song.artist;
-  lockCoverImage.src = song.cover;
-
-  // Lock screen visibility
-  lockScreen.style.display = "block"; // Show lock screen
-  setTimeout(() => lockScreen.style.display = "none", 3000); // Hide after 3 seconds
 }
 
 // Toggle play/pause

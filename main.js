@@ -2,6 +2,8 @@ import { hindiSongs, englishSongs, marathiSongs } from './songs.js';
 
 let currentSongIndex = 0;
 let isPlaying = false;
+let isShuffle = false;
+let isRepeat = false;
 let currentSongs = hindiSongs; // Default to Hindi songs
 
 // HTML Elements
@@ -16,15 +18,13 @@ const progressBar = document.getElementById("progress-bar");
 const progress = document.getElementById("progress");
 const currentTimeEl = document.getElementById("current-time");
 const durationEl = document.getElementById("duration");
+const shuffleBtn = document.getElementById("shuffle-btn");
+const repeatBtn = document.getElementById("repeat-btn");
+const downloadBtn = document.getElementById("download-btn");
+const hindiBtn = document.getElementById("hindi-btn");
+const englishBtn = document.getElementById("english-btn");
+const marathiBtn = document.getElementById("marathi-btn");
 
-// Utility function to format time
-function formatTime(seconds) {
-  const minutes = Math.floor(seconds / 60);
-  const remainingSeconds = Math.floor(seconds % 60);
-  return `${minutes}:${remainingSeconds < 10 ? "0" + remainingSeconds : remainingSeconds}`;
-}
-
-// Update song details
 function updateSongDetails() {
   const song = currentSongs[currentSongIndex];
   songTitle.textContent = song.title;
@@ -33,69 +33,39 @@ function updateSongDetails() {
   audio.src = song.src;
 }
 
-// Play song
-function playSong() {
-  audio.play();
-  isPlaying = true;
-  playPauseBtn.textContent = "⏸️"; // Update play/pause button to pause
+function formatTime(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = Math.floor(seconds % 60);
+  return `${minutes}:${remainingSeconds < 10 ? "0" + remainingSeconds : remainingSeconds}`;
 }
 
-// Pause song
-function pauseSong() {
-  audio.pause();
-  isPlaying = false;
-  playPauseBtn.textContent = "▶️"; // Update play/pause button to play
-}
-
-// Toggle play/pause
 playPauseBtn.addEventListener("click", () => {
   if (isPlaying) {
-    pauseSong();
+    audio.pause();
+    isPlaying = false;
+    playPauseBtn.textContent = "▶️";
   } else {
-    playSong();
+    audio.play();
+    isPlaying = true;
+    playPauseBtn.textContent = "⏸️";
   }
 });
 
-// Next song
 nextBtn.addEventListener("click", () => {
-  currentSongIndex = (currentSongIndex + 1) % currentSongs.length;
+  if (isShuffle) {
+    currentSongIndex = Math.floor(Math.random() * currentSongs.length);
+  } else {
+    currentSongIndex = (currentSongIndex + 1) % currentSongs.length;
+  }
   updateSongDetails();
-  playSong(); // Autoplay the next song
+  audio.play();
 });
 
-// Previous song
 prevBtn.addEventListener("click", () => {
   currentSongIndex = (currentSongIndex - 1 + currentSongs.length) % currentSongs.length;
   updateSongDetails();
-  playSong(); // Autoplay the previous song
 });
 
-// Playlist button event listeners
-document.getElementById("hindi-btn").addEventListener("click", () => {
-  currentSongs = hindiSongs;
-  currentSongIndex = 0;
-  updateSongDetails();
-  playSong(); // Autoplay
-});
-
-document.getElementById("english-btn").addEventListener("click", () => {
-  currentSongs = englishSongs;
-  currentSongIndex = 0;
-  updateSongDetails();
-  playSong(); // Autoplay
-});
-
-document.getElementById("marathi-btn").addEventListener("click", () => {
-  currentSongs = marathiSongs;
-  currentSongIndex = 0;
-  updateSongDetails();
-  playSong(); // Autoplay
-});
-
-// Initialize player
-updateSongDetails();
-
-// Audio event listeners
 audio.addEventListener("timeupdate", () => {
   const currentTime = audio.currentTime;
   const duration = audio.duration;
@@ -104,3 +74,48 @@ audio.addEventListener("timeupdate", () => {
   durationEl.textContent = formatTime(duration);
 });
 
+progressBar.addEventListener("click", (e) => {
+  const progressBarWidth = progressBar.offsetWidth;
+  const clickPosition = e.offsetX;
+  const newTime = (clickPosition / progressBarWidth) * audio.duration;
+  audio.currentTime = newTime;
+});
+
+shuffleBtn.addEventListener("click", () => {
+  isShuffle = !isShuffle;
+  shuffleBtn.classList.toggle("active", isShuffle);
+});
+
+repeatBtn.addEventListener("click", () => {
+  isRepeat = !isRepeat;
+  repeatBtn.classList.toggle("active", isRepeat);
+  audio.loop = isRepeat;
+});
+
+downloadBtn.addEventListener("click", () => {
+  const song = currentSongs[currentSongIndex];
+  const link = document.createElement("a");
+  link.href = song.src;
+  link.download = song.title + ".mp3";
+  link.click();
+});
+
+hindiBtn.addEventListener("click", () => {
+  currentSongs = hindiSongs;
+  currentSongIndex = 0;
+  updateSongDetails();
+});
+
+englishBtn.addEventListener("click", () => {
+  currentSongs = englishSongs;
+  currentSongIndex = 0;
+  updateSongDetails();
+});
+
+marathiBtn.addEventListener("click", () => {
+  currentSongs = marathiSongs;
+  currentSongIndex = 0;
+  updateSongDetails();
+});
+
+updateSongDetails();

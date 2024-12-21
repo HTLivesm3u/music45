@@ -8,21 +8,20 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
 <div class="search-container">
-  <input type="text" id="search-bar" placeholder="Search for a song or artist..." />
+  <input type="text" id="search-bar" placeholder="Search for a song or artist...">
   <button id="search-btn">🔍</button>
   <ul id="suggestions-list"></ul>
 </div>
 
-<div class="music-banner">
-  <!-- Playlist buttons -->
-  <div class="playlist-container">
-    <button id="hindi-btn" class="playlist-btn">Hindi</button>
-    <button id="english-btn" class="playlist-btn">English</button>
-    <button id="marathi-btn" class="playlist-btn">Marathi</button>
-  </div>
+<div class="playlist-buttons">
+  <button id="hindi-btn">Hindi</button>
+  <button id="english-btn">English</button>
+  <button id="marathi-btn">Marathi</button>
+</div>
 
-  <!-- Cover image and song details -->
+<div class="music-banner">
   <div class="cover">
     <img id="cover-image" src="cover1.jpg" alt="Album Cover">
   </div>
@@ -31,7 +30,6 @@
     <p id="artist-name">Artist Name 1</p>
   </div>
 
-  <!-- Progress bar -->
   <div class="progress-container">
     <span id="current-time">0:00</span>
     <div id="progress-bar">
@@ -40,14 +38,12 @@
     <span id="duration">0:00</span>
   </div>
 
-  <!-- Controls -->
   <div class="controls">
     <button id="prev" class="control-btn">⏮️</button>
     <button id="play-pause" class="control-btn play">▶️</button>
     <button id="next" class="control-btn">⏭️</button>
   </div>
 
-  <!-- Secondary controls -->
   <div class="secondary-controls">
     <button id="shuffle-btn">🔀</button>
     <button id="repeat-btn">🔁</button>

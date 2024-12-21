@@ -1,7 +1,6 @@
-// main.js
-import { hindiSongs, englishSongs, marathiSongs} from './songs.js';
+import { hindiSongs, englishSongs, marathiSongs } from './songs.js';
 
-let currentSongIndex = 0; // Start with the first song
+let currentSongIndex = 0;
 let isPlaying = false;
 let isShuffle = false;
 let isRepeat = false;
@@ -27,21 +26,25 @@ const downloadBtn = document.getElementById("download-btn"); // New download but
 // Utility function to format time
 function formatTime(seconds) {
   const minutes = Math.floor(seconds / 60);
-  const secs = Math.floor(seconds % 60);
-  return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
+  const remainingSeconds = Math.floor(seconds % 60);
+  return `${minutes}:${remainingSeconds < 10 ? "0" + remainingSeconds : remainingSeconds}`;
 }
 
-// Load a song
-function loadSong(song) {
-  audio.src = song.src;
+// Update song details
+function updateSongDetails() {
+  const song = currentSongs[currentSongIndex];
   songTitle.textContent = song.title;
   artistName.textContent = song.artist;
   coverImage.src = song.cover;
-  updateMediaSession(song); // Update lock screen metadata
+  audio.src = song.src;
+  audio.play();
+  isPlaying = true;
+  playPauseBtn.textContent = "⏸️"; // Pause icon
+  updateProgress();
 }
 
-// Play or pause functionality
-function togglePlayPause() {
+// Toggle play/pause
+playPauseBtn.addEventListener("click", () => {
   if (isPlaying) {
     audio.pause();
     isPlaying = false;
@@ -51,191 +54,87 @@ function togglePlayPause() {
     isPlaying = true;
     playPauseBtn.textContent = "⏸️"; // Pause icon
   }
-}
+});
 
-// Play the next song
-function playNextSong() {
+// Next song
+nextBtn.addEventListener("click", () => {
   if (isShuffle) {
     currentSongIndex = Math.floor(Math.random() * currentSongs.length);
   } else {
     currentSongIndex = (currentSongIndex + 1) % currentSongs.length;
   }
-  loadSong(currentSongs[currentSongIndex]);
-  if (isPlaying) {
-    audio.play();
-  }
-}
+  updateSongDetails();
+});
 
-// Play the previous song
-function playPrevSong() {
-  currentSongIndex =
-    (currentSongIndex - 1 + currentSongs.length) % currentSongs.length;
-  loadSong(currentSongs[currentSongIndex]);
-  if (isPlaying) {
-    audio.play();
-  }
-}
+// Previous song
+prevBtn.addEventListener("click", () => {
+  currentSongIndex = (currentSongIndex - 1 + currentSongs.length) % currentSongs.length;
+  updateSongDetails();
+});
 
-// Update progress bar
-audio.addEventListener("timeupdate", () => {
-  const { currentTime, duration } = audio;
-  const progressPercent = (currentTime / duration) * 100;
-  progress.style.width = `${progressPercent}%`;
-
-  // Update current time and duration
+// Update progress
+function updateProgress() {
+  const currentTime = audio.currentTime;
+  const duration = audio.duration;
+  progress.style.width = (currentTime / duration) * 100 + "%";
   currentTimeEl.textContent = formatTime(currentTime);
   durationEl.textContent = formatTime(duration);
-});
+}
 
-// Seek functionality
+// Sync progress bar with audio
 progressBar.addEventListener("click", (e) => {
-  const width = progressBar.clientWidth;
-  const clickX = e.offsetX;
-  const duration = audio.duration;
-
-  audio.currentTime = (clickX / width) * duration;
+  const progressBarWidth = progressBar.offsetWidth;
+  const clickPosition = e.offsetX;
+  const newTime = (clickPosition / progressBarWidth) * audio.duration;
+  audio.currentTime = newTime;
 });
 
-// Automatically play the next song when the current one ends
-audio.addEventListener("ended", () => {
-  if (isRepeat) {
-    audio.play(); // Replay the current song
-  } else {
-    playNextSong();
-  }
-});
-
-// Add event listeners for buttons
-playPauseBtn.addEventListener("click", togglePlayPause);
-nextBtn.addEventListener("click", playNextSong);
-prevBtn.addEventListener("click", playPrevSong);
-
-// Shuffle and Repeat functionality
+// Handle shuffle button
 document.getElementById("shuffle-btn").addEventListener("click", () => {
   isShuffle = !isShuffle;
   document.getElementById("shuffle-btn").classList.toggle("active", isShuffle);
 });
 
+// Handle repeat button
 document.getElementById("repeat-btn").addEventListener("click", () => {
   isRepeat = !isRepeat;
   document.getElementById("repeat-btn").classList.toggle("active", isRepeat);
+  audio.loop = isRepeat; // Enable/disable loop
 });
 
-// Update lock screen media information
-function updateMediaSession(song) {
-  if ('mediaSession' in navigator) {
-    navigator.mediaSession.metadata = new MediaMetadata({
-      title: song.title,
-      artist: song.artist,
-      artwork: [
-        { src: song.cover, sizes: '96x96', type: 'image/png' },
-        { src: song.cover, sizes: '128x128', type: 'image/png' },
-        { src: song.cover, sizes: '192x192', type: 'image/png' },
-        { src: song.cover, sizes: '256x256', type: 'image/png' },
-        { src: song.cover, sizes: '384x384', type: 'image/png' },
-        { src: song.cover, sizes: '512x512', type: 'image/png' },
-      ],
-    });
-
-    // Handle media session actions (play, pause, next, previous)
-    navigator.mediaSession.setActionHandler('play', () => {
-      audio.play();
-      isPlaying = true;
-      playPauseBtn.textContent = '⏸️';
-    });
-    navigator.mediaSession.setActionHandler('pause', () => {
-      audio.pause();
-      isPlaying = false;
-      playPauseBtn.textContent = '▶️';
-    });
-    navigator.mediaSession.setActionHandler('nexttrack', playNextSong);
-    navigator.mediaSession.setActionHandler('previoustrack', playPrevSong);
-  }
-}
-
-// Search for a song and show suggestions
-searchBar.addEventListener("input", () => {
-  const query = searchBar.value.toLowerCase().trim();
-  suggestionsList.innerHTML = ""; // Clear previous suggestions
-
-  if (query) {
-    const matches = currentSongs.filter(
-      (song) =>
-        song.title.toLowerCase().includes(query) ||
-        song.artist.toLowerCase().includes(query)
-    );
-
-    matches.forEach((song) => {
-      const suggestionItem = document.createElement("li");
-      suggestionItem.textContent = `${song.title} - ${song.artist}`;
-      suggestionItem.addEventListener("click", () => {
-        const index = currentSongs.findIndex(
-          (s) => s.title === song.title && s.artist === song.artist
-        );
-        currentSongIndex = index;
-        loadSong(song);
-        if (isPlaying) {
-          audio.play();
-        }
-        searchBar.value = "";
-        suggestionsList.innerHTML = "";
-      });
-      suggestionsList.appendChild(suggestionItem);
-    });
-  }
+// Handle download button
+downloadBtn.addEventListener("click", () => {
+  const song = currentSongs[currentSongIndex];
+  const link = document.createElement("a");
+  link.href = song.src;
+  link.download = song.title + ".mp3";
+  link.click();
 });
 
-// Search Button Click
-searchBtn.addEventListener("click", () => {
-  const query = searchBar.value.toLowerCase().trim();
-  if (!query) return;
-
-  const songIndex = currentSongs.findIndex(
-    (song) =>
-      song.title.toLowerCase().includes(query) ||
-      song.artist.toLowerCase().includes(query)
-  );
-
-  if (songIndex !== -1) {
-    currentSongIndex = songIndex;
-    loadSong(currentSongs[currentSongIndex]);
-    if (isPlaying) {
-      audio.play();
-    }
-  } else {
-    alert("No matching song found!");
-  }
-
-  searchBar.value = "";
-  suggestionsList.innerHTML = "";
-});
-
-// Playlist selection buttons
+// Handle song change based on selected playlist buttons
 document.getElementById("hindi-btn").addEventListener("click", () => {
   currentSongs = hindiSongs;
-  loadSong(currentSongs[0]);
+  currentSongIndex = 0;
+  updateSongDetails();
 });
 
 document.getElementById("english-btn").addEventListener("click", () => {
   currentSongs = englishSongs;
-  loadSong(currentSongs[0]);
+  currentSongIndex = 0;
+  updateSongDetails();
 });
 
 document.getElementById("marathi-btn").addEventListener("click", () => {
   currentSongs = marathiSongs;
-  loadSong(currentSongs[0]);
+  currentSongIndex = 0;
+  updateSongDetails();
 });
 
-// Download button listener
-downloadBtn.addEventListener("click", () => {
-  const currentSong = currentSongs[currentSongIndex]; // Get the current song
-  const link = document.createElement("a");
-  link.href = currentSong.src; // Set the link to the song's source
-  link.download = `${currentSong.title} - ${currentSong.artist}.mp3`; // Set the filename for download
-  document.body.appendChild(link); // Append link to body
-  link.click(); // Trigger the download
-  document.body.removeChild(link); // Remove the link after the click
-});
+// Initialize the player
+updateSongDetails();
 
-// Load the first song on page load
-loadSong(currentSongs[currentSongIndex]);
+// Audio event listeners
+audio.addEventListener("timeupdate", updateProgress);
+audio.addEventListener("ended", () => {
+  nextBtn.click();
+});

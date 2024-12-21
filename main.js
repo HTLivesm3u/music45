@@ -6,7 +6,7 @@ let isPlaying = false;
 let isShuffle = false;
 let isRepeat = false;
 let currentSongs = hindiSongs; // Default to Hindi songs
-
+//
 // HTML Elements
 const audio = document.getElementById("audio");
 const playPauseBtn = document.getElementById("play-pause");

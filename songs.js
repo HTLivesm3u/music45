@@ -9,7 +9,7 @@ export const hindiSongs = [
  { 
    title: "Aankhon Mein Doob Jaane Ko",
    artist: "Sandesh Shandilya",
-   src: "music/Aankhon Mein Doob Jaane Ko - THE 9TEEN, Sandesh Shandilya.m4",
+   src: "music/Aankhon Mein Doob Jaane Ko - THE 9TEEN, Sandesh Shandilya.m4a",
  cover: "https://c.saavncdn.com/730/Aankhon-Mein-Doob-Jaane-Ko-Hindi-2024-20240816183310-500x500.jpg" },
 ];
 

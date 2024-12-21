@@ -21,6 +21,7 @@ const durationEl = document.getElementById("duration");
 const searchBar = document.getElementById("search-bar");
 const searchBtn = document.getElementById("search-btn");
 const suggestionsList = document.getElementById("suggestions-list");
+const downloadBtn = document.getElementById("download-btn"); // Download button
 
 // Utility function to format time
 function formatTime(seconds) {
@@ -207,6 +208,26 @@ searchBtn.addEventListener("click", () => {
   searchBar.value = "";
   suggestionsList.innerHTML = "";
 });
+
+// Function to handle the song download
+function downloadSong() {
+  const currentSong = songs[currentSongIndex];
+  if (!currentSong || !currentSong.src) {
+    alert("No song available to download!");
+    return;
+  }
+
+  // Create a temporary anchor element to trigger the download
+  const downloadLink = document.createElement("a");
+  downloadLink.href = currentSong.src;
+  downloadLink.download = `${currentSong.title} - ${currentSong.artist}.mp3`;
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  document.body.removeChild(downloadLink); // Cleanup
+}
+
+// Add event listener to the Download button
+downloadBtn.addEventListener("click", downloadSong);
 
 // Load the first song on page load
 loadSong(songs[currentSongIndex]);

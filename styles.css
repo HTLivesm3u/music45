@@ -88,10 +88,10 @@ body {
 .playlist-buttons {
   position: absolute;
   top: 10%;
-  left: 10%;
-  right: 10%;
+  left: 5%;
+  width: 90%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   z-index: 1;
 }
 
@@ -186,7 +186,7 @@ button:disabled {
   }
 
   .playlist-buttons {
-    top: 5%;
+    top: 10%;
     left: 5%;
     right: 5%;
     flex-direction: column;

@@ -12,7 +12,7 @@ body {
 
 /* Search Container */
 .search-container {
-  width: 100%;
+  width: 90%; /* Adjust width for smaller screens */
   max-width: 400px;
   margin-bottom: 20px;
   display: flex;
@@ -22,7 +22,7 @@ body {
 
 #search-bar {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   font-size: 16px;
   border: none;
   border-radius: 5px;
@@ -31,7 +31,7 @@ body {
 }
 
 #search-btn {
-  padding: 10px 15px;
+  padding: 8px 12px;
   font-size: 16px;
   border: none;
   border-radius: 5px;
@@ -41,40 +41,15 @@ body {
   width: 100%;
 }
 
-#search-btn:hover {
-  background-color: #1ed760;
-}
-
-/* Suggestions List */
 #suggestions-list {
-  list-style: none;
-  padding: 0;
-  margin: 5px 0 0;
-  background-color: #1c1c1c;
-  border: 1px solid #444;
-  border-radius: 5px;
-  max-width: 400px;
-  color: white;
-  position: absolute;
-  z-index: 10;
-}
-
-#suggestions-list li {
-  padding: 10px;
-  cursor: pointer;
-}
-
-#suggestions-list li:hover {
-  background-color: #333;
+  width: 100%;
+  font-size: 14px; /* Reduce font size for better fit */
 }
 
 /* Music Banner */
 .music-banner {
-  width: 100%;
+  width: 90%; /* Adjust width for smaller screens */
   max-width: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: #222;
   padding: 15px;
   border-radius: 10px;
@@ -82,130 +57,38 @@ body {
 }
 
 .cover img {
-  width: 100%;
+  width: 100%; /* Make the image responsive */
   max-width: 300px;
   height: auto;
   border-radius: 10px;
   margin-bottom: 15px;
 }
 
-.song-details {
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.song-details h2 {
-  font-size: 20px;
-  margin: 0;
-}
-
-.song-details p {
-  font-size: 16px;
-  color: #bbb;
-  margin: 0;
-}
-
 /* Controls */
 .controls {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
-}
-
-.control-btn {
-  font-size: 20px;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s;
-}
-
-.control-btn:hover {
-  background-color: #333;
-}
-
-.play {
-  background-color: #1db954;
-  color: white;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-}
-
-.play:hover {
-  background-color: #1ed760;
-}
-/* Style for control buttons */
-.controls {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
+  gap: 10px; /* Add spacing for touch interactions */
 }
 
 button {
   padding: 10px;
-  font-size: 18px;
+  font-size: 16px; /* Reduce size slightly for smaller screens */
   border: none;
   background-color: #444;
   color: white;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 button:hover {
   background-color: #1db954;
 }
 
-button:disabled {
-  background-color: #888;
-}
-
-button.active {
-  background-color: #1ed760;
-}
-
-/* Responsive Design */
-@media (max-width: 480px) {
-  #search-bar {
-    font-size: 14px;
-  }
-
-  #search-btn {
-    font-size: 14px;
-    padding: 8px 12px;
-  }
-
-  .song-details h2 {
-    font-size: 18px;
-  }
-
-  .song-details p {
-    font-size: 14px;
-  }
-
-  .control-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-  }
-
-  .play {
-    width: 50px;
-    height: 50px;
-  }
-  /* Progress Bar */
+/* Progress Bar */
 .progress-container {
   width: 100%;
-  max-width: 400px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -218,7 +101,6 @@ button.active {
   background-color: #444;
   border-radius: 5px;
   overflow: hidden;
-  cursor: pointer;
   position: relative;
 }
 
@@ -226,14 +108,35 @@ button.active {
   width: 0%;
   height: 100%;
   background-color: #1db954;
-  transition: width 0.1s linear;
 }
 
-#current-time,
-#duration {
-  font-size: 14px;
-  color: #bbb;
-}
+/* Responsive Design */
+@media (max-width: 480px) {
+  #search-bar {
+    font-size: 14px;
+    padding: 8px;
+  }
 
+  #search-btn {
+    font-size: 14px;
+    padding: 8px;
+  }
 
+  .song-details h2 {
+    font-size: 18px;
+  }
+
+  .song-details p {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .play {
+    width: 50px;
+    height: 50px;
+  }
 }

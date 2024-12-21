@@ -108,101 +108,39 @@ body {
 /* Controls */
 .controls {
   display: flex;
-  justify-content: space-around;
-  width: 100%;
-}
-
-.control-btn {
-  font-size: 20px;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s;
-}
-
-.control-btn:hover {
-  background-color: #333;
-}
-
-.play {
-  background-color: #1db954;
-  color: white;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-}
-
-.play:hover {
-  background-color: #1ed760;
-}
-/* Style for control buttons */
-.controls {
-  display: flex;
   gap: 10px;
   margin-top: 20px;
 }
 
 button {
-  padding: 10px;
-  font-size: 18px;
-  border: none;
-  background-color: #444;
+  background: #4caf50; /* General button color */
   color: white;
+  border: none;
   border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s;
 }
 
 button:hover {
-  background-color: #1db954;
+  background: #45a049; /* Hover effect */
 }
 
-button:disabled {
-  background-color: #888;
+#download-btn {
+  background: #2196f3; /* Blue for the download button */
+}
+
+#download-btn:hover {
+  background: #1976d2; /* Darker blue on hover */
 }
 
 button.active {
   background-color: #1ed760;
 }
 
-/* Responsive Design */
-@media (max-width: 480px) {
-  #search-bar {
-    font-size: 14px;
-  }
-
-  #search-btn {
-    font-size: 14px;
-    padding: 8px 12px;
-  }
-
-  .song-details h2 {
-    font-size: 18px;
-  }
-
-  .song-details p {
-    font-size: 14px;
-  }
-
-  .control-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-  }
-
-  .play {
-    width: 50px;
-    height: 50px;
-  }
-  /* Progress Bar */
+/* Progress Bar */
 .progress-container {
   width: 100%;
   max-width: 400px;
@@ -235,5 +173,34 @@ button.active {
   color: #bbb;
 }
 
+/* Responsive Design */
+@media (max-width: 480px) {
+  #search-bar {
+    font-size: 14px;
+  }
 
+  #search-btn {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .song-details h2 {
+    font-size: 18px;
+  }
+
+  .song-details p {
+    font-size: 14px;
+  }
+
+  .control-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .play {
+    width: 50px;
+    height: 50px;
+  }
 }
+

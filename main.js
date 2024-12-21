@@ -208,5 +208,16 @@ searchBtn.addEventListener("click", () => {
   suggestionsList.innerHTML = "";
 });
 
+// Add event listener for the download button
+document.getElementById("download-btn").addEventListener("click", () => {
+  const currentSong = songs[currentSongIndex]; // Get the current song
+  const link = document.createElement("a");
+  link.href = currentSong.src;  // Set the link to the song's source
+  link.download = currentSong.title + " - " + currentSong.artist + ".mp3"; // Set the filename for download
+  document.body.appendChild(link); // Append link to body
+  link.click(); // Trigger the download
+  document.body.removeChild(link); // Remove the link after the click
+});
+
 // Load the first song on page load
 loadSong(songs[currentSongIndex]);

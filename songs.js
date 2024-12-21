@@ -23,14 +23,12 @@ export const englishSongs = [
   // Add more songs
 ];
 
-export const marathiSongs = [
-  {
-    title: "Zingaat",
-    artist: "Ajay-Atul",
-    src: "music/Aai - Pravin Koli, Yogita Koli, Deeya Wadkar, Myra Vaikul, Ankita Raut.m4a",
-    cover: "https://c.saavncdn.com/399/shades-of-blue-English-2024-20241105054633-500x500.jpg",
-  },
-  
+export const marathiSongs = [{
+     title: "AAI",
+      artist: "Yogita Koli,Pravin Koli",
+      src: "music/Aai - Pravin Koli, Yogita Koli, Deeya Wadkar, Myra Vaikul, Ankita Raut.m4a",
+      cover: "https://c.saavncdn.com/621/Aai-Marathi-2022-20220505134712-500x500.jpg",
+ },
 ];
 
 

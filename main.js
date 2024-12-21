@@ -22,6 +22,7 @@ const durationEl = document.getElementById("duration");
 const searchBar = document.getElementById("search-bar");
 const searchBtn = document.getElementById("search-btn");
 const suggestionsList = document.getElementById("suggestions-list");
+const downloadBtn = document.getElementById("download-btn"); // New download button
 
 // Utility function to format time
 function formatTime(seconds) {
@@ -228,12 +229,13 @@ document.getElementById("marathi-btn").addEventListener("click", () => {
 
 
 
-// Add event listener for the download button
-document.getElementById("download-btn").addEventListener("click", () => {
-  const currentSong = songs[currentSongIndex]; // Get the current song
+
+// Download button listener
+downloadBtn.addEventListener("click", () => {
+  const currentSong = currentSongs[currentSongIndex]; // Get the current song
   const link = document.createElement("a");
-  link.href = currentSong.src;  // Set the link to the song's source
-  link.download = currentSong.title + " - " + currentSong.artist + ".mp3"; // Set the filename for download
+  link.href = currentSong.src; // Set the link to the song's source
+  link.download = `${currentSong.title} - ${currentSong.artist}.mp3`; // Set the filename for download
   document.body.appendChild(link); // Append link to body
   link.click(); // Trigger the download
   document.body.removeChild(link); // Remove the link after the click

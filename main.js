@@ -6,7 +6,7 @@ let isPlaying = false;
 let isShuffle = false;
 let isRepeat = false;
 let currentSongs = hindiSongs; // Default to Hindi songs
-//
+
 // HTML Elements
 const audio = document.getElementById("audio");
 const playPauseBtn = document.getElementById("play-pause");
@@ -142,17 +142,6 @@ document.getElementById("english-btn").addEventListener("click", () => {
 document.getElementById("marathi-btn").addEventListener("click", () => {
   currentSongs = marathiSongs;
   loadSong(currentSongs[0]);
-});
-
-// Shuffle and Repeat functionality
-document.getElementById("shuffle").addEventListener("click", () => {
-  isShuffle = !isShuffle;
-  document.getElementById("shuffle").classList.toggle("active", isShuffle);
-});
-
-document.getElementById("repeat").addEventListener("click", () => {
-  isRepeat = !isRepeat;
-  document.getElementById("repeat").classList.toggle("active", isRepeat);
 });
 
 // Initial song load

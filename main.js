@@ -1,10 +1,11 @@
 // main.js
-import { songs } from './songs.js';
+import { hindiSongs, englishSongs, marathiSongs} from './songs.js';
 
 let currentSongIndex = 0; // Start with the first song
 let isPlaying = false;
 let isShuffle = false;
 let isRepeat = false;
+let currentSongs = hindiSongs;
 
 // HTML Elements
 const audio = document.getElementById("audio");
@@ -21,6 +22,7 @@ const durationEl = document.getElementById("duration");
 const searchBar = document.getElementById("search-bar");
 const searchBtn = document.getElementById("search-btn");
 const suggestionsList = document.getElementById("suggestions-list");
+const downloadBtn = document.getElementById("download-btn");
 
 // Utility function to format time
 function formatTime(seconds) {
@@ -206,6 +208,23 @@ searchBtn.addEventListener("click", () => {
 
   searchBar.value = "";
   suggestionsList.innerHTML = "";
+});
+
+
+// Playlist selection buttons
+document.getElementById("hindi-btn").addEventListener("click", () => {
+  currentSongs = hindiSongs;
+  loadSong(currentSongs[0]);
+});
+
+document.getElementById("english-btn").addEventListener("click", () => {
+  currentSongs = englishSongs;
+  loadSong(currentSongs[0]);
+});
+
+document.getElementById("marathi-btn").addEventListener("click", () => {
+  currentSongs = marathiSongs;
+  loadSong(currentSongs[0]);
 });
 
 // Add event listener for the download button

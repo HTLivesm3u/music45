@@ -33,7 +33,7 @@ export const hindiSongs = [
     title:"Choo Lo",
     artist:"The local Train",
     src:"music/Choo Lo - The Local Train.m4a",
-    cover"https://c.saavncdn.com/111/Aalas-Ka-Pedh-Hindi-2015-20231005005130-500x500.jpg",
+    cover:"https://c.saavncdn.com/111/Aalas-Ka-Pedh-Hindi-2015-20231005005130-500x500.jpg",
   },
   
  ];

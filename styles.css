@@ -10,10 +10,6 @@ body {
   padding: 10px;
 }
 
-
-
-
-
 /* Search Container */
 .search-container {
   width: 100%;
@@ -33,13 +29,6 @@ body {
   margin-right: -1px;  /* Align with button */
 }
 
-.search-controls {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  width: 100%;
-}
-
 #search-btn {
   padding: 12px 15px;
   font-size: 16px;
@@ -55,7 +44,6 @@ body {
   background-color: #1ed760;
 }
 
-
 /* Menu Button */
 .menu-btn {
   font-size: 30px;
@@ -64,7 +52,10 @@ body {
   border: none;
   cursor: pointer;
   padding: 10px;
-  margin-bottom: 15px;
+  margin-top: 10px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 
 /* Playlist Menu */
@@ -74,8 +65,8 @@ body {
   align-items: center;
   position: absolute;
   top: 50px;  /* Positioning the menu below the menu button */
-  left: 0;
-  width: 100%;
+  left: 10px;
+  width: 200px;
   background-color: #222;
   padding: 20px;
   border-radius: 10px;
@@ -100,16 +91,6 @@ body {
 /* Show the playlist menu when the button is clicked */
 .playlist-menu.active {
   display: flex;
-}
-
-/* The rest of your existing CSS here */
-
-#quality-select {
-  background-color: #444;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
 }
 
 /* Suggestions List */

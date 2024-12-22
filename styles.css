@@ -12,6 +12,50 @@ body {
 
 
 
+
+
+/* Search Container */
+.search-container {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;  /* Aligns the input and button horizontally */
+}
+
+#search-bar {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px 0 0 5px;  /* Rounded left corners */
+  outline: none;
+  margin-right: -1px;  /* Align with button */
+}
+
+.search-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+#search-btn {
+  padding: 12px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 0 5px 5px 0;  /* Rounded right corners */
+  cursor: pointer;
+  background-color: #1db954;
+  color: white;
+  width: 50px; /* Adjust width to match the search bar height */
+}
+
+#search-btn:hover {
+  background-color: #1ed760;
+}
+
+
 /* Menu Button */
 .menu-btn {
   font-size: 30px;
@@ -59,48 +103,6 @@ body {
 }
 
 /* The rest of your existing CSS here */
-
-
-/* Search Container */
-.search-container {
-  width: 100%;
-  max-width: 400px;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;  /* Aligns the input and button horizontally */
-}
-
-#search-bar {
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px 0 0 5px;  /* Rounded left corners */
-  outline: none;
-  margin-right: -1px;  /* Align with button */
-}
-
-.search-controls {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  width: 100%;
-}
-
-#search-btn {
-  padding: 12px 15px;
-  font-size: 16px;
-  border: none;
-  border-radius: 0 5px 5px 0;  /* Rounded right corners */
-  cursor: pointer;
-  background-color: #1db954;
-  color: white;
-  width: 50px; /* Adjust width to match the search bar height */
-}
-
-#search-btn:hover {
-  background-color: #1ed760;
-}
 
 #quality-select {
   background-color: #444;

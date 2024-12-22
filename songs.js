@@ -1,244 +1,47 @@
-/* General Styles */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #121212;
-  color: white;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-}
+export const hindiSongs = [
+  {
+    title: "Tum Hi Ho",
+    artist: "Arijit Singh",
+    cover: "cover1.jpg",
+    url: "songs/tum_hi_ho.mp3"
+  },
+  {
+    title: "Tum Jo Aaye",
+    artist: "Javed Miandad",
+    cover: "cover2.jpg",
+    url: "songs/tum_jo_aaye.mp3"
+  },
+  // more songs
+];
 
-/* Search Container */
-.search-container {
-  width: 100%;
-  max-width: 400px;
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
+export const englishSongs = [
+  {
+    title: "Shape of You",
+    artist: "Ed Sheeran",
+    cover: "cover1.jpg",
+    url: "songs/shape_of_you.mp3"
+  },
+  {
+    title: "Blinding Lights",
+    artist: "The Weeknd",
+    cover: "cover2.jpg",
+    url: "songs/blinding_lights.mp3"
+  },
+  // more songs
+];
 
-#search-bar {
-  width: 80%;
-  padding: 12px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  outline: none;
-  margin-right: 10px;
-}
-
-#search-btn {
-  padding: 10px 15px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: #1db954;
-  color: white;
-}
-
-#search-btn:hover {
-  background-color: #1ed760;
-}
-
-/* Suggestions List */
-#suggestions-list {
-  list-style: none;
-  padding: 0;
-  margin: 5px 0 0;
-  background-color: #1c1c1c;
-  border: 1px solid #444;
-  border-radius: 5px;
-  max-width: 400px;
-  color: white;
-  position: absolute;
-  z-index: 10;
-}
-
-#suggestions-list li {
-  padding: 10px;
-  cursor: pointer;
-}
-
-#suggestions-list li:hover {
-  background-color: #333;
-}
-
-/* Progress Bar */
-.progress-container {
-  width: 100%;
-  max-width: 400px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-#progress-bar {
-  flex: 1;
-  height: 5px;
-  background-color: #444;
-  border-radius: 5px;
-  overflow: hidden;
-  cursor: pointer;
-  position: relative;
-}
-
-#progress {
-  width: 0%;
-  height: 100%;
-  background-color: #1db954;
-  transition: width 0.1s linear;
-}
-
-#current-time,
-#duration {
-  font-size: 14px;
-  color: #bbb;
-}
-
-/* Music Banner */
-.music-banner {
-  width: 100%;
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #222;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.cover img {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-.song-details {
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.song-details h2 {
-  font-size: 20px;
-  margin: 0;
-}
-
-.song-details p {
-  font-size: 16px;
-  color: #bbb;
-  margin: 0;
-}
-
-/* Controls */
-.controls {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-}
-
-.control-btn {
-  font-size: 20px;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s;
-}
-
-.control-btn:hover {
-  background-color: #333;
-}
-
-.play {
-  background-color: #1db954;
-  color: white;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-}
-
-.play:hover {
-  background-color: #1ed760;
-}
-
-/* Controls Layout */
-.controls {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-/* Secondary Controls */
-.secondary-controls {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  margin-top: 10px;
-}
-
-/* Button Style */
-button {
-  padding: 10px;
-  font-size: 18px;
-  border: none;
-  background-color: #444;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #1db954;
-}
-
-button.active {
-  background-color: #1ed760;
-}
-
-/* Responsive Design */
-@media (max-width: 480px) {
-  #search-bar {
-    font-size: 14px;
-  }
-
-  #search-btn {
-    font-size: 14px;
-    padding: 8px 12px;
-  }
-
-  .song-details h2 {
-    font-size: 18px;
-  }
-
-  .song-details p {
-    font-size: 14px;
-  }
-
-  .control-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-  }
-
-  .play {
-    width: 50px;
-    height: 50px;
-  }
-}
+export const marathiSongs = [
+  {
+    title: "Apsara Aali",
+    artist: "Vaishali Samant",
+    cover: "cover1.jpg",
+    url: "songs/apsara_aali.mp3"
+  },
+  {
+    title: "Madhuban Mein Radhika",
+    artist: "Suresh Wadkar",
+    cover: "cover2.jpg",
+    url: "songs/madhuban_mein_radhika.mp3"
+  },
+  // more songs
+];

@@ -1,4 +1,4 @@
-import { hindiSongs, englishSongs, marathiSongs } from './songs.js';
+import { hindiSongs, englishSongs, marathiSongs } from "./songs.js";
 
 let currentSongIndex = 0;
 let isPlaying = false;

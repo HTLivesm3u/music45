@@ -5,7 +5,7 @@ let isPlaying = false;
 let isShuffle = false;
 let isRepeat = false;
 let currentSongs = hindiSongs; // Default playlist is Hindi
-let currentQuality = 'high'; // Default quality
+let currentQuality = 'high'; // Default streaming quality
 
 // HTML Elements
 const audio = document.getElementById("audio");
@@ -34,7 +34,8 @@ function formatTime(seconds) {
 
 // Load a song
 function loadSong(song) {
-  audio.src = song.src[currentQuality]; // Use selected quality
+  audio.src = song.src[currentQuality]; // Set the correct quality source
+  audio.load(); // Ensure the audio is loaded before playing
   songTitle.textContent = song.title;
   artistName.textContent = song.artist;
   coverImage.src = song.cover;
@@ -136,6 +137,7 @@ function updateMediaSession(song) {
       ],
     });
 
+    // Handle media session actions (play, pause, next, previous)
     navigator.mediaSession.setActionHandler('play', () => {
       audio.play();
       isPlaying = true;
@@ -151,35 +153,107 @@ function updateMediaSession(song) {
   }
 }
 
-// Handle song search
-searchBtn.addEventListener('click', () => {
-  const query = searchBar.value.trim().toLowerCase();
+// Search for a song and show suggestions
+searchBar.addEventListener("input", () => {
+  const query = searchBar.value.toLowerCase().trim();
+  suggestionsList.innerHTML = ""; // Clear previous suggestions
+
   if (query) {
-    const suggestions = currentSongs.filter((song) =>
-      song.title.toLowerCase().includes(query)
+    const matches = currentSongs.filter(
+      (song) =>
+        song.title.toLowerCase().includes(query) ||
+        song.artist.toLowerCase().includes(query)
     );
-    suggestionsList.innerHTML = suggestions
-      .map((song) => `<li>${song.title}</li>`)
-      .join('');
-  } else {
-    suggestionsList.innerHTML = '';
+
+    matches.forEach((song) => {
+      const suggestionItem = document.createElement("li");
+      suggestionItem.textContent = `${song.title} - ${song.artist}`;
+      suggestionItem.addEventListener("click", () => {
+        const index = currentSongs.findIndex(
+          (s) => s.title === song.title && s.artist === song.artist
+        );
+        currentSongIndex = index;
+        loadSong(song);
+        if (isPlaying) {
+          audio.play();
+        }
+        searchBar.value = "";
+        suggestionsList.innerHTML = "";
+      });
+      suggestionsList.appendChild(suggestionItem);
+    });
   }
 });
 
-// Handle quality selection
-qualitySelect.addEventListener('change', (e) => {
-  currentQuality = e.target.value;
+// Search Button Click
+searchBtn.addEventListener("click", () => {
+  const query = searchBar.value.toLowerCase().trim();
+  if (!query) return;
+
+  const songIndex = currentSongs.findIndex(
+    (song) =>
+      song.title.toLowerCase().includes(query) ||
+      song.artist.toLowerCase().includes(query)
+  );
+
+  if (songIndex !== -1) {
+    currentSongIndex = songIndex;
+    loadSong(currentSongs[currentSongIndex]);
+    if (isPlaying) {
+      audio.play();
+    }
+  } else {
+    alert("No matching song found!");
+  }
+
+  searchBar.value = "";
+  suggestionsList.innerHTML = "";
+});
+
+// Playlist selection buttons
+document.getElementById("hindi-btn").addEventListener("click", () => {
+  currentSongs = hindiSongs;
+  currentSongIndex = 0; // Reset index to 0 (start with first song)
   loadSong(currentSongs[currentSongIndex]);
+  isPlaying = true; // Set the state to playing
+  playPauseBtn.textContent = "⏸️"; // Set button to pause icon
+  audio.play(); // Auto-play the first song
 });
 
-// Handle song download button
-downloadBtn.addEventListener('click', () => {
-  const song = currentSongs[currentSongIndex];
-  const link = document.createElement('a');
-  link.href = song.src[currentQuality];
-  link.download = song.title;
-  link.click();
+document.getElementById("english-btn").addEventListener("click", () => {
+  currentSongs = englishSongs;
+  currentSongIndex = 0; // Reset index to 0 (start with first song)
+  loadSong(currentSongs[currentSongIndex]);
+  isPlaying = true; // Set the state to playing
+  playPauseBtn.textContent = "⏸️"; // Set button to pause icon
+  audio.play(); // Auto-play the first song
 });
 
-// Initialize the first song
+document.getElementById("marathi-btn").addEventListener("click", () => {
+  currentSongs = marathiSongs;
+  currentSongIndex = 0; // Reset index to 0 (start with first song)
+  loadSong(currentSongs[currentSongIndex]);
+  isPlaying = true; // Set the state to playing
+  playPauseBtn.textContent = "⏸️"; // Set button to pause icon
+  audio.play(); // Auto-play the first song
+});
+
+// Add event listener for the download button
+downloadBtn.addEventListener("click", () => {
+  const currentSong = currentSongs[currentSongIndex]; // Get the current song
+  const link = document.createElement("a");
+  link.href = currentSong.src[currentQuality];  // Set the link to the song's source
+  link.download = currentSong.title + " - " + currentSong.artist + ".mp3"; // Set the filename for download
+  document.body.appendChild(link); // Append link to body
+  link.click(); // Trigger the download
+  document.body.removeChild(link); // Remove the link after the click
+});
+
+// Quality selection event listener
+qualitySelect.addEventListener("change", (e) => {
+  currentQuality = e.target.value; // Set the new quality
+  loadSong(currentSongs[currentSongIndex]); // Reload the song with the new quality
+});
+
+// Load the first song on page load
 loadSong(currentSongs[currentSongIndex]);

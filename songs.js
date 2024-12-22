@@ -11,7 +11,18 @@ export const hindiSongs = [
     src:"music/Agar Tum Saath Ho - Alka Yagnik, Arijit Singh.m4a",
     cover:"https://c.saavncdn.com/994/Tamasha-Hindi-2015-500x500.jpg",
   },
-  
+  {
+    title:"Apna Bana Le",
+    artist:"Sachin-Jigar, Arijit Singh, Amitabh Bhattacharya",
+    src:"music/Apna Bana Le - Sachin-Jigar, Arijit Singh, Amitabh Bhattacharya.m4a",
+    cover"https://c.saavncdn.com/815/Bhediya-Hindi-2023-20230927155213-500x500.jpg",
+  },
+  {
+    title:"Arjan Vailly (From ANIMAL )",
+    artist:"Manan Bhardwaj, Bhupinder Babbal",
+    src:"music/Arjan Vailly (From  ANIMAL ) - Manan Bhardwaj, Bhupinder Babbal.m4a",
+    cover"https://c.saavncdn.com/092/ANIMAL-Hindi-2023-20231124191036-500x500.jpg",
+  },
 ];
 
 export const englishSongs = [

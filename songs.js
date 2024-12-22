@@ -25,10 +25,40 @@ export const hindiSongs = [
   },
   {
     title:"Chaleya (from jawan", 
-    artist:"", 
-    src:"", 
-    cover:"", 
+    artist:" Anirudh Ravichander, Arijit Singh, Shilpa Rao, Kumaar", 
+    src:"music/Chaleya (From  Jawan ) - Anirudh Ravichander, Arijit Singh, Shilpa Rao, Kumaar.m4a", 
+    cover:"https://upload.wikimedia.org/wikipedia/en/c/c9/Chaleya_album_cover.jpg", 
+  },
+  {
+    title:"Heeriye",
+    artist:"Jasleen Royal, Arijit Singh, Dulquer Salmaan",
+    src:"music/Heeriye (feat. Arijit Singh) - Jasleen Royal, Arijit Singh, Dulquer Salmaan.m4a",
+    cover:"https://c.saavncdn.com/022/Heeriye-feat-Arijit-Singh-Hindi-2023-20230928050405-500x500.jpg",
+  },
+  {
+    title:"Hua Main(From ANIMAL )",
+    artist:"Raghav Chaitanya, Manoj Muntashir, Pritam",
+    src:"music/Hua Main (From  ANIMAL ) - Raghav Chaitanya, Manoj Muntashir, Pritam.m4a",
+    cover:"https://c.saavncdn.com/155/Hua-Main-From-ANIMAL-Hindi-2023-20231011001003-500x500.jpg",
   }, 
+  {
+    title:"Husn",
+    artist:"Anuv Jain",
+    src:"music/Husn - Anuv Jain.m4a",
+    cover:"https://c.saavncdn.com/436/Husn-Hindi-2023-20231129054140-500x500.jpg",
+  },
+  {
+    title:"Jo Tum Mere Ho",
+    artist:" Anuv Jain",
+    src:"music/Jo Tum Mere Ho - Anuv Jain.m4a",
+    cover:"https://c.saavncdn.com/401/Jo-Tum-Mere-Ho-Hindi-2024-20240731053953-500x500.jpg",
+  },
+  {
+    title:"",
+    artist:"",
+    src:"",
+    cover:"",
+  },
 ];
 
 export const englishSongs = [

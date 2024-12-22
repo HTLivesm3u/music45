@@ -67,6 +67,11 @@ export const englishSongs = [
     artist:"Lukas Graham",
     src:"music/7 Years - Lukas Graham.m4a",
     cover:"https://c.saavncdn.com/496/Lukas-Graham-English-2016-20190607043917-500x500.jpg",
+  },{
+    title:"Blue",
+    artist:"yung kai",
+    src:"music/blue - yung kai.m4a",
+    cover:"https://c.saavncdn.com/419/blue-English-2024-20241029054606-500x500.jpg",
   },
   {
     title:"Beautiful Things",
@@ -113,6 +118,41 @@ export const englishSongs = [
     artist:"Glass Animals",
     src:"music/Heat Waves - Glass Animals.m4a",
     cover:"https://c.saavncdn.com/173/Dreamland-English-2020-20200806000748-500x500.jpg",
+  },{
+    title:"In The Stars",
+    artist:"Benson Boone",
+    src:"music/In The Stars - Benson Boone.m4a",
+    cover:"https://c.saavncdn.com/046/In-The-Stars-English-2022-20240404090421-500x500.jpg",
+  },{
+    title:"Lover",
+    artist:"Taylor Swift",
+    src:"music/Lover - Taylor Swift.m4a",
+    cover:"https://c.saavncdn.com/228/Lover-English-2019-20190823031817-500x500.jpg",
+  },{
+    title:"MY EYES",
+    artist:"Travis Scott",
+    src:"music/MY EYES - Travis Scott.m4a",
+    cover:"https://c.saavncdn.com/882/UTOPIA-English-2023-20230728085013-500x500.jpg",
+  }, {
+    title:"Night Changes",
+    artist:"One Direction",
+    src:"music/Night Changes - One Direction.m4a",
+    cover:"https://c.saavncdn.com/851/FOUR-Deluxe--English-2014-500x500.jpg",
+  }, {
+    title:"STAY (with Justin Bieber)",
+    artist:"The Kid LAROI, Justin Bieber",
+    src:"music/STAY (with Justin Bieber) - The Kid LAROI, Justin Bieber.m4a",
+    cover:"https://c.saavncdn.com/895/Stay-English-2021-20210706223809-500x500.jpg",
+  },{
+    title:"Señorita",
+    artist:"Shawn Mendes, Camila Cabello",
+    src:"music/Señorita - Shawn Mendes, Camila Cabello.m4a",
+    cover:"https://c.saavncdn.com/624/Se-orita-English-2019-20190822022326-500x500.jpg",
+  },{
+    title:"Stereo Hearts (feat. Adam Levine)",
+    artist:"Gym Class Heroes, Adam Levine",
+    src:"music/Stereo Hearts (feat. Adam Levine) - Gym Class Heroes, Adam Levine.m4a",
+    cover:"https://c.saavncdn.com/509/The-Papercut-Chronicles-II-English-2011-20200822053426-500x500.jpg",
   },{
     title:"",
     artist:"",

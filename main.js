@@ -6,127 +6,103 @@ let isShuffle = false;
 let isRepeat = false;
 let currentSongs = hindiSongs;
 
-const audio = document.getElementById('audio');
-const playPauseBtn = document.getElementById('play-pause');
-const nextBtn = document.getElementById('next');
-const prevBtn = document.getElementById('prev');
-const songTitle = document.getElementById('song-title');
-const artistName = document.getElementById('artist-name');
-const coverImage = document.getElementById('cover-image');
-const progressBar = document.getElementById('progress-bar');
-const progress = document.getElementById('progress');
-const currentTimeEl = document.getElementById('current-time');
-const durationEl = document.getElementById('duration');
-const shuffleBtn = document.getElementById('shuffle-btn');
-const repeatBtn = document.getElementById('repeat-btn');
-const downloadBtn = document.getElementById('download-btn');
-const menuBtn = document.getElementById('menu-btn');
-const playlistMenu = document.getElementById('playlist-menu');
+// HTML Elements
+const audio = document.getElementById("audio");
+const playPauseBtn = document.getElementById("play-pause");
+const nextBtn = document.getElementById("next");
+const prevBtn = document.getElementById("prev");
+const songTitle = document.getElementById("song-title");
+const artistName = document.getElementById("artist-name");
+const coverImage = document.getElementById("cover-image");
+const progressBar = document.getElementById("progress-bar");
+const progress = document.getElementById("progress");
+const currentTimeEl = document.getElementById("current-time");
+const durationEl = document.getElementById("duration");
+const searchBar = document.getElementById("search-bar");
+const searchBtn = document.getElementById("search-btn");
+const suggestionsList = document.getElementById("suggestions-list");
 
 // Utility function to format time
-const formatTime = seconds => {
+function formatTime(seconds) {
   const minutes = Math.floor(seconds / 60);
   const secs = Math.floor(seconds % 60);
-  return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
-};
+  return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
+}
 
 // Load a song
-const loadSong = song => {
+function loadSong(song) {
   audio.src = song.src;
   songTitle.textContent = song.title;
   artistName.textContent = song.artist;
   coverImage.src = song.cover;
+}
 
-  if (isPlaying) {
-    audio.play();
-    playPauseBtn.textContent = '⏸️';
-  }
-};
-
-// Toggle play/pause
-const togglePlayPause = () => {
+// Play or pause functionality
+function togglePlayPause() {
   if (isPlaying) {
     audio.pause();
-    playPauseBtn.textContent = '▶️';
+    isPlaying = false;
+    playPauseBtn.textContent = "▶️";
   } else {
     audio.play();
-    playPauseBtn.textContent = '⏸️';
+    isPlaying = true;
+    playPauseBtn.textContent = "⏸️";
   }
-  isPlaying = !isPlaying;
-};
+}
 
-// Next song
-const playNextSong = () => {
-  if (isShuffle) {
-    currentSongIndex = Math.floor(Math.random() * currentSongs.length);
-  } else {
-    currentSongIndex = (currentSongIndex + 1) % currentSongs.length;
-  }
+// Play the next song
+function playNextSong() {
+  currentSongIndex = (currentSongIndex + 1) % currentSongs.length;
   loadSong(currentSongs[currentSongIndex]);
-};
+  if (isPlaying) audio.play();
+}
 
-// Previous song
-const playPrevSong = () => {
-  currentSongIndex =
-    (currentSongIndex - 1 + currentSongs.length) % currentSongs.length;
+// Play the previous song
+function playPrevSong() {
+  currentSongIndex = (currentSongIndex - 1 + currentSongs.length) % currentSongs.length;
   loadSong(currentSongs[currentSongIndex]);
-};
+  if (isPlaying) audio.play();
+}
 
-// Progress bar update
-audio.addEventListener('timeupdate', () => {
-  const progressPercent = (audio.currentTime / audio.duration) * 100;
-  progress.style.width = `${progressPercent}%`;
-  currentTimeEl.textContent = formatTime(audio.currentTime);
-  durationEl.textContent = formatTime(audio.duration);
+// Search functionality
+function searchSongs(query) {
+  suggestionsList.innerHTML = ""; // Clear suggestions
+  if (query === "") return; // Exit if no input
+
+  const results = currentSongs.filter(song =>
+    song.title.toLowerCase().includes(query.toLowerCase()) ||
+    song.artist.toLowerCase().includes(query.toLowerCase())
+  );
+
+  results.forEach(song => {
+    const li = document.createElement("li");
+    li.textContent = `${song.title} - ${song.artist}`;
+    li.addEventListener("click", () => {
+      currentSongIndex = currentSongs.indexOf(song);
+      loadSong(song);
+      isPlaying = true;
+      playPauseBtn.textContent = "⏸️";
+      audio.play();
+      suggestionsList.innerHTML = ""; // Clear suggestions
+    });
+    suggestionsList.appendChild(li);
+  });
+}
+
+// Event listeners
+searchBtn.addEventListener("click", () => {
+  const query = searchBar.value.trim();
+  searchSongs(query);
 });
 
-// Seek
-progressBar.addEventListener('click', e => {
-  const clickX = e.offsetX;
-  audio.currentTime = (clickX / progressBar.clientWidth) * audio.duration;
+searchBar.addEventListener("input", () => {
+  const query = searchBar.value.trim();
+  searchSongs(query);
 });
 
-// Toggle shuffle
-shuffleBtn.addEventListener('click', () => {
-  isShuffle = !isShuffle;
-  shuffleBtn.classList.toggle('active', isShuffle);
-});
+playPauseBtn.addEventListener("click", togglePlayPause);
+nextBtn.addEventListener("click", playNextSong);
+prevBtn.addEventListener("click", playPrevSong);
 
-// Toggle repeat
-repeatBtn.addEventListener('click', () => {
-  isRepeat = !isRepeat;
-  repeatBtn.classList.toggle('active', isRepeat);
-});
-
-// Download song
-downloadBtn.addEventListener('click', () => {
-  const song = currentSongs[currentSongIndex];
-  alert(`Downloading: ${song.title}`);
-});
-
-// Playlist switching
-menuBtn.addEventListener('click', () => {
-  playlistMenu.classList.toggle('active');
-});
-
-// Playlist buttons
-document.getElementById('hindi-btn').addEventListener('click', () => {
-  currentSongs = hindiSongs;
-  currentSongIndex = 0;
-  loadSong(currentSongs[currentSongIndex]);
-});
-
-document.getElementById('english-btn').addEventListener('click', () => {
-  currentSongs = englishSongs;
-  currentSongIndex = 0;
-  loadSong(currentSongs[currentSongIndex]);
-});
-
-document.getElementById('marathi-btn').addEventListener('click', () => {
-  currentSongs = marathiSongs;
-  currentSongIndex = 0;
-  loadSong(currentSongs[currentSongIndex]);
-});
-
-// Initial load
+// Initialize with first song
 loadSong(currentSongs[currentSongIndex]);

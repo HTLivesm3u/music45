@@ -106,7 +106,7 @@ body {
 }
 
 /* Music Banner */
-.music-banner {
+/* .music-banner {
   width: 100%;
   max-width: 400px;
   display: flex;
@@ -117,7 +117,7 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-
+ */
 /* Suggestions List */
 #suggestions-list {
   list-style: none;
@@ -174,7 +174,7 @@ body {
   color: #bbb;
 }
 
-/* /* Music Banner */
+/* Music Banner */
 .music-banner {
   width: 100%;
   max-width: 400px;
@@ -186,7 +186,7 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
- */
+
 .cover img {
   width: 100%;
   max-width: 300px;

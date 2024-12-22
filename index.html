@@ -8,49 +8,53 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="search-container">
-  <input type="text" id="search-bar" placeholder="Search for a song or artist..." />
-  <button id="search-btn">🔍</button>
-  <ul id="suggestions-list"></ul>
-</div>
+  <!-- Menu Button -->
+  <button id="menu-btn" class="menu-btn">☰</button>
 
-<div class="playlist-buttons">
-  <button id="hindi-btn" class="control-button">Hindi</button>
-  <button id="english-btn" class="control-button">English</button>
-  <button id="marathi-btn" class="control-button">Marathi</button>
-</div>
-
-<div class="music-banner">
-  <div class="cover">
-    <img id="cover-image" src="cover1.jpg" alt="Album Cover">
-  </div>
-  <div class="song-details">
-    <h2 id="song-title">Song Title 1</h2>
-    <p id="artist-name">Artist Name 1</p>
+  <!-- Playlist Buttons inside the menu -->
+  <div id="playlist-menu" class="playlist-menu">
+    <button id="hindi-btn" class="control-button">Hindi</button>
+    <button id="english-btn" class="control-button">English</button>
+    <button id="marathi-btn" class="control-button">Marathi</button>
   </div>
 
-  <div class="progress-container">
-    <span id="current-time">0:00</span>
-    <div id="progress-bar">
-      <div id="progress"></div>
+  <div class="search-container">
+    <input type="text" id="search-bar" placeholder="Search for a song or artist..." />
+    <button id="search-btn">🔍</button>
+    <ul id="suggestions-list"></ul>
+  </div>
+
+  <div class="music-banner">
+    <div class="cover">
+      <img id="cover-image" src="cover1.jpg" alt="Album Cover">
     </div>
-    <span id="duration">0:00</span>
+    <div class="song-details">
+      <h2 id="song-title">Song Title 1</h2>
+      <p id="artist-name">Artist Name 1</p>
+    </div>
+
+    <div class="progress-container">
+      <span id="current-time">0:00</span>
+      <div id="progress-bar">
+        <div id="progress"></div>
+      </div>
+      <span id="duration">0:00</span>
+    </div>
+
+    <div class="controls">
+      <button id="prev" class="control-btn">⏮️</button>
+      <button id="play-pause" class="control-btn play">▶️</button>
+      <button id="next" class="control-btn">⏭️</button>
+    </div>
+
+    <div class="secondary-controls">
+      <button id="shuffle-btn">🔀</button>
+      <button id="repeat-btn">🔁</button>
+      <button id="download-btn">⬇️</button> <!-- New Download Button -->
+    </div>
   </div>
 
-  <div class="controls">
-    <button id="prev" class="control-btn">⏮️</button>
-    <button id="play-pause" class="control-btn play">▶️</button>
-    <button id="next" class="control-btn">⏭️</button>
-  </div>
-
-  <div class="secondary-controls">
-    <button id="shuffle-btn">🔀</button>
-    <button id="repeat-btn">🔁</button>
-    <button id="download-btn">⬇️</button> <!-- New Download Button -->
-  </div>
-</div>
-
-<audio id="audio"></audio>
-<script type="module" src="main.js"></script>
+  <audio id="audio"></audio>
+  <script type="module" src="main.js"></script>
 </body>
 </html>

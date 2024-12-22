@@ -16,17 +16,25 @@ body {
   max-width: 400px;
   margin-bottom: 20px;
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 #search-bar {
-  width: 90%;
+  width: 100%;
   padding: 12px;
   font-size: 16px;
   border: none;
   border-radius: 5px;
   outline: none;
-  margin-right: 10px; /* Space between search bar and button */
+  margin-bottom: 5px;
+}
+
+.search-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
 }
 
 #search-btn {
@@ -37,10 +45,19 @@ body {
   cursor: pointer;
   background-color: #1db954;
   color: white;
+  width: 40px;
 }
 
 #search-btn:hover {
   background-color: #1ed760;
+}
+
+#quality-select {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 /* Suggestions List */
@@ -200,20 +217,6 @@ button:hover {
 
 button.active {
   background-color: #1ed760;
-}
-
-/* Quality Options */
-.quality-options {
-  margin-top: 10px;
-}
-
-#quality-select {
-  padding: 8px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: none;
-  background-color: #444;
-  color: white;
 }
 
 /* Responsive Design */

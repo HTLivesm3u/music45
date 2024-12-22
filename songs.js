@@ -194,7 +194,7 @@ export const marathiSongs = [
     src:"music/Vazan - Red Bull 64 Bars - SAMBATA, Karan Kanchan.m4a",
     cover:"https://c.saavncdn.com/926/Vazan-Red-Bull-64-Bars-Marathi-2024-20241015220101-500x500.jpg",
   },{
-    title:"Pinna",
+    title:"Pinnak",
     artist:"SAMBATA",
     src:"music/Pinnak - SAMBATA.m4a",
     cover:"https://c.saavncdn.com/965/Pinnak-Marathi-2022-20240601180152-500x500.jpg",

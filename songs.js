@@ -35,6 +35,24 @@ export const hindiSongs = [
     src:"music/Choo Lo - The Local Train.m4a",
     cover:"https://c.saavncdn.com/111/Aalas-Ka-Pedh-Hindi-2015-20231005005130-500x500.jpg",
   },
+  {
+    title:"Heeriye (feat. Arijit Singh)",
+    artist:"Jasleen Royal, Arijit Singh, Dulquer Salmaan",
+    src:"music/Heeriye (feat. Arijit Singh) - Jasleen Royal, Arijit Singh, Dulquer Salmaan.m4a",
+    cover:"https://c.saavncdn.com/022/Heeriye-feat-Arijit-Singh-Hindi-2023-20230928050405-500x500.jpg",
+  },
+  {
+    title:"Hua Main",
+    artist:"Raghav Chaitanya,Manoj Muntashir,Pritam",
+    src:"music/Hua Main (From  ANIMAL ) - Raghav Chaitanya, Manoj Muntashir, Pritam.m4a",
+    cover:"https://c.saavncdn.com/155/Hua-Main-From-ANIMAL-Hindi-2023-20231011001003-500x500.jpg",
+  },
+  {
+    title:"Husn",
+    artist:"Anuv Jain",
+    src:"music/Hsn-Anuv Jain.m4a",
+    cover:"https://c.saavncdn.com/436/Husn-Hindi-2023-20231129054140-500x500.jpg",
+  },
   
  ];
 

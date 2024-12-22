@@ -72,7 +72,7 @@ export const englishSongs = [
     title:"Beautiful Things",
     artist:"Benson Boone",
     src:"music/Beautiful Things - Benson Boone.m4a",
-    cover:"",
+    cover:"https://c.saavncdn.com/751/Beautiful-Things-English-2024-20240404023143-500x500.jpg",
   },{
     title:"Cheap Thrills",
     artist:"Sia",
@@ -83,6 +83,36 @@ export const englishSongs = [
     artist:"The Chainsmokers",
     src:"music/Closer - The Chainsmokers, Halsey.m4a",
     cover:"https://c.saavncdn.com/147/Closer-English-2016-500x500.jpg",
+  },{
+    title:"Dandelions",
+    artist:"Ruth B.",
+    src:"music/Dandelions - Ruth B..m4a",
+    cover:"https://c.saavncdn.com/400/Dandelions-English-2017-500x500.jpg",
+  },{
+    title:"Die With A Smile",
+    artist:"Lady Gaga, Bruno Mars",
+    src:"music/Die With A Smile - Lady Gaga, Bruno Mars.m4a",
+    cover:"https://c.saavncdn.com/060/Die-With-A-Smile-English-2024-20240816103634-500x500.jpg",
+  },{
+    title:"End of Beginning",
+    artist:"Djo",
+    src:"music/End of Beginning - Djo.m4a",
+    cover:"https://c.saavncdn.com/336/DECIDE-English-2022-20221205093021-500x500.jpg",
+  },{
+    title:"Espresso",
+    artist:"Sabrina Carpenter",
+    src:"music/Espresso - Sabrina Carpenter.m4a",
+    cover:"https://c.saavncdn.com/111/Espresso-English-2024-20240412064803-500x500.jpg",
+  },{
+    title:"Falling",
+    artist:"Trevor Daniel",
+    src:"music/Falling - Trevor Daniel.m4a",
+    cover:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpkWnTLHpWnRoNQ3bZRGRPxkUSzWQVvGwuhMSJQrQ5rBD7z_Hb-Bt1WTFA&s=10",
+  },{
+    title:"Heat Waves",
+    artist:"Glass Animals",
+    src:"music/Heat Waves - Glass Animals.m4a",
+    cover:"https://c.saavncdn.com/173/Dreamland-English-2020-20200806000748-500x500.jpg",
   },{
     title:"",
     artist:"",

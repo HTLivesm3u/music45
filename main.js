@@ -1,10 +1,10 @@
 import { hindiSongs, englishSongs, marathiSongs } from './songs.js';
 
-let currentSongIndex = 0; // Start with the first song
+let currentSongIndex = 0;
 let isPlaying = false;
 let isShuffle = false;
 let isRepeat = false;
-let currentSongs = hindiSongs; // Default playlist is Hindi
+let currentSongs = hindiSongs;
 
 // HTML Elements
 const audio = document.getElementById("audio");
@@ -18,9 +18,8 @@ const progressBar = document.getElementById("progress-bar");
 const progress = document.getElementById("progress");
 const currentTimeEl = document.getElementById("current-time");
 const durationEl = document.getElementById("duration");
-const searchBar = document.getElementById("search-bar");
-const searchBtn = document.getElementById("search-btn");
-const suggestionsList = document.getElementById("suggestions-list");
+const shuffleBtn = document.getElementById("shuffle-btn");
+const repeatBtn = document.getElementById("repeat-btn");
 const downloadBtn = document.getElementById("download-btn");
 const menuBtn = document.getElementById("menu-btn");
 const playlistMenu = document.getElementById("playlist-menu");
@@ -41,7 +40,7 @@ function loadSong(song) {
   updateMediaSession(song); // Update lock screen metadata
   if (isPlaying) {
     audio.play();
-    playPauseBtn.textContent = "⏸️"; // Update play button to pause
+    playPauseBtn.textContent = "⏸️";
   }
 }
 
@@ -50,11 +49,11 @@ function togglePlayPause() {
   if (isPlaying) {
     audio.pause();
     isPlaying = false;
-    playPauseBtn.textContent = "▶️"; // Play icon
+    playPauseBtn.textContent = "▶️";
   } else {
     audio.play();
     isPlaying = true;
-    playPauseBtn.textContent = "⏸️"; // Pause icon
+    playPauseBtn.textContent = "⏸️";
   }
 }
 
@@ -80,8 +79,6 @@ audio.addEventListener("timeupdate", () => {
   const { currentTime, duration } = audio;
   const progressPercent = (currentTime / duration) * 100;
   progress.style.width = `${progressPercent}%`;
-
-  // Update current time and duration
   currentTimeEl.textContent = formatTime(currentTime);
   durationEl.textContent = formatTime(duration);
 });
@@ -91,76 +88,92 @@ progressBar.addEventListener("click", (e) => {
   const width = progressBar.clientWidth;
   const clickX = e.offsetX;
   const duration = audio.duration;
-
   audio.currentTime = (clickX / width) * duration;
 });
 
 // Automatically play the next song
-audio.addEventListener("ended", playNextSong);
+audio.addEventListener("ended", () => {
+  if (isRepeat) {
+    audio.currentTime = 0;
+    audio.play();
+  } else {
+    playNextSong();
+  }
+});
 
-// Shuffle Button functionality
-document.getElementById("shuffle-btn").addEventListener("click", () => {
+// Shuffle functionality
+shuffleBtn.addEventListener("click", () => {
   isShuffle = !isShuffle;
-  document.getElementById("shuffle-btn").classList.toggle("active", isShuffle);
+  shuffleBtn.classList.toggle("active", isShuffle);
 });
 
-// Repeat Button functionality
-document.getElementById("repeat-btn").addEventListener("click", () => {
+// Repeat functionality
+repeatBtn.addEventListener("click", () => {
   isRepeat = !isRepeat;
-  document.getElementById("repeat-btn").classList.toggle("active", isRepeat);
+  repeatBtn.classList.toggle("active", isRepeat);
 });
 
-// Download functionality (Placeholder for downloading functionality)
+// Download functionality
 downloadBtn.addEventListener("click", () => {
   const currentSong = currentSongs[currentSongIndex];
-  alert(`Downloading: ${currentSong.title}`);
+  const a = document.createElement("a");
+  a.href = currentSong.src;
+  a.download = `${currentSong.title}.mp3`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
 });
 
-// Playlist Button functionalities
+// Playlist selection
 menuBtn.addEventListener("click", () => {
   playlistMenu.classList.toggle("active");
 });
 
 document.getElementById("hindi-btn").addEventListener("click", () => {
   currentSongs = hindiSongs;
-  currentSongIndex = 0; // Reset index to 0 (start with first song)
+  currentSongIndex = 0;
   loadSong(currentSongs[currentSongIndex]);
   isPlaying = true;
-  playPauseBtn.textContent = "⏸️"; // Set button to pause icon
-  audio.play(); // Auto-play the first song
-  playlistMenu.classList.remove("active"); // Close menu after selecting a playlist
+  audio.play();
+  playPauseBtn.textContent = "⏸️";
+  playlistMenu.classList.remove("active");
 });
 
 document.getElementById("english-btn").addEventListener("click", () => {
   currentSongs = englishSongs;
-  currentSongIndex = 0; // Reset index to 0 (start with first song)
+  currentSongIndex = 0;
   loadSong(currentSongs[currentSongIndex]);
   isPlaying = true;
-  playPauseBtn.textContent = "⏸️"; // Set button to pause icon
-  audio.play(); // Auto-play the first song
-  playlistMenu.classList.remove("active"); // Close menu after selecting a playlist
+  audio.play();
+  playPauseBtn.textContent = "⏸️";
+  playlistMenu.classList.remove("active");
 });
 
 document.getElementById("marathi-btn").addEventListener("click", () => {
   currentSongs = marathiSongs;
-  currentSongIndex = 0; // Reset index to 0 (start with first song)
+  currentSongIndex = 0;
   loadSong(currentSongs[currentSongIndex]);
   isPlaying = true;
-  playPauseBtn.textContent = "⏸️"; // Set button to pause icon
-  audio.play(); // Auto-play the first song
-  playlistMenu.classList.remove("active"); // Close menu after selecting a playlist
+  audio.play();
+  playPauseBtn.textContent = "⏸️";
+  playlistMenu.classList.remove("active");
 });
 
+// Update lock screen media session
 function updateMediaSession(song) {
   if ("mediaSession" in navigator) {
     navigator.mediaSession.metadata = new MediaMetadata({
       title: song.title,
       artist: song.artist,
-      artwork: [
-        { src: song.cover, sizes: "512x512", type: "image/jpeg" }
-      ]
+      artwork: [{ src: song.cover, sizes: "512x512", type: "image/jpeg" }],
     });
+
+    navigator.mediaSession.setActionHandler("play", togglePlayPause);
+    navigator.mediaSession.setActionHandler("pause", togglePlayPause);
+    navigator.mediaSession.setActionHandler("previoustrack", playPrevSong);
+    navigator.mediaSession.setActionHandler("nexttrack", playNextSong);
   }
 }
 
-loadSong(currentSongs[currentSongIndex]);  // Load the first song when the page loads
+// Load the first song on page load
+loadSong(currentSongs[currentSongIndex]);

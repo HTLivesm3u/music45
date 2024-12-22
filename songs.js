@@ -50,7 +50,7 @@ export const hindiSongs = [
   {
     title:"Husn",
     artist:"Anuv Jain",
-    src:"music/Hsn-Anuv Jain.m4a",
+    src:"music/Husn-Anuv Jain.m4a",
     cover:"https://c.saavncdn.com/436/Husn-Hindi-2023-20231129054140-500x500.jpg",
   },
   

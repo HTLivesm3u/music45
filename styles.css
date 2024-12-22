@@ -65,9 +65,9 @@ body {
   cursor: pointer;
   padding: 10px;
   position: fixed;
-  top: 10px;
-  left: 10px;
-  z-index: 100;
+  top: 10px; /* Position at the top */
+  left: 10px; /* Position at the left */
+  z-index: 1000; /* Make sure it appears on top of other elements */
 }
 
 /* Playlist Menu */
@@ -75,10 +75,10 @@ body {
   display: none; /* Hide the playlist buttons by default */
   flex-direction: column;
   align-items: center;
-  position: absolute;
-  top: 50px;  /* Positioning the menu below the menu button */
-  left: 0;
-  width: 100%;
+  position: fixed; /* Fixed position to keep it visible when scrolling */
+  top: 60px;  /* Position the menu just below the menu button */
+  left: 10px;
+  width: 200px;
   background-color: #222;
   padding: 20px;
   border-radius: 10px;
@@ -105,14 +105,17 @@ body {
   display: flex;
 }
 
-/* The rest of your existing CSS here */
-
-#quality-select {
-  background-color: #444;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
+/* Music Banner */
+.music-banner {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #222;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Suggestions List */
@@ -171,7 +174,7 @@ body {
   color: #bbb;
 }
 
-/* Music Banner */
+/* /* Music Banner */
 .music-banner {
   width: 100%;
   max-width: 400px;
@@ -183,7 +186,7 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-
+ */
 .cover img {
   width: 100%;
   max-width: 300px;

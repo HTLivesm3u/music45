@@ -64,7 +64,10 @@ body {
   border: none;
   cursor: pointer;
   padding: 10px;
-  margin-bottom: 15px;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
 }
 
 /* Playlist Menu */

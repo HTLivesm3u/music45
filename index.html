@@ -9,10 +9,8 @@
 </head>
 <body>
   <div class="search-container">
-    <div class="search-bar-wrapper">
-      <input type="text" id="search-bar" placeholder="Search for a song or artist..." />
-      <button id="search-btn">🔍</button>
-    </div>
+    <input type="text" id="search-bar" placeholder="Search for a song or artist..." />
+    <button id="search-btn">🔍</button>
     <ul id="suggestions-list"></ul>
   </div>
 
@@ -20,6 +18,15 @@
     <button id="hindi-btn" class="control-button">Hindi</button>
     <button id="english-btn" class="control-button">English</button>
     <button id="marathi-btn" class="control-button">Marathi</button>
+  </div>
+
+  <div class="quality-selection">
+    <label for="quality">Streaming Quality:</label>
+    <select id="quality">
+      <option value="low">Low (128kbps)</option>
+      <option value="medium" selected>Medium (192kbps)</option>
+      <option value="high">High (320kbps)</option>
+    </select>
   </div>
 
   <div class="music-banner">
@@ -49,11 +56,6 @@
       <button id="shuffle-btn">🔀</button>
       <button id="repeat-btn">🔁</button>
       <button id="download-btn">⬇️</button>
-      <select id="quality-select">
-        <option value="low">Low</option>
-        <option value="medium" selected>Medium</option>
-        <option value="high">High</option>
-      </select>
     </div>
   </div>
 

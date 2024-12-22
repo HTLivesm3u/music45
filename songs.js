@@ -54,10 +54,40 @@ export const hindiSongs = [
     cover:"https://c.saavncdn.com/401/Jo-Tum-Mere-Ho-Hindi-2024-20240731053953-500x500.jpg",
   },
   {
-    title:"",
-    artist:"",
-    src:"",
-    cover:"",
+    title:"Kaise Ab Kahein",
+    artist:"Gaurav Chatterji, Aasa Singh, Hansika Pareek, Hrishi Giridhar, Pratik Gangavane",
+    src:"music/Kaise Ab Kahein - From  Gutar Gu  - Gaurav Chatterji, Aasa Singh, Hansika Pareek, Hrishi Giridhar, Pratik Gangavane.m4a",
+    cover:"https://c.saavncdn.com/275/Kaise-Ab-Kahein-From-Gutar-Gu-Hindi-2023-20230425180122-500x500.jpg",
+  },{
+    title:"Kun Faya Kun",
+    artist:"A.R. Rahman, Javed Ali, Mohit Chauhan",
+    src:"music/Kun Faya Kun - A.R. Rahman, Javed Ali, Mohit Chauhan.m4a",
+    cover:"https://c.saavncdn.com/408/Rockstar-Hindi-2011-20221212023139-500x500.jpg",
+  },{
+    title:"Maa",
+    artist:"Shankar Mahadevan",
+    src:"music/Maa - Shankar Mahadevan.m4a",
+    cover:"https://c.saavncdn.com/643/Taare-Zameen-Par-Hindi-2007-20221206085820-500x500.jpg",
+  },{
+    title:"O Bedardeya (From Tu Jhoothi Main Makkaar )",
+    artist:"Pritam, Arijit Singh, Amitabh Bhattacharya",
+    src:"music/O Bedardeya (From  Tu Jhoothi Main Makkaar ) - Pritam, Arijit Singh, Amitabh Bhattacharya.m4a",
+    cover:"https://c.saavncdn.com/576/O-Bedardeya-From-Tu-Jhoothi-Main-Makkaar-Hindi-2023-20230303194422-500x500.jpg",
+  },{
+    title:"O Meri Laila",
+    artist:"Atif Aslam, Jyotica Tangri",
+    src:"music/O Meri Laila - Atif Aslam, Jyotica Tangri.m4a",
+    cover:"https://c.saavncdn.com/334/Laila-Majnu-Hindi-2018-20190506111426-500x500.jpg",
+  },{
+    title:"Pehle Bhi Main",
+    artist:"Vishal Mishra, Raj Shekhar",
+    src:"music/Pehle Bhi Main - Vishal Mishra, Raj Shekhar.m4a",
+    cover:"https://c.saavncdn.com/248/Pehle-Bhi-Main-Future-Bass-Hindi-2024-20240223181016-500x500.jpg",
+  },{
+    title:"Raataan Lambiyan(From Shershaah )",
+    artist:"Tanishk Bagchi, Jubin Nautiyal, Asees Kaur",
+    src:"music/Raataan Lambiyan (From  Shershaah ) - Tanishk Bagchi, Jubin Nautiyal, Asees Kaur.m4a",
+    cover:"https://c.saavncdn.com/238/Shershaah-Original-Motion-Picture-Soundtrack--Hindi-2021-20210815181610-500x500.jpg",
   },
 ];
 
@@ -153,26 +183,20 @@ export const englishSongs = [
     artist:"Gym Class Heroes, Adam Levine",
     src:"music/Stereo Hearts (feat. Adam Levine) - Gym Class Heroes, Adam Levine.m4a",
     cover:"https://c.saavncdn.com/509/The-Papercut-Chronicles-II-English-2011-20200822053426-500x500.jpg",
-  },{
-    title:"",
-    artist:"",
-    src:"",
-    cover:"",
-  },
+  }, 
+    
 ];
 
 export const marathiSongs = [
-  {
-    title: "Apsara Aali",
-    artist: "Vaishali Samant",
-    cover: "cover1.jpg",
-    url: "songs/apsara_aali.mp3"
+ {
+    title:"Vazan",
+    artist:"SAMBATA, Karan Kanchan",
+    src:"music/Vazan - Red Bull 64 Bars - SAMBATA, Karan Kanchan.m4a",
+    cover:"https://c.saavncdn.com/926/Vazan-Red-Bull-64-Bars-Marathi-2024-20241015220101-500x500.jpg",
+  },{
+    title:"Pinna",
+    artist:"SAMBATA",
+    src:"music/Pinnak - SAMBATA.m4a",
+    cover:"https://c.saavncdn.com/965/Pinnak-Marathi-2022-20240601180152-500x500.jpg",
   },
-  {
-    title: "Madhuban Mein Radhika",
-    artist: "Suresh Wadkar",
-    cover: "cover2.jpg",
-    url: "songs/madhuban_mein_radhika.mp3"
-  },
-  // more songs
 ];

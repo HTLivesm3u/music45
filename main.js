@@ -20,6 +20,8 @@ const durationEl = document.getElementById("duration");
 const searchBar = document.getElementById("search-bar");
 const searchBtn = document.getElementById("search-btn");
 const suggestionsList = document.getElementById("suggestions-list");
+const menuBtn = document.getElementById("menu-btn");
+const playlistMenu = document.getElementById("playlist-menu");
 
 // Utility function to format time
 function formatTime(seconds) {
@@ -112,6 +114,11 @@ function searchSongs(query) {
     suggestionsList.appendChild(li);
   });
 }
+
+// Toggle playlist menu
+menuBtn.addEventListener("click", () => {
+  playlistMenu.classList.toggle("active");
+});
 
 // Event listeners
 playPauseBtn.addEventListener("click", togglePlayPause);

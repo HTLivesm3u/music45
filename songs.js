@@ -73,8 +73,22 @@ export const englishSongs = [
     artist:"Benson Boone",
     src:"music/Beautiful Things - Benson Boone.m4a",
     cover:"",
+  },{
+    title:"Cheap Thrills",
+    artist:"Sia",
+    src:"music/Cheap Thrills - Sia.m4a",
+    cover:"https://c.saavncdn.com/203/This-Is-Acting-English-2016-500x500.jpg",
+  },{
+    title:"Colser",
+    artist:"The Chainsmokers",
+    src:"music/Closer - The Chainsmokers, Halsey.m4a",
+    cover:"https://c.saavncdn.com/147/Closer-English-2016-500x500.jpg",
+  },{
+    title:"",
+    artist:"",
+    src:"",
+    cover:"",
   },
-  // more songs
 ];
 
 export const marathiSongs = [

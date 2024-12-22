@@ -2,7 +2,9 @@ import { hindiSongs, englishSongs, marathiSongs } from './songs.js';
 
 let currentSongIndex = 0;
 let isPlaying = false;
-let currentSongs = hindiSongs; // Default playlist is Hindi
+let isShuffle = false;
+let isRepeat = false;
+let currentSongs = hindiSongs; // Default playlist
 
 // HTML Elements
 const audio = document.getElementById("audio");
@@ -12,118 +14,123 @@ const prevBtn = document.getElementById("prev");
 const songTitle = document.getElementById("song-title");
 const artistName = document.getElementById("artist-name");
 const coverImage = document.getElementById("cover-image");
-const qualitySelect = document.getElementById("quality-select");
 const progressBar = document.getElementById("progress-bar");
 const progress = document.getElementById("progress");
 const currentTimeEl = document.getElementById("current-time");
 const durationEl = document.getElementById("duration");
+const searchBar = document.getElementById("search-bar");
+const searchBtn = document.getElementById("search-btn");
+const suggestionsList = document.getElementById("suggestions-list");
+const downloadBtn = document.getElementById("download-btn");
 
-// Utility function to format time
+// Format time function
 function formatTime(seconds) {
   const minutes = Math.floor(seconds / 60);
   const secs = Math.floor(seconds % 60);
-  return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
+  return `${minutes}:${secs < 10 ? '0' + secs : secs}`;
 }
 
-// Function to load a song
-function loadSong(song) {
-  // Get the selected quality
-  const selectedQuality = qualitySelect.value;
-
-  // Set the audio source based on the selected quality
-  audio.src = song.src[selectedQuality];
+// Update song info
+function updateSongInfo(song) {
   songTitle.textContent = song.title;
   artistName.textContent = song.artist;
   coverImage.src = song.cover;
-
-  // Update media session metadata (for better user experience on devices like phones)
-  updateMediaSession(song);
-
-  // Play song if it's already playing
-  if (isPlaying) {
-    audio.play();
-    playPauseBtn.textContent = "⏸️"; // Update play button to pause
-  }
+  audio.src = song.url;
 }
 
-// Function to toggle play/pause
+// Toggle play/pause
 function togglePlayPause() {
   if (isPlaying) {
     audio.pause();
-    isPlaying = false;
-    playPauseBtn.textContent = "▶️"; // Play icon
+    playPauseBtn.textContent = "▶️";
   } else {
     audio.play();
-    isPlaying = true;
-    playPauseBtn.textContent = "⏸️"; // Pause icon
+    playPauseBtn.textContent = "⏸️";
   }
+  isPlaying = !isPlaying;
 }
 
-// Function to play the next song
-function playNextSong() {
-  currentSongIndex = (currentSongIndex + 1) % currentSongs.length;
-  loadSong(currentSongs[currentSongIndex]);
+// Next song
+function nextSong() {
+  currentSongIndex = isShuffle ? Math.floor(Math.random() * currentSongs.length) : (currentSongIndex + 1) % currentSongs.length;
+  updateSongInfo(currentSongs[currentSongIndex]);
+  if (isPlaying) audio.play();
 }
 
-// Function to play the previous song
-function playPrevSong() {
-  currentSongIndex =
-    (currentSongIndex - 1 + currentSongs.length) % currentSongs.length;
-  loadSong(currentSongs[currentSongIndex]);
+// Previous song
+function prevSong() {
+  currentSongIndex = isShuffle ? Math.floor(Math.random() * currentSongs.length) : (currentSongIndex - 1 + currentSongs.length) % currentSongs.length;
+  updateSongInfo(currentSongs[currentSongIndex]);
+  if (isPlaying) audio.play();
 }
 
-// Function to update the progress bar and time display
-audio.addEventListener("timeupdate", () => {
-  const { currentTime, duration } = audio;
-  const progressPercent = (currentTime / duration) * 100;
-  progress.style.width = `${progressPercent}%`;
+// Update progress bar
+function updateProgressBar() {
+  const progressPercent = (audio.currentTime / audio.duration) * 100;
+  progress.style.width = progressPercent + '%';
+  currentTimeEl.textContent = formatTime(audio.currentTime);
+  durationEl.textContent = formatTime(audio.duration);
+}
 
-  // Update current time and duration
-  currentTimeEl.textContent = formatTime(currentTime);
-  durationEl.textContent = formatTime(duration);
-});
+// Shuffle songs
+function toggleShuffle() {
+  isShuffle = !isShuffle;
+  document.getElementById("shuffle-btn").classList.toggle('active', isShuffle);
+}
 
-// Seek functionality (click on the progress bar to seek)
-progressBar.addEventListener("click", (e) => {
-  const width = progressBar.clientWidth;
-  const clickX = e.offsetX;
-  const duration = audio.duration;
+// Repeat song
+function toggleRepeat() {
+  isRepeat = !isRepeat;
+  document.getElementById("repeat-btn").classList.toggle('active', isRepeat);
+}
 
-  audio.currentTime = (clickX / width) * duration;
-});
+// Download song
+function downloadSong() {
+  const a = document.createElement("a");
+  a.href = audio.src;
+  a.download = currentSongs[currentSongIndex].title + ".mp3";
+  a.click();
+}
 
-// Automatically play the next song when the current one ends
-audio.addEventListener("ended", () => {
-  playNextSong();
-});
-
-// Event listener for quality select dropdown to change song quality
-qualitySelect.addEventListener("change", () => {
-  const currentSong = currentSongs[currentSongIndex];
-  loadSong(currentSong);
-});
-
-// Load the first song on page load
-loadSong(currentSongs[currentSongIndex]);
-
-// Event listeners for play, pause, next, and previous buttons
+// Event listeners
 playPauseBtn.addEventListener("click", togglePlayPause);
-nextBtn.addEventListener("click", playNextSong);
-prevBtn.addEventListener("click", playPrevSong);
-
-// Function to update media session metadata (for better user experience on devices like phones)
-function updateMediaSession(song) {
-  if (navigator.mediaSession) {
-    navigator.mediaSession.metadata = new MediaMetadata({
-      title: song.title,
-      artist: song.artist,
-      artwork: [
-        {
-          src: song.cover,
-          sizes: "500x500",
-          type: "image/jpeg",
-        },
-      ],
-    });
+nextBtn.addEventListener("click", nextSong);
+prevBtn.addEventListener("click", prevSong);
+audio.addEventListener("timeupdate", updateProgressBar);
+audio.addEventListener("ended", () => {
+  if (isRepeat) {
+    audio.play();
+  } else {
+    nextSong();
   }
-}
+});
+document.getElementById("shuffle-btn").addEventListener("click", toggleShuffle);
+document.getElementById("repeat-btn").addEventListener("click", toggleRepeat);
+downloadBtn.addEventListener("click", downloadSong);
+
+// Handle search suggestions
+searchBar.addEventListener("input", function () {
+  const query = searchBar.value.toLowerCase();
+  const suggestions = currentSongs.filter(song => song.title.toLowerCase().includes(query));
+  suggestionsList.innerHTML = suggestions.map(song => `<li>${song.title} - ${song.artist}</li>`).join('');
+});
+
+// Playlist buttons
+document.getElementById("hindi-btn").addEventListener("click", () => {
+  currentSongs = hindiSongs;
+  currentSongIndex = 0;
+  updateSongInfo(hindiSongs[currentSongIndex]);
+});
+document.getElementById("english-btn").addEventListener("click", () => {
+  currentSongs = englishSongs;
+  currentSongIndex = 0;
+  updateSongInfo(englishSongs[currentSongIndex]);
+});
+document.getElementById("marathi-btn").addEventListener("click", () => {
+  currentSongs = marathiSongs;
+  currentSongIndex = 0;
+  updateSongInfo(marathiSongs[currentSongIndex]);
+});
+
+// Initial song
+updateSongInfo(currentSongs[currentSongIndex]);

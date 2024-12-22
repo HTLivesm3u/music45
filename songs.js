@@ -23,6 +23,12 @@ export const hindiSongs = [
     src:"music/Arjan Vailly (From  ANIMAL ) - Manan Bhardwaj, Bhupinder Babbal.m4a",
     cover:"https://c.saavncdn.com/092/ANIMAL-Hindi-2023-20231124191036-500x500.jpg",
   },
+  {
+    title:"Chaleya (from jawan", 
+    artist:"", 
+    src:"", 
+    cover:"", 
+  }, 
 ];
 
 export const englishSongs = [

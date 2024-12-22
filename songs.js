@@ -6,12 +6,12 @@ export const hindiSongs = [
     cover: "https://c.saavncdn.com/730/Aankhon-Mein-Doob-Jaane-Ko-Hindi-2024-20240816183310-500x500.jpg",
   },
   {
-    title: "",
-    artist: "Javed Miandad",
-    cover: "cover2.jpg",
-    url: "songs/tum_jo_aaye.mp3"
+    title:"Agar Tum Saath Ho",
+    artist:"Alka Yagnik, Arijit Singh",
+    src:"music/Agar Tum Saath Ho - Alka Yagnik, Arijit Singh.m4a",
+    cover:"https://c.saavncdn.com/994/Tamasha-Hindi-2015-500x500.jpg",
   },
-  // more songs
+  
 ];
 
 export const englishSongs = [

@@ -12,31 +12,26 @@ body {
 
 /* Search Container */
 .search-container {
-  width: 100%;
-  max-width: 400px;
-  margin-bottom: 20px;
-  position: relative;
-}
-
-.search-bar-wrapper {
   display: flex;
-  width: 100%;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 #search-bar {
-  flex: 1;
+  width: 300px;
   padding: 12px;
   font-size: 16px;
   border: none;
-  border-radius: 5px 0 0 5px;
+  border-radius: 5px;
   outline: none;
 }
 
 #search-btn {
-  padding: 10px;
+  padding: 12px;
   font-size: 16px;
   border: none;
-  border-radius: 0 5px 5px 0;
+  border-radius: 5px;
   cursor: pointer;
   background-color: #1db954;
   color: white;
@@ -46,40 +41,20 @@ body {
   background-color: #1ed760;
 }
 
-#suggestions-list {
-  list-style: none;
-  padding: 0;
-  margin: 5px 0 0;
-  background-color: #1c1c1c;
-  border: 1px solid #444;
-  border-radius: 5px;
-  max-width: 400px;
-  color: white;
-  position: absolute;
-  z-index: 10;
+/* Quality Selection */
+.quality-selection {
+  margin-bottom: 20px;
 }
 
-#suggestions-list li {
-  padding: 10px;
-  cursor: pointer;
+.quality-selection label {
+  margin-right: 10px;
 }
 
-#suggestions-list li:hover {
-  background-color: #333;
-}
-
-/* Controls */
-.secondary-controls select {
-  padding: 10px;
+.quality-selection select {
+  padding: 5px;
   font-size: 16px;
   border: none;
-  background-color: #444;
-  color: white;
   border-radius: 5px;
-  cursor: pointer;
-  margin-left: 10px;
 }
 
-.secondary-controls select:hover {
-  background-color: #555;
-}
+/* Other styles remain unchanged */

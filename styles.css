@@ -16,8 +16,7 @@ body {
   max-width: 400px;
   margin-bottom: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: center;  /* Aligns the input and button horizontally */
 }
 
 #search-bar {
@@ -25,9 +24,9 @@ body {
   padding: 12px;
   font-size: 16px;
   border: none;
-  border-radius: 5px;
+  border-radius: 5px 0 0 5px;  /* Rounded left corners */
   outline: none;
-  margin-bottom: 5px;
+  margin-right: -1px;  /* Align with button */
 }
 
 .search-controls {
@@ -38,14 +37,14 @@ body {
 }
 
 #search-btn {
-  padding: 10px 15px;
+  padding: 12px 15px;
   font-size: 16px;
   border: none;
-  border-radius: 5px;
+  border-radius: 0 5px 5px 0;  /* Rounded right corners */
   cursor: pointer;
   background-color: #1db954;
   color: white;
-  width: 40px;
+  width: 50px; /* Adjust width to match the search bar height */
 }
 
 #search-btn:hover {

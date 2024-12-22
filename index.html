@@ -3,29 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Music App</title>
-  <link rel="icon" type="image/webp" href="music/music45.webp">
+  <title>Music45</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Menu Container -->
-  <div id="menu-container" class="menu-container">
-    <button id="menu-btn" class="menu-btn" aria-expanded="false" aria-label="Toggle menu">☰</button>
-    <div id="playlist-menu" class="playlist-menu hidden">
-      <button id="hindi-btn" class="menu-item">Hindi</button>
-      <button id="english-btn" class="menu-item">English</button>
-      <button id="marathi-btn" class="menu-item">Marathi</button>
-    </div>
+  <!-- Menu Button -->
+  <button id="menu-btn" class="menu-btn">☰</button>
+
+  <!-- Playlist Buttons inside the menu -->
+  <div id="playlist-menu" class="playlist-menu">
+    <button id="hindi-btn" class="control-button">Hindi</button>
+    <button id="english-btn" class="control-button">English</button>
+    <button id="marathi-btn" class="control-button">Marathi</button>
   </div>
 
-  <!-- Search Section -->
   <div class="search-container">
     <input type="text" id="search-bar" placeholder="Search for a song or artist..." />
     <button id="search-btn">🔍</button>
     <ul id="suggestions-list"></ul>
   </div>
 
-  <!-- Music Banner -->
   <div class="music-banner">
     <div class="cover">
       <img id="cover-image" src="cover1.jpg" alt="Album Cover">
@@ -35,7 +32,6 @@
       <p id="artist-name">Artist Name 1</p>
     </div>
 
-    <!-- Progress Bar -->
     <div class="progress-container">
       <span id="current-time">0:00</span>
       <div id="progress-bar">
@@ -44,14 +40,12 @@
       <span id="duration">0:00</span>
     </div>
 
-    <!-- Controls -->
     <div class="controls">
       <button id="prev" class="control-btn">⏮️</button>
       <button id="play-pause" class="control-btn play">▶️</button>
       <button id="next" class="control-btn">⏭️</button>
     </div>
 
-    <!-- Secondary Controls -->
     <div class="secondary-controls">
       <button id="shuffle-btn">🔀</button>
       <button id="repeat-btn">🔁</button>
@@ -59,7 +53,6 @@
     </div>
   </div>
 
-  <!-- Audio Player -->
   <audio id="audio"></audio>
   <script type="module" src="main.js"></script>
 </body>

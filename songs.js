@@ -63,16 +63,16 @@ export const hindiSongs = [
 
 export const englishSongs = [
   {
-    title: "Shape of You",
-    artist: "Ed Sheeran",
-    cover: "cover1.jpg",
-    url: "songs/shape_of_you.mp3"
+    title:"7 Years",
+    artist:"Lukas Graham",
+    src:"music/7 Years - Lukas Graham.m4a",
+    cover:"https://c.saavncdn.com/496/Lukas-Graham-English-2016-20190607043917-500x500.jpg",
   },
   {
-    title: "Blinding Lights",
-    artist: "The Weeknd",
-    cover: "cover2.jpg",
-    url: "songs/blinding_lights.mp3"
+    title:"Beautiful Things",
+    artist:"Benson Boone",
+    src:"music/Beautiful Things - Benson Boone.m4a",
+    cover:"",
   },
   // more songs
 ];

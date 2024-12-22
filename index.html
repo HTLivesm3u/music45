@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Music Player</title>
+  <title>Music45</title>
   <link rel="icon" type="image/webp" href="music/music45.webp">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -25,18 +25,14 @@
 
 <!-- Music Player Section -->
 <div class="music-banner">
-  <!-- Cover Image -->
   <div class="cover">
     <img id="cover-image" src="cover1.jpg" alt="Album Cover">
   </div>
-
-  <!-- Song Title and Artist Name -->
   <div class="song-details">
     <h2 id="song-title">Song Title 1</h2>
     <p id="artist-name">Artist Name 1</p>
   </div>
 
-  <!-- Progress Bar -->
   <div class="progress-container">
     <span id="current-time">0:00</span>
     <div id="progress-bar">
@@ -45,33 +41,20 @@
     <span id="duration">0:00</span>
   </div>
 
-  <!-- Controls -->
   <div class="controls">
     <button id="prev" class="control-btn">⏮️</button>
     <button id="play-pause" class="control-btn play">▶️</button>
     <button id="next" class="control-btn">⏭️</button>
   </div>
 
-  <!-- Secondary Controls -->
   <div class="secondary-controls">
     <button id="shuffle-btn">🔀</button>
     <button id="repeat-btn">🔁</button>
-    <button id="download-btn">⬇️</button> <!-- Download button -->
-  </div>
-
-  <!-- Quality Selection -->
-  <div class="quality-selection">
-    <select id="quality-select">
-      <option value="high">High</option>
-      <option value="medium">Medium</option>
-      <option value="low">Low</option>
-    </select>
+    <button id="download-btn">⬇️</button> <!-- New Download Button -->
   </div>
 </div>
 
 <audio id="audio"></audio>
-
 <script type="module" src="main.js"></script>
-
 </body>
 </html>

@@ -25,7 +25,7 @@ function formatTime(seconds) {
   return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
 }
 
-// Load a song
+// Function to load a song
 function loadSong(song) {
   // Get the selected quality
   const selectedQuality = qualitySelect.value;
@@ -36,7 +36,7 @@ function loadSong(song) {
   artistName.textContent = song.artist;
   coverImage.src = song.cover;
 
-  // Update media session metadata
+  // Update media session metadata (for better user experience on devices like phones)
   updateMediaSession(song);
 
   // Play song if it's already playing
@@ -46,7 +46,7 @@ function loadSong(song) {
   }
 }
 
-// Play or pause functionality
+// Function to toggle play/pause
 function togglePlayPause() {
   if (isPlaying) {
     audio.pause();
@@ -59,20 +59,20 @@ function togglePlayPause() {
   }
 }
 
-// Play the next song
+// Function to play the next song
 function playNextSong() {
   currentSongIndex = (currentSongIndex + 1) % currentSongs.length;
   loadSong(currentSongs[currentSongIndex]);
 }
 
-// Play the previous song
+// Function to play the previous song
 function playPrevSong() {
   currentSongIndex =
     (currentSongIndex - 1 + currentSongs.length) % currentSongs.length;
   loadSong(currentSongs[currentSongIndex]);
 }
 
-// Update progress bar
+// Function to update the progress bar and time display
 audio.addEventListener("timeupdate", () => {
   const { currentTime, duration } = audio;
   const progressPercent = (currentTime / duration) * 100;
@@ -83,7 +83,7 @@ audio.addEventListener("timeupdate", () => {
   durationEl.textContent = formatTime(duration);
 });
 
-// Seek functionality
+// Seek functionality (click on the progress bar to seek)
 progressBar.addEventListener("click", (e) => {
   const width = progressBar.clientWidth;
   const clickX = e.offsetX;
@@ -97,10 +97,33 @@ audio.addEventListener("ended", () => {
   playNextSong();
 });
 
-// Add event listeners for buttons
+// Event listener for quality select dropdown to change song quality
+qualitySelect.addEventListener("change", () => {
+  const currentSong = currentSongs[currentSongIndex];
+  loadSong(currentSong);
+});
+
+// Load the first song on page load
+loadSong(currentSongs[currentSongIndex]);
+
+// Event listeners for play, pause, next, and previous buttons
 playPauseBtn.addEventListener("click", togglePlayPause);
 nextBtn.addEventListener("click", playNextSong);
 prevBtn.addEventListener("click", playPrevSong);
 
-// Load the first song on page load
-loadSong(currentSongs[currentSongIndex]);
+// Function to update media session metadata (for better user experience on devices like phones)
+function updateMediaSession(song) {
+  if (navigator.mediaSession) {
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: song.title,
+      artist: song.artist,
+      artwork: [
+        {
+          src: song.cover,
+          sizes: "500x500",
+          type: "image/jpeg",
+        },
+      ],
+    });
+  }
+}

@@ -102,6 +102,12 @@ audio.addEventListener("ended", () => {
   }
 });
 
+// Menu button functionality to toggle the playlist menu
+document.getElementById("menu-btn").addEventListener("click", () => {
+  const playlistMenu = document.getElementById("playlist-menu");
+  playlistMenu.classList.toggle("active");
+});
+
 // Add event listeners for buttons
 playPauseBtn.addEventListener("click", togglePlayPause);
 nextBtn.addEventListener("click", playNextSong);

@@ -23,6 +23,8 @@ const searchBar = document.getElementById("search-bar");
 const searchBtn = document.getElementById("search-btn");
 const suggestionsList = document.getElementById("suggestions-list");
 const downloadBtn = document.getElementById("download-btn");
+const menuBtn = document.getElementById("menu-btn");
+const playlistMenu = document.getElementById("playlist-menu");
 
 // Utility function to format time
 function formatTime(seconds) {
@@ -103,10 +105,16 @@ audio.addEventListener("ended", () => {
   }
 });
 
-// Menu button functionality to toggle the playlist menu
-document.getElementById("menu-btn").addEventListener("click", () => {
-  const playlistMenu = document.getElementById("playlist-menu");
-  playlistMenu.classList.toggle("active"); // Toggle visibility of menu
+// Toggle the playlist menu visibility
+menuBtn.addEventListener("click", () => {
+  playlistMenu.classList.toggle("active");
+});
+
+// Close menu when clicking outside
+document.addEventListener("click", (event) => {
+  if (!playlistMenu.contains(event.target) && !menuBtn.contains(event.target)) {
+    playlistMenu.classList.remove("active");
+  }
 });
 
 // Add event listeners for buttons
@@ -197,7 +205,7 @@ document.getElementById("hindi-btn").addEventListener("click", () => {
   isPlaying = true;
   playPauseBtn.textContent = "⏸️";
   audio.play();
-  document.getElementById("playlist-menu").classList.remove("active");
+  playlistMenu.classList.remove("active");
 });
 
 document.getElementById("english-btn").addEventListener("click", () => {
@@ -207,7 +215,7 @@ document.getElementById("english-btn").addEventListener("click", () => {
   isPlaying = true;
   playPauseBtn.textContent = "⏸️";
   audio.play();
-  document.getElementById("playlist-menu").classList.remove("active");
+  playlistMenu.classList.remove("active");
 });
 
 document.getElementById("marathi-btn").addEventListener("click", () => {
@@ -217,7 +225,7 @@ document.getElementById("marathi-btn").addEventListener("click", () => {
   isPlaying = true;
   playPauseBtn.textContent = "⏸️";
   audio.play();
-  document.getElementById("playlist-menu").classList.remove("active");
+  playlistMenu.classList.remove("active");
 });
 
 // Download functionality

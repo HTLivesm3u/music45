@@ -16,7 +16,7 @@ body {
   max-width: 400px;
   margin-bottom: 20px;
   display: flex;
-  align-items: center;  /* Aligns the input and button horizontally */
+  align-items: center;
 }
 
 #search-bar {
@@ -24,9 +24,9 @@ body {
   padding: 12px;
   font-size: 16px;
   border: none;
-  border-radius: 5px 0 0 5px;  /* Rounded left corners */
+  border-radius: 5px 0 0 5px;
   outline: none;
-  margin-right: -1px;  /* Align with button */
+  margin-right: -1px;
 }
 
 .search-controls {
@@ -40,11 +40,11 @@ body {
   padding: 12px 15px;
   font-size: 16px;
   border: none;
-  border-radius: 0 5px 5px 0;  /* Rounded right corners */
+  border-radius: 0 5px 5px 0;
   cursor: pointer;
   background-color: #1db954;
   color: white;
-  width: 50px; /* Adjust width to match the search bar height */
+  width: 50px;
 }
 
 #search-btn:hover {
@@ -62,17 +62,17 @@ body {
   position: fixed;
   top: 10px; /* Position at the top */
   left: 10px; /* Position at the left */
-  z-index: 1000; /* Make sure it appears on top of other elements */
+  z-index: 1000;
 }
 
 /* Playlist Menu */
 .playlist-menu {
-  display: none; /* Hide the playlist buttons by default */
+  display: none;
   flex-direction: column;
   align-items: center;
-  position: fixed; /* Fixed position to keep it visible when scrolling */
-  top: 60px;  /* Position the menu just below the menu button */
-  left: 10px; /* Position the menu on the left */
+  position: fixed;
+  top: 60px;
+  left: 10px;
   width: 200px;
   background-color: #222;
   padding: 20px;
@@ -167,31 +167,6 @@ body {
 #duration {
   font-size: 14px;
   color: #bbb;
-}
-
-/* Music Banner */
-.cover img {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-.song-details {
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.song-details h2 {
-  font-size: 20px;
-  margin: 0;
-}
-
-.song-details p {
-  font-size: 16px;
-  color: #bbb;
-  margin: 0;
 }
 
 /* Controls */
@@ -289,15 +264,5 @@ button.active {
     width: 50px;
     height: 50px;
   }
-
-  /* Menu button on mobile */
-  .menu-btn {
-    left: 15px;
-  }
-
-  /* Playlist menu for mobile */
-  .playlist-menu {
-    left: 0;
-    top: 60px;
-  }
 }
+

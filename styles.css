@@ -16,7 +16,7 @@ body {
   max-width: 400px;
   margin-bottom: 20px;
   display: flex;
-  align-items: center; /* Aligns the input and button horizontally */
+  align-items: center;  /* Aligns the input and button horizontally */
 }
 
 #search-bar {
@@ -24,9 +24,9 @@ body {
   padding: 12px;
   font-size: 16px;
   border: none;
-  border-radius: 5px 0 0 5px; /* Rounded left corners */
+  border-radius: 5px 0 0 5px;  /* Rounded left corners */
   outline: none;
-  margin-right: -1px; /* Align with button */
+  margin-right: -1px;  /* Align with button */
 }
 
 .search-controls {
@@ -40,7 +40,7 @@ body {
   padding: 12px 15px;
   font-size: 16px;
   border: none;
-  border-radius: 0 5px 5px 0; /* Rounded right corners */
+  border-radius: 0 5px 5px 0;  /* Rounded right corners */
   cursor: pointer;
   background-color: #1db954;
   color: white;
@@ -71,15 +71,13 @@ body {
   flex-direction: column;
   align-items: center;
   position: fixed; /* Fixed position to keep it visible when scrolling */
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Adjust to truly center */
-  width: 300px; /* Adjust width as needed */
+  top: 60px;  /* Position the menu just below the menu button */
+  left: 10px; /* Position the menu on the left */
+  width: 200px;
   background-color: #222;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  z-index: 1000; /* Ensure it's above other elements */
 }
 
 #playlist-menu button {
@@ -115,28 +113,27 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.cover img {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 15px;
+/* Suggestions List */
+#suggestions-list {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0;
+  background-color: #1c1c1c;
+  border: 1px solid #444;
+  border-radius: 5px;
+  max-width: 400px;
+  color: white;
+  position: absolute;
+  z-index: 10;
 }
 
-.song-details {
-  text-align: center;
-  margin-bottom: 15px;
+#suggestions-list li {
+  padding: 10px;
+  cursor: pointer;
 }
 
-.song-details h2 {
-  font-size: 20px;
-  margin: 0;
-}
-
-.song-details p {
-  font-size: 16px;
-  color: #bbb;
-  margin: 0;
+#suggestions-list li:hover {
+  background-color: #333;
 }
 
 /* Progress Bar */
@@ -170,6 +167,31 @@ body {
 #duration {
   font-size: 14px;
   color: #bbb;
+}
+
+/* Music Banner */
+.cover img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.song-details {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.song-details h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.song-details p {
+  font-size: 16px;
+  color: #bbb;
+  margin: 0;
 }
 
 /* Controls */
@@ -238,29 +260,6 @@ button.active {
   background-color: #1ed760;
 }
 
-/* Suggestions List */
-#suggestions-list {
-  list-style: none;
-  padding: 0;
-  margin: 5px 0 0;
-  background-color: #1c1c1c;
-  border: 1px solid #444;
-  border-radius: 5px;
-  max-width: 400px;
-  color: white;
-  position: absolute;
-  z-index: 10;
-}
-
-#suggestions-list li {
-  padding: 10px;
-  cursor: pointer;
-}
-
-#suggestions-list li:hover {
-  background-color: #333;
-}
-
 /* Responsive Design */
 @media (max-width: 480px) {
   #search-bar {
@@ -289,5 +288,16 @@ button.active {
   .play {
     width: 50px;
     height: 50px;
+  }
+
+  /* Menu button on mobile */
+  .menu-btn {
+    left: 15px;
+  }
+
+  /* Playlist menu for mobile */
+  .playlist-menu {
+    left: 0;
+    top: 60px;
   }
 }

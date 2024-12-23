@@ -1,4 +1,3 @@
-// script.js
 import { hindiSongs, englishSongs, marathiSongs } from './songs.js';
 
 let currentSongIndex = 0;
@@ -108,12 +107,21 @@ audio.addEventListener("ended", () => {
 // Toggle the playlist menu visibility
 menuBtn.addEventListener("click", () => {
   playlistMenu.classList.toggle("active");
-});
-
-// Close menu when clicking outside
-document.addEventListener("click", (event) => {
-  if (!playlistMenu.contains(event.target) && !menuBtn.contains(event.target)) {
-    playlistMenu.classList.remove("active");
+  if (playlistMenu.classList.contains("active")) {
+    // Adding background overlay when menu is open
+    const overlay = document.createElement("div");
+    overlay.classList.add("overlay");
+    document.body.appendChild(overlay);
+    overlay.addEventListener("click", () => {
+      playlistMenu.classList.remove("active");
+      document.body.removeChild(overlay);
+    });
+  } else {
+    // Remove overlay when menu is closed
+    const overlay = document.querySelector(".overlay");
+    if (overlay) {
+      document.body.removeChild(overlay);
+    }
   }
 });
 

@@ -1,64 +1,61 @@
-/* Basic Styling */
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
   background-color: #121212;
   color: white;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
 }
 
 /* Menu Button */
 .menu-btn {
   font-size: 30px;
+  background: none;
+  color: white;
+  border: none;
   cursor: pointer;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 1000;
+  padding: 10px;
+  position: fixed;
+  top: 10px; /* Position at the top */
+  left: 10px; /* Position at the left */
+  z-index: 1000; /* Make sure it appears on top of other elements */
 }
 
 /* Playlist Menu */
-#playlist-menu {
+.playlist-menu {
+  display: none; /* Hide the playlist buttons by default */
   position: fixed;
-  left: -250px;  /* Initially hidden off-screen */
   top: 0;
+  left: -250px; /* Initially hidden off-screen */
   width: 250px;
   height: 100%;
-  background-color: #333;
-  color: white;
-  padding-top: 60px;
-  transition: left 0.3s ease; /* Sliding effect */
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-  z-index: 999;
-}
-
-#playlist-menu.active {
-  left: 0; /* Slide in from the left */
+  background-color: #222;
+  padding: 20px;
+  transition: left 0.3s ease; /* Smooth transition */
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.3);
 }
 
 #playlist-menu button {
   background-color: #444;
   color: white;
   border: none;
-  padding: 15px;
-  margin: 10px 0;
+  padding: 10px;
+  margin-bottom: 10px;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 #playlist-menu button:hover {
   background-color: #1db954;
 }
 
-/* Overlay when menu is active */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 998;
+/* Show the playlist menu when the button is clicked */
+.playlist-menu.active {
+  left: 0; /* Slide in the menu */
 }
 
 /* Search Container */
@@ -75,7 +72,7 @@ body {
   padding: 12px;
   font-size: 16px;
   border: none;
-  border-radius: 5px 0 0 5px;
+  border-radius: 5px 0 0 5px;  /* Rounded left corners */
   outline: none;
   margin-right: -1px;
 }
@@ -95,7 +92,7 @@ body {
   background-color: #1ed760;
 }
 
-/* Music Banner */
+/* Music Banner and other styles */
 .music-banner {
   width: 100%;
   max-width: 400px;
@@ -149,6 +146,10 @@ body {
   border-radius: 50%;
   width: 50px;
   height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
 }
 
 .control-btn:hover {
@@ -167,39 +168,6 @@ body {
   background-color: #1ed760;
 }
 
-/* Progress Bar */
-.progress-container {
-  width: 100%;
-  max-width: 400px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-#progress-bar {
-  flex: 1;
-  height: 5px;
-  background-color: #444;
-  border-radius: 5px;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-#progress {
-  width: 0%;
-  height: 100%;
-  background-color: #1db954;
-  transition: width 0.1s linear;
-}
-
-#current-time,
-#duration {
-  font-size: 14px;
-  color: #bbb;
-}
-
-/* Secondary Controls */
 .secondary-controls {
   display: flex;
   justify-content: space-around;
@@ -207,21 +175,15 @@ body {
   margin-top: 10px;
 }
 
-button {
-  padding: 10px;
-  font-size: 18px;
-  border: none;
-  background-color: #444;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+/* Responsive Design */
+@media (max-width: 480px) {
+  .control-btn {
+    width: 40px;
+    height: 40px;
+  }
 
-button:hover {
-  background-color: #1db954;
-}
-
-button.active {
-  background-color: #1ed760;
+  .play {
+    width: 50px;
+    height: 50px;
+  }
 }

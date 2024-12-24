@@ -25,14 +25,14 @@ body {
   position: fixed;
   top: 10px;
   left: 10px;
-  z-index: 1000; /* Ensure it's above other elements */
+  z-index: 1000;
 }
 
 /* Playlist Menu */
 .playlist-menu {
   position: fixed;
   top: 0;
-  left: -250px; /* Initially hidden off-screen */
+  left: -250px;
   width: 250px;
   height: 100%;
   background-color: #222;
@@ -41,12 +41,12 @@ body {
   padding: 20px;
   border-radius: 0 10px 10px 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  transition: left 0.3s ease-in-out; /* Smooth slide animation */
+  transition: left 0.3s ease-in-out;
   z-index: 999;
 }
 
 .playlist-menu.active {
-  left: 0; /* Slide into view */
+  left: 0;
 }
 
 .playlist-menu button {
@@ -57,9 +57,7 @@ body {
   margin-bottom: 10px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
-  text-align: left;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
 .playlist-menu button:hover {
@@ -93,10 +91,6 @@ body {
   font-size: 18px;
 }
 
-#search-btn:hover {
-  background-color: #1ed760;
-}
-
 #suggestions-list {
   margin-top: 5px;
   list-style: none;
@@ -105,6 +99,17 @@ body {
   padding: 5px 10px;
   max-height: 150px;
   overflow-y: auto;
+}
+
+#suggestions-list li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #444;
+}
+
+#suggestions-list li:hover {
+  background-color: #1db954;
+  color: white;
 }
 
 /* Music Banner */
@@ -117,154 +122,6 @@ body {
   align-items: center;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  margin-top: 20px;
 }
 
-.cover img {
-  width: 100%;
-  max-width: 250px;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-.song-details {
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.song-details h2 {
-  font-size: 20px;
-  margin-bottom: 5px;
-}
-
-.song-details p {
-  font-size: 16px;
-  color: #bbb;
-}
-
-/* Progress Bar */
-.progress-container {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-  gap: 10px;
-}
-
-#progress-bar {
-  flex: 1;
-  height: 5px;
-  background-color: #444;
-  border-radius: 5px;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-#progress {
-  width: 0;
-  height: 100%;
-  background-color: #1db954;
-  transition: width 0.1s linear;
-}
-
-#current-time,
-#duration {
-  font-size: 14px;
-  color: #bbb;
-}
-
-/* Control Buttons */
-.controls {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  margin-top: 15px;
-}
-
-.control-btn {
-  font-size: 20px;
-  background: none;
-  color: white;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s;
-}
-
-.control-btn:hover {
-  background-color: #333;
-}
-
-.play {
-  width: 60px;
-  height: 60px;
-  font-size: 25px;
-  background-color: #1db954;
-  border-radius: 50%;
-  color: white;
-}
-
-.play:hover {
-  background-color: #1ed760;
-}
-
-/* Secondary Controls */
-.secondary-controls {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  margin-top: 15px;
-}
-
-.secondary-controls button {
-  background-color: #444;
-  color: white;
-  border: none;
-  padding: 10px;
-  font-size: 18px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.secondary-controls button:hover {
-  background-color: #1db954;
-}
-
-.secondary-controls button.active {
-  background-color: #1ed760;
-}
-
-/* Responsive Design */
-@media (max-width: 480px) {
-  #search-bar {
-    font-size: 14px;
-    padding: 10px;
-  }
-
-  .song-details h2 {
-    font-size: 18px;
-  }
-
-  .song-details p {
-    font-size: 14px;
-  }
-
-  .control-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-  }
-
-  .play {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-  }
-}
+/* Add other styling here */

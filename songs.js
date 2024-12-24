@@ -468,5 +468,12 @@ export const teluguSongs = [
   src: "music/telugu/Arabic Kuthu - Halamithi Habibo (From  Beast ) - Anirudh Ravichander, Jonita Gandhi.m4a",
   cover: "https://c.saavncdn.com/510/Beast-Tamil-2022-20220504184736-500x500.jpg",
 }, 
+  {
+  title: "Buttabomma - Telugu",
+  artist: "Armaan Malik, Thaman S",
+  src: "music/telugu/Buttabomma - Telugu - Armaan Malik, Thaman S.m4a",
+  cover: "https://c.saavncdn.com/517/Ala-Vaikunthapurramuloo-Telugu-2019-20200116144338-500x500.jpg",
+}
+
 
     ];

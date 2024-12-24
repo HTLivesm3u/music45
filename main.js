@@ -89,118 +89,63 @@ audio.addEventListener("timeupdate", () => {
 // Seek functionality
 progressBar.addEventListener("click", (e) => {
   const width = progressBar.clientWidth;
-  const clickX = e.offsetX;
-  const duration = audio.duration;
-
-  audio.currentTime = (clickX / width) * duration;
+  const clickPosition = e.offsetX;
+  const newTime = (clickPosition / width) * audio.duration;
+  audio.currentTime = newTime;
 });
 
-// Automatically play the next song when the current one ends
-audio.addEventListener("ended", () => {
-  if (isRepeat) {
-    audio.play(); // Replay the current song
-  } else {
-    playNextSong();
-  }
+// Shuffle functionality
+document.getElementById("shuffle-btn").addEventListener("click", () => {
+  isShuffle = !isShuffle;
+  document.getElementById("shuffle-btn").classList.toggle("active");
 });
 
-// Toggle the playlist menu visibility
+// Repeat functionality
+document.getElementById("repeat-btn").addEventListener("click", () => {
+  isRepeat = !isRepeat;
+  document.getElementById("repeat-btn").classList.toggle("active");
+  audio.loop = isRepeat; // Set loop behavior based on repeat state
+});
+
+// Download functionality
+downloadBtn.addEventListener("click", () => {
+  const link = document.createElement("a");
+  link.href = audio.src;
+  link.download = songTitle.textContent;
+  link.click();
+});
+
+// Playlist Menu Toggle
 menuBtn.addEventListener("click", () => {
   playlistMenu.classList.toggle("active");
 });
 
-// Close menu when clicking outside
-document.addEventListener("click", (event) => {
-  if (!playlistMenu.contains(event.target) && !menuBtn.contains(event.target)) {
-    playlistMenu.classList.remove("active");
-  }
-});
-
-// Add event listeners for buttons
-playPauseBtn.addEventListener("click", togglePlayPause);
-nextBtn.addEventListener("click", playNextSong);
-prevBtn.addEventListener("click", playPrevSong);
-
-// Shuffle and Repeat functionality
-document.getElementById("shuffle-btn").addEventListener("click", () => {
-  isShuffle = !isShuffle;
-  document.getElementById("shuffle-btn").classList.toggle("active", isShuffle);
-});
-
-document.getElementById("repeat-btn").addEventListener("click", () => {
-  isRepeat = !isRepeat;
-  document.getElementById("repeat-btn").classList.toggle("active", isRepeat);
-});
-
-// Update lock screen media information
-function updateMediaSession(song) {
-  if ('mediaSession' in navigator) {
-    navigator.mediaSession.metadata = new MediaMetadata({
-      title: song.title,
-      artist: song.artist,
-      artwork: [
-        { src: song.cover, sizes: '96x96', type: 'image/png' },
-        { src: song.cover, sizes: '128x128', type: 'image/png' },
-        { src: song.cover, sizes: '192x192', type: 'image/png' },
-        { src: song.cover, sizes: '256x256', type: 'image/png' },
-        { src: song.cover, sizes: '384x384', type: 'image/png' },
-        { src: song.cover, sizes: '512x512', type: 'image/png' },
-      ],
-    });
-
-    // Handle media session actions (play, pause, next, previous)
-    navigator.mediaSession.setActionHandler('play', () => {
-      audio.play();
-      isPlaying = true;
-      playPauseBtn.textContent = '⏸️';
-    });
-
-    navigator.mediaSession.setActionHandler('pause', () => {
-      audio.pause();
-      isPlaying = false;
-      playPauseBtn.textContent = '▶️';
-    });
-
-    navigator.mediaSession.setActionHandler('nexttrack', playNextSong);
-    navigator.mediaSession.setActionHandler('previoustrack', playPrevSong);
-  }
-}
-
-// Search Bar Functionality
-searchBar.addEventListener("input", () => {
-  const query = searchBar.value.toLowerCase();
-  suggestionsList.innerHTML = "";
-  if (query) {
-    const filteredSongs = currentSongs.filter((song) =>
-      song.title.toLowerCase().includes(query) ||
-      song.artist.toLowerCase().includes(query)
-    );
-    filteredSongs.forEach((song) => {
-      const li = document.createElement("li");
-      li.textContent = `${song.title} - ${song.artist}`;
-      li.addEventListener("click", () => {
-        loadSong(song);
-      });
-      suggestionsList.appendChild(li);
-    });
-  }
-});
-
-// Playlist Button functionality
+// Playlist buttons
 document.getElementById("hindi-btn").addEventListener("click", () => {
   currentSongs = hindiSongs;
+  currentSongIndex = 0;
   loadSong(currentSongs[currentSongIndex]);
   playlistMenu.classList.remove("active");
 });
 
 document.getElementById("english-btn").addEventListener("click", () => {
   currentSongs = englishSongs;
+  currentSongIndex = 0;
   loadSong(currentSongs[currentSongIndex]);
   playlistMenu.classList.remove("active");
 });
 
 document.getElementById("marathi-btn").addEventListener("click", () => {
   currentSongs = marathiSongs;
+  currentSongIndex = 0;
   loadSong(currentSongs[currentSongIndex]);
   playlistMenu.classList.remove("active");
 });
+
+// Initial song loading
+loadSong(currentSongs[currentSongIndex]);
+
+// Event listeners for buttons
+playPauseBtn.addEventListener("click", togglePlayPause);
+nextBtn.addEventListener("click", playNextSong);
+prevBtn.addEventListener("click", playPrevSong);

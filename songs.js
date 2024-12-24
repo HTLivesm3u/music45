@@ -488,7 +488,7 @@ export const teluguSongs = [
 }, {
   title: "Hey Rangule (From Amaran) (Telugu)",
   artist: "G. V. Prakash, Ramya Behara, Anurag Kulkarni, Ramajogayya Sastry",
-  src: "music/telugu/Hey Rangule (From Amaran) (Telugu) - G. V. Prakash, Ramya Behara, Anurag Kulkarni, Ramajogayya Sastry.m4a",
+  src: "music/telugu/Hey Rangule (From  Amaran ) (Telugu) - G. V. Prakash, Ramya Behara, Anurag Kulkarni, Ramajogayya Sastry.m4a",
   cover: "https://c.saavncdn.com/993/Amaran-Telugu-Tamil-2024-20241203174234-500x500.jpg",
 }, {
     "title": "Inkem Inkem Inkem Kaavaale",

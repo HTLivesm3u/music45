@@ -31,22 +31,23 @@ body {
 /* Playlist Menu */
 .playlist-menu {
   position: fixed;
-  top: 0;
-  left: -250px; /* Initially hidden off-screen */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the menu */
   width: 250px;
-  height: 100%;
+  height: 300px;
   background-color: #222;
   display: flex;
   flex-direction: column;
   padding: 20px;
-  border-radius: 0 10px 10px 0;
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  transition: left 0.3s ease-in-out; /* Smooth slide animation */
   z-index: 999;
+  display: none;
 }
 
 .playlist-menu.active {
-  left: 0; /* Slide into view */
+  display: flex; /* Show the menu when active */
 }
 
 .playlist-menu button {

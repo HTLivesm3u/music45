@@ -25,33 +25,29 @@ body {
   position: fixed;
   top: 10px;
   left: 10px;
-  z-index: 1000; /* Ensure it's above other elements */
+  z-index: 1000;
 }
 
 /* Playlist Menu */
 .playlist-menu {
   position: fixed;
-  top: 0;
-  left: 50%; /* Position it in the center */
-  transform: translateX(-50%); /* Offset to truly center */
+  top: 50%;
+  left: -250px;
+  transform: translateY(-50%);
   width: 250px;
-  height: 100%;
+  height: 300px;
   background-color: #222;
   display: flex;
   flex-direction: column;
   padding: 20px;
   border-radius: 0 10px 10px 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-  opacity: 0;
-  visibility: hidden;
+  transition: left 0.3s ease-in-out;
   z-index: 999;
 }
 
 .playlist-menu.active {
-  opacity: 1; /* Make it visible */
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
+  left: 0;
 }
 
 .playlist-menu button {

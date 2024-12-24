@@ -465,7 +465,7 @@ export const teluguSongs = [
     {
   title: "Arabic Kuthu - Halamithi Habibo (From Beast)",
   artist: "Anirudh Ravichander, Jonita Gandhi",
-  src: "music/telugu/Arabic Kuthu - Halamithi Habibo (From Beast) - Anirudh Ravichander, Jonita Gandhi.m4a",
+  src: "music/telugu/Arabic Kuthu - Halamithi Habibo (From  Beast ) - Anirudh Ravichander, Jonita Gandhi.m4a",
   cover: "https://c.saavncdn.com/510/Beast-Tamil-2022-20220504184736-500x500.jpg",
 }, 
 

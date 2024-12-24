@@ -443,13 +443,13 @@ export const marathiSongs = [
   {
     title: "Tula Japnar Aahe - From Khari Biscuit",
     artist: "Adarsh Shinde, Ronkini Gupta",
-    src: "music/marathi/Tula Japnar Aahe - From Khari Biscuit - Adarsh Shinde, Ronkini Gupta.m4a",
+    src: "music/marathi/Tula Japnar Aahe - From  Khari Biscuit  - Adarsh Shinde, Ronkini Gupta.m4a",
     cover: "https://c.saavncdn.com/307/Khari-Biscuit-Marathi-2019-20191023094044-500x500.jpg",
   },
   {
     title: "Ved Tujha (From Ved)",
     artist: "Ajay-Atul, Ajay Gogavale",
-    src: "music/marathi/Ved Tujha (From Ved) - Ajay-Atul, Ajay Gogavale.m4a",
+    src: "music/marathi/Ved Tujha (From  Ved ) - Ajay-Atul, Ajay Gogavale.m4a",
     cover: "https://c.saavncdn.com/287/Ved-Marathi-2022-20221217150739-500x500.jpg",
   },
   {

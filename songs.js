@@ -24,7 +24,7 @@ export const hindiSongs = [
     cover:"https://c.saavncdn.com/092/ANIMAL-Hindi-2023-20231124191036-500x500.jpg",
   },
   {
-    title:"Chaleya (from jawan", 
+    title:"Chaleya (from jawan)", 
     artist:" Anirudh Ravichander, Arijit Singh, Shilpa Rao, Kumaar", 
     src:"music/Chaleya (From  Jawan ) - Anirudh Ravichander, Arijit Singh, Shilpa Rao, Kumaar.m4a", 
     cover:"https://upload.wikimedia.org/wikipedia/en/c/c9/Chaleya_album_cover.jpg", 

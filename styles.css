@@ -31,7 +31,7 @@ body {
 /* Playlist Menu */
 .playlist-menu {
   position: fixed;
-  top: 10%;
+  top: 50%;
   left: -250px;
   transform: translateY(-50%);
   width: 250px;

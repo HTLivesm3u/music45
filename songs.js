@@ -208,19 +208,190 @@ export const englishSongs = [
     src:"music/english/Stereo Hearts (feat. Adam Levine) - Gym Class Heroes, Adam Levine.m4a",
     cover:"https://c.saavncdn.com/509/The-Papercut-Chronicles-II-English-2011-20200822053426-500x500.jpg",
   }, 
-    
+ 
+   
 ];
 
 export const marathiSongs = [
  {
     title:"Vazan",
     artist:"SAMBATA, Karan Kanchan",
-    src:"music/Vazan - Red Bull 64 Bars - SAMBATA, Karan Kanchan.m4a",
+    src:"music/marathi/Vazan - Red Bull 64 Bars - SAMBATA, Karan Kanchan.m4a",
     cover:"https://c.saavncdn.com/926/Vazan-Red-Bull-64-Bars-Marathi-2024-20241015220101-500x500.jpg",
   },{
     title:"Pinnak",
     artist:"SAMBATA",
-    src:"music/Pinnak - SAMBATA.m4a",
+    src:"music/marathi/Pinnak - SAMBATA.m4a",
     cover:"https://c.saavncdn.com/965/Pinnak-Marathi-2022-20240601180152-500x500.jpg",
   },
+  {
+    title: "Aai",                                         // Song title
+    artist: "Pravin Koli, Yogita Koli, Deeya Wadkar, Myra Vaikul, Ankita Raut", // Artists
+    src: "music/marathi/Aai - Pravin Koli, Yogita Koli, Deeya Wadkar, Myra Vaikul, Ankita Raut.m4a",  // Audio file path
+    cover: "path/to/cover.jpg"                            // Cover image path (replace with the actual path)
+  },
+  {
+    title: "Baharla Ha Madhumas",
+    artist: "Ajay-Atul, Ajay Gogavale, Shreya Ghoshal",
+    src: "music/marathi/Baharla Ha Madhumas - Ajay-Atul, Ajay Gogavale, Shreya Ghoshal.m4a",
+    cover: "path/to/cover.jpg"
+  },
+  {
+    title: "Chand Tu Nabhatla",
+    artist: "Swapnil Bandodkar",
+    src: "music/marathi/Chand Tu Nabhatla - Swapnil Bandodkar.m4a",
+    cover: "path/to/cover.jpg"
+  },
+  {
+    title: "Deva Tujhya Gaabhaaryaalaa",
+    artist: "Adarsh Shinde, Kirti Killedar, Anandi Joshi",
+    src: "music/marathi/Deva Tujhya Gaabhaaryaalaa - Adarsh Shinde, Kirti Killedar, Anandi Joshi.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Dewak Kalji Re",
+    artist: "Ajay Gogavale",
+    src: "music/marathi/Dewak Kalji Re - Ajay Gogavale.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Dhaga Dhaga",
+    artist: "Harsh Wavre, Anandi Joshi",
+    src: "music/marathi/Dhaga Dhaga - harsh wavre, Anandi Joshi.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Ekati Ekati",
+    artist: "Shubhankar Kulkarni, Anjali Kulkarni",
+    src: "music/marathi/Ekati Ekati (feat Shubhankar Kulkarni Anjali Kulkarni).mp3",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Govyachya Kinaryav",
+    artist: "Shubhangii Kedar, Pravin Koli, Rajneesh Patel",
+    src: "music/marathi/Govyachya Kinaryav - Shubhangii Kedar, Pravin Koli, Rajneesh Patel.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Gulabachi Kali",
+    artist: "Vaishali Samant, Urmila Dhangar, Amitraj",
+    src: "music/marathi/Gulabachi Kali - Vaishali Samant, Urmila Dhangar, Amitraj.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Haravali Pakhare",
+    artist: "Shekhar Ravjiani",
+    src: "music/marathi/Haravali Pakhare Song From BP ( Balak-Palak ) By Shekhar Ravjiani [HD].mp3",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Hich Amuchi Praarthana",
+    artist: "Mugdha Vaishampain, Ajit Parab",
+    src: "music/marathi/Hich Amuchi Praarthana - Mugdha Vaishampain, Ajit Parab.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Hrudayat Vaje Something",
+    artist: "Vidhit Patankar",
+    src: "music/marathi/Hrudayat Vaje Something - Vidhit Patankar.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Jara Jara",
+    artist: "Hrishikesh Ranade, Aarya Ambekar",
+    src: "music/marathi/Jara Jara - Hrishikesh Ranade, Aarya Ambekar.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Jau De Na Va",
+    artist: "Jayas Kumar, AV Prafullachandra",
+    src: "music/marathi/Jau De Na Va - Jayas Kumar, AV Prafullachandra.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Jeev Rangla",
+    artist: "Ajay-Atul, Hariharan, Shreya Ghoshal",
+    src: "music/marathi/Jeev Rangla - Ajay-Atul, Hariharan, Shreya Ghoshal.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Ka Kalena",
+    artist: "Bela Shende, Swapnil Bandodkar",
+    src: "music/marathi/Ka Kalena - Bela Shende, Swapnil Bandodkar.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Kaakan",
+    artist: "Shankar Mahadevan, Neha Rajpal",
+    src: "music/marathi/Kaakan - Shankar Mahadevan, Neha Rajpal.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Kadhi Tu (From Mumbai Pune Mumbai)",
+    artist: "Avinash Vishwajeet, Hrishikesh Ranade",
+    src: "music/marathi/Kadhi Tu (From Mumbai Pune Mumbai) - Avinash Vishwajeet, Hrishikesh Ranade.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Kitida Navyane",
+    artist: "Aarya Ambekar, Mandar Aapte",
+    src: "music/marathi/Kitida Navyane - Aarya Ambekar, Mandar Aapte.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Maagu Kasa Mi",
+    artist: "Ajay Gogavale",
+    src: "music/marathi/Maagu Kasa Mi - Ajay Gogavale.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Maai Bappa Vithala",
+    artist: "Ajay Gogavale, Atul Gogavale, Nitin Ugalmugale",
+    src: "music/marathi/Maai Bappa Vithala - Ajay Gogavale, Atul Gogavale, Nitin Ugalmugale.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Majhya Raja Ra",
+    artist: "Adarsh Shinde, Kshitij Patwardhan",
+    src: "music/marathi/Majhya Raja Ra - Adarsh Shinde, Kshitij Patwardhan.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Mala Ved Laagale - Duet",
+    artist: "Swapnil Bandodkar, Ketaki Mategaonkar",
+    src: "music/marathi/Mala Ved Laagale - Duet - Swapnil Bandodkar, Ketaki Mategaonkar.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Mauli Mauli",
+    artist: "Ajay Gogavale",
+    src: "music/marathi/Mauli Mauli - Ajay Gogavale.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Mitwaa",
+    artist: "Shankar Mahadevan, Jaanvee Prabhu Arora",
+    src: "music/marathi/Mitwaa - Shankar Mahadevan, Jaanvee Prabhu Arora.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Parikatha",
+    artist: "Kaushik Deshpande",
+    src: "music/marathi/Parikatha - Kaushik Deshpande.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  
+  
+
+  
+  
+  
+  
+    
+  
+  
+    
+
+  
+  
 ];

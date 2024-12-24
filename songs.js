@@ -263,7 +263,7 @@ export const marathiSongs = [
   {
     title: "Ekati Ekati",
     artist: "Shubhankar Kulkarni, Anjali Kulkarni",
-    src: "music/marathi/Ekati Ekati (feat Shubhankar Kulkarni Anjali Kulkarni).mp3",
+    src: "music/marathi/Ekati Ekati (feat  Shubhankar Kulkarni   Anjali Kulkarni).mp3",
     cover: "https://c.saavncdn.com/993/Chintoo-Marathi-2011-500x500.jpg",
   },
   {

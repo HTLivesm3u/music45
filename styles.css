@@ -1,47 +1,18 @@
-/* General Styles */
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #121212;
   color: white;
-  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10px;
-}
-
-/* Search Container */
-.search-container {
-  width: 100%;
-  max-width: 400px;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;  /* Aligns the input and button horizontally */
-}
-
-#search-bar {
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px 0 0 5px;  /* Rounded left corners */
-  outline: none;
-  margin-right: -1px;  /* Align with button */
-}
-
-#search-btn {
-  padding: 12px 15px;
-  font-size: 16px;
-  border: none;
-  border-radius: 0 5px 5px 0;  /* Rounded right corners */
-  cursor: pointer;
-  background-color: #1db954;
-  color: white;
-  width: 50px; /* Adjust width to match the search bar height */
-}
-
-#search-btn:hover {
-  background-color: #1ed760;
 }
 
 /* Menu Button */
@@ -51,70 +22,134 @@ body {
   color: white;
   border: none;
   cursor: pointer;
-  padding: 10px;
   position: fixed;
-  top: 10px; /* Position at the top */
-  left: 10px; /* Position at the left */
-  z-index: 1000; /* Make sure it appears on top of other elements */
+  top: 10px;
+  left: 10px;
+  z-index: 1000; /* Ensure it's above other elements */
 }
 
 /* Playlist Menu */
 .playlist-menu {
-  display: none; /* Hidden by default */
-  flex-direction: column;
-  align-items: center;
   position: fixed;
   top: 0;
-  left: -250px; /* Initially offscreen */
+  left: -250px; /* Initially hidden off-screen */
   width: 250px;
   height: 100%;
   background-color: #222;
+  display: flex;
+  flex-direction: column;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: left 0.3s ease-in-out; /* Slide effect */
+  border-radius: 0 10px 10px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: left 0.3s ease-in-out; /* Smooth slide animation */
+  z-index: 999;
 }
 
 .playlist-menu.active {
-  left: 0; /* Move the menu into view */
+  left: 0; /* Slide into view */
 }
 
-#playlist-menu button {
+.playlist-menu button {
   background-color: #444;
   color: white;
   border: none;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 10px;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
+  text-align: left;
   transition: background-color 0.3s ease;
 }
 
-#playlist-menu button:hover {
+.playlist-menu button:hover {
   background-color: #1db954;
+}
+
+/* Search Bar */
+.search-container {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+#search-bar {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+#search-btn {
+  width: 50px;
+  background-color: #1db954;
+  border: none;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#search-btn:hover {
+  background-color: #1ed760;
+}
+
+#suggestions-list {
+  margin-top: 5px;
+  list-style: none;
+  background-color: #333;
+  border-radius: 5px;
+  padding: 5px 10px;
+  max-height: 150px;
+  overflow-y: auto;
 }
 
 /* Music Banner */
 .music-banner {
   width: 100%;
   max-width: 400px;
+  background-color: #222;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #222;
-  padding: 15px;
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+}
+
+.cover img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.song-details {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.song-details h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.song-details p {
+  font-size: 16px;
+  color: #bbb;
 }
 
 /* Progress Bar */
 .progress-container {
   width: 100%;
-  max-width: 400px;
   display: flex;
   align-items: center;
+  margin-top: 10px;
   gap: 10px;
-  margin-top: 15px;
 }
 
 #progress-bar {
@@ -122,13 +157,13 @@ body {
   height: 5px;
   background-color: #444;
   border-radius: 5px;
+  position: relative;
   overflow: hidden;
   cursor: pointer;
-  position: relative;
 }
 
 #progress {
-  width: 0%;
+  width: 0;
   height: 100%;
   background-color: #1db954;
   transition: width 0.1s linear;
@@ -140,23 +175,22 @@ body {
   color: #bbb;
 }
 
-/* Controls */
+/* Control Buttons */
 .controls {
   display: flex;
   justify-content: space-around;
   width: 100%;
+  margin-top: 15px;
 }
 
 .control-btn {
   font-size: 20px;
   background: none;
-  border: none;
   color: white;
+  border: none;
   cursor: pointer;
   padding: 10px;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -168,11 +202,12 @@ body {
 }
 
 .play {
-  background-color: #1db954;
-  color: white;
   width: 60px;
   height: 60px;
+  font-size: 25px;
+  background-color: #1db954;
   border-radius: 50%;
+  color: white;
 }
 
 .play:hover {
@@ -184,25 +219,25 @@ body {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
-button {
-  padding: 10px;
-  font-size: 18px;
-  border: none;
+.secondary-controls button {
   background-color: #444;
   color: white;
+  border: none;
+  padding: 10px;
+  font-size: 18px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-button:hover {
+.secondary-controls button:hover {
   background-color: #1db954;
 }
 
-button.active {
+.secondary-controls button.active {
   background-color: #1ed760;
 }
 
@@ -210,11 +245,7 @@ button.active {
 @media (max-width: 480px) {
   #search-bar {
     font-size: 14px;
-  }
-
-  #search-btn {
-    font-size: 14px;
-    padding: 8px 12px;
+    padding: 10px;
   }
 
   .song-details h2 {
@@ -228,11 +259,12 @@ button.active {
   .control-btn {
     width: 40px;
     height: 40px;
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .play {
     width: 50px;
     height: 50px;
+    font-size: 20px;
   }
 }

@@ -1,5 +1,5 @@
 // script.js
-import { hindiSongs, englishSongs, marathiSongs } from './songs.js';
+import { hindiSongs, englishSongs, marathiSongs, teluguSongs } from './songs.js';
 
 let currentSongIndex = 0;
 let isPlaying = false;
@@ -220,6 +220,15 @@ document.getElementById("english-btn").addEventListener("click", () => {
 
 document.getElementById("marathi-btn").addEventListener("click", () => {
   currentSongs = marathiSongs;
+  currentSongIndex = 0;
+  loadSong(currentSongs[currentSongIndex]);
+  isPlaying = true;
+  playPauseBtn.textContent = "⏸️";
+  audio.play();
+  playlistMenu.classList.remove("active");
+});
+document.getElementById("telugu-btn").addEventListener("click", () => {
+  currentSongs = teluguSongs;
   currentSongIndex = 0;
   loadSong(currentSongs[currentSongIndex]);
   isPlaying = true;

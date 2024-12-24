@@ -213,7 +213,7 @@ export const englishSongs = [
 ];
 
 export const marathiSongs = [
- {
+  {
     title:"Vazan",
     artist:"SAMBATA, Karan Kanchan",
     src:"music/marathi/Vazan - Red Bull 64 Bars - SAMBATA, Karan Kanchan.m4a",
@@ -380,18 +380,70 @@ export const marathiSongs = [
     src: "music/marathi/Parikatha - Kaushik Deshpande.m4a",
     cover: "https://c.saavncdn.com/104/Ti-Saddhya-Kay-Karte-Marathi-2016-500x500.jpg",
   },
-  
-  
-
-  
-  
-  
-  
-    
-  
-  
-    
-
-  
+  {
+    title: "Radha Hi Bawari",
+    artist: "Swapnil Bandodkar",
+    src: "music/marathi/Radha Hi Bawari - Swapnil Bandodkar.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Raja Aala",
+    artist: "Devdutta Manisha Baji, Avadhoot Gupte",
+    src: "music/marathi/Raja Aala - Devdutta Manisha Baji, Avadhoot Gupte.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Saang Na",
+    artist: "Shekhar Ravjiani",
+    src: "music/marathi/Saang Na - Shekhar Ravjiani.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Saavar Re Mana",
+    artist: "Jaanvee Prabhu Arora, Swapnil Bandodkar",
+    src: "music/marathi/Saavar Re Mana - Jaanvee Prabhu Arora, Swapnil Bandodkar.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Sajiri Gojiri",
+    artist: "Sahil Kulkarni, Rupali Moghe",
+    src: "music/marathi/Sajiri Gojiri - Sahil Kulkarni, Rupali Moghe.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Sar Sukhachi Shravani",
+    artist: "Abhijeet Sawant, Bela Shende",
+    src: "music/marathi/Sar Sukhachi Shravani - Abhijeet Sawant, Bela Shende.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Sukh Kalale",
+    artist: "Ajay-Atul, Shreya Ghoshal",
+    src: "music/marathi/Sukh Kalale - Ajay-Atul, Shreya Ghoshal.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Taambdi Chaamdi",
+    artist: "Kratex, Shreyas",
+    src: "music/marathi/Taambdi Chaamdi - Kratex, Shreyas.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Tik Tik Vajate Dokyaat - Duet Version",
+    artist: "Sonu Nigam, Sayali Pankaj",
+    src: "music/marathi/Tik Tik Vajate Dokyaat - Duet Version - Sonu Nigam, Sayali Pankaj.m4a",
+    cover: "path/to/cover.jpg",
+  },
+  {
+    title: "Tola Tola",
+    artist: "Amitraj, Bela Shende",
+    src: "music/marathi/Tola Tola - Amitraj, Bela Shende.m4a",
+    cover: "path/to/cover.jpg",
+  },
   
 ];
+
+export const teluguSongs = [
+    
+
+    ];

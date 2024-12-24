@@ -1,4 +1,4 @@
-Kuthuexport const hindiSongs = [
+export const hindiSongs = [
   {
     title: "Aankhon Mein Doob Jaane Ko",
     artist: "THE 9TEEN, Sandesh Shandilya",
@@ -467,6 +467,6 @@ export const teluguSongs = [
   artist: "Anirudh Ravichander, Jonita Gandhi",
   src: "music/telugu/Arabic Kuthu - Halamithi Habibo (From Beast) - Anirudh Ravichander, Jonita Gandhi.m4a",
   cover: "https://c.saavncdn.com/510/Beast-Tamil-2022-20220504184736-500x500.jpg",
-}
+}, 
 
     ];

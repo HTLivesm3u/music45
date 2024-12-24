@@ -473,7 +473,27 @@ export const teluguSongs = [
   artist: "Armaan Malik, Thaman S",
   src: "music/telugu/Buttabomma - Telugu - Armaan Malik, Thaman S.m4a",
   cover: "https://c.saavncdn.com/517/Ala-Vaikunthapurramuloo-Telugu-2019-20200116144338-500x500.jpg",
-}
-
+}, 
+{
+  title: "Chuttamalle (From Devara Part 1)",
+  artist: "Shilpa Rao, Anirudh Ravichander, Ramajogayya Sastry",
+  src: "music/telugu/Chuttamalle (From Devara Part 1) - Shilpa Rao, Anirudh Ravichander, Ramajogayya Sastry.m4a",
+  cover: "https://c.saavncdn.com/411/Chuttamalle-From-Devara-Part-1-Telugu-2024-20240805181008-500x500.jpg",
+}, 
+{
+  title: "Crazy Feeling",
+  artist: "Prudhvi Chandra",
+  src: "music/telugu/Crazy Feeling - Prudhvi Chandra.m4a",
+  cover: "https://c.saavncdn.com/027/Nenu-Sailaja-Telugu-2015-500x500.jpg",
+}, {
+  title: "Hey Rangule (From Amaran) (Telugu)",
+  artist: "G. V. Prakash, Ramya Behara, Anurag Kulkarni, Ramajogayya Sastry",
+  src: "music/telugu/Hey Rangule (From Amaran) (Telugu) - G. V. Prakash, Ramya Behara, Anurag Kulkarni, Ramajogayya Sastry.m4a",
+  cover: "https://c.saavncdn.com/993/Amaran-Telugu-Tamil-2024-20241203174234-500x500.jpg",
+}, {
+    "title": "Inkem Inkem Inkem Kaavaale",
+    "artist": "Sid Sriram",
+    "src": "music/telugu/Inkem Inkem Inkem Kaavaale - Sid Sriram.m4a",
+    "cover": "https://c.saavncdn.com/237/Geetha-Govindam-Telugu-2018-20180921-500x500.jpg"}, 
 
     ];

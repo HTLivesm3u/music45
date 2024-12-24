@@ -98,16 +98,6 @@ body {
   background-color: #1ed760;
 }
 
-/* #suggestions-list {
-  margin-top: 5px;
-  list-style: none;
-  background-color: #333;
-  border-radius: 5px;
-  padding: 5px 10px;
-  max-height: 150px;
-  overflow-y: auto;
-} */
-
 /* Suggestions List */
 #suggestions-list {
   list-style: none;
@@ -267,6 +257,23 @@ body {
 
 /* Responsive Design */
 @media (max-width: 480px) {
+  body {
+    padding: 0;
+  }
+
+  .playlist-menu {
+    top: 70%;  /* Move the playlist menu further down */
+    left: -100%; /* Make the menu fully hidden offscreen */
+  }
+
+  .playlist-menu.active {
+    left: 0; /* Ensure it appears when activated */
+  }
+
+  .search-container {
+    max-width: 90%; /* Ensure search bar takes more width on mobile */
+  }
+
   #search-bar {
     font-size: 14px;
     padding: 10px;

@@ -13,6 +13,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 10px;
+  position: relative; /* Ensures child elements are correctly positioned */
 }
 
 /* Menu Button */
@@ -23,9 +24,10 @@ body {
   border: none;
   cursor: pointer;
   position: fixed;
-  top: 10px;
-  left: 10px;
-  z-index: 1000;
+  top: 10px; /* Keep the button a bit from the top */
+  left: 10px; /* Keep the button to the left */
+  z-index: 1000; /* Make sure it's above other elements */
+  padding: 15px; /* Ensure it's large enough */
 }
 
 /* Playlist Menu */
@@ -43,14 +45,13 @@ body {
   border-radius: 0 10px 10px 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   transition: left 0.3s ease-in-out;
-  z-index: 999;
+  z-index: 999; /* Ensure the menu is below the button */
 }
 
 .playlist-menu.active {
-  transform: translateX(-0%) translateY(-50%);
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
-
 .playlist-menu button {
   background-color: #444;
   color: white;
@@ -63,11 +64,6 @@ body {
   text-align: left;
   transition: background-color 0.3s ease;
 }
-
-.playlist-menu button:hover {
-  background-color: #1db954;
-}
-
 /* Search Bar */
 .search-container {
   width: 100%;
@@ -103,7 +99,7 @@ body {
 #suggestions-list {
   list-style: none;
   padding: 0;
-  margin: 30px 0 0; /* Increased margin-top to move the list further down */
+  margin: 30px 0 0;
   background-color: #1c1c1c;
   border: 1px solid #444;
   border-radius: 5px;
@@ -262,17 +258,29 @@ body {
     padding: 0;
   }
 
+  /* Adjust the position of the playlist menu for mobile */
   .playlist-menu {
-    top: 70%;  /* Move the playlist menu further down */
-    left: -100%; /* Make the menu fully hidden offscreen */
+    top: 50%;
+    left: -100%;
   }
 
   .playlist-menu.active {
-    left: 0; /* Ensure it appears when activated */
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
   }
 
+  /* Adjust the menu button to be visible on mobile */
+  .menu-btn {
+    left: 10px; /* Keep it to the left side */
+    top: 10px; /* Keep a small distance from the top */
+    font-size: 35px; /* Larger button size for better visibility */
+    padding: 15px; /* Increase padding */
+    z-index: 1001; /* Ensure it's above all elements */
+  }
+
+  /* Adjust layout for small screens */
   .search-container {
-    max-width: 90%; /* Ensure search bar takes more width on mobile */
+    max-width: 90%;
   }
 
   #search-bar {

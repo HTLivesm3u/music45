@@ -48,6 +48,13 @@ export const hindiSongs = [
     cover:"https://c.saavncdn.com/436/Husn-Hindi-2023-20231129054140-500x500.jpg",
   },
   {
+    title: "Ishq Hai",
+    artist: "Romy, Amarabha Banerjee, Varun Jain, Madhubanti Bagchi",
+    src: "music/hindi/Ishq Hai - Anurag Saikia, Raj Shekhar, Romy, Amarabha Banerjee, Varun Jain, Madhubanti Bagchi, Mismatched - Cast.m4a",
+    cover: "https://c.saavncdn.com/839/Mismatched-Season-3-Soundtrack-from-the-Netflix-Series-Hindi-2024-20241217204803-500x500.jpg", 
+}, 
+
+  {
     title:"Jo Tum Mere Ho",
     artist:" Anuv Jain",
     src:"music/hindi/Jo Tum Mere Ho - Anuv Jain.m4a",

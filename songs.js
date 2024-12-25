@@ -12,6 +12,12 @@ export const hindiSongs = [
     cover:"https://c.saavncdn.com/994/Tamasha-Hindi-2015-500x500.jpg",
   },
   {
+    title: "Akhiyaan Gulaab",
+    artist: "Mitraz",
+    src: "music/hindi/Akhiyaan Gulaab (From  Teri Baaton Mein Aisa Uljha Jiya ) - Mitraz.m4a",
+    cover: "https://c.saavncdn.com/214/Teri-Baaton-Mein-Aisa-Uljha-Jiya-Hindi-2024-20240205151011-500x500.jpg"
+}, 
+  {
     title:"Apna Bana Le",
     artist:"Sachin-Jigar, Arijit Singh, Amitabh Bhattacharya",
     src:"music/hindi/Apna Bana Le - Sachin-Jigar, Arijit Singh, Amitabh Bhattacharya.m4a",
@@ -120,6 +126,7 @@ export const hindiSongs = [
     src:"music/hindi/Tujhe Kitna Chahne Lage (From  Kabir Singh ) - Arijit Singh, Mithoon.m4a",
     cover:"https://c.saavncdn.com/763/Tujhe-Kitna-Chahne-Lage-From-Kabir-Singh--Hindi-2019-20190531075012-500x500.jpg",
   },
+  
 ];
 
 export const englishSongs = [

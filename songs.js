@@ -126,6 +126,12 @@ export const hindiSongs = [
     src:"music/hindi/Tujhe Kitna Chahne Lage (From  Kabir Singh ) - Arijit Singh, Mithoon.m4a",
     cover:"https://c.saavncdn.com/763/Tujhe-Kitna-Chahne-Lage-From-Kabir-Singh--Hindi-2019-20190531075012-500x500.jpg",
   },
+  {
+    title: "Tum Se",
+    artist: "Raghav Chaitanya, Varun Jain, Sachin-Jigar, Indraneel",
+    src: "music/hindi/Tum Se - Raghav Chaitanya, Varun Jain, Sachin-Jigar, Indraneel.m4a",
+    cover: "https://c.saavncdn.com/214/Teri-Baaton-Mein-Aisa-Uljha-Jiya-Hindi-2024-20240205151011-500x500.jpg"
+}, 
   
 ];
 

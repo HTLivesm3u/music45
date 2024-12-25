@@ -193,6 +193,12 @@ export const englishSongs = [
     src:"music/english/Heat Waves - Glass Animals.m4a",
     cover:"https://c.saavncdn.com/173/Dreamland-English-2020-20200806000748-500x500.jpg",
   },{
+    "title": "I Wanna Be Yours",
+    "artist": "Arctic Monkeys",
+    "src": "music/english/I Wanna Be Yours - Arctic Monkeys.m4a",
+    "cover": "https://c.saavncdn.com/795/AM-English-2013-20240402165515-500x500.jpg", 
+}, 
+{
     title:"In The Stars",
     artist:"Benson Boone",
     src:"music/english/In The Stars - Benson Boone.m4a",

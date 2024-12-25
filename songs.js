@@ -477,7 +477,7 @@ export const teluguSongs = [
 {
   title: "Chuttamalle (From Devara Part 1)",
   artist: "Shilpa Rao, Anirudh Ravichander, Ramajogayya Sastry",
-  src: "music/telugu/Chuttamalle (From Devara Part 1) - Shilpa Rao, Anirudh Ravichander, Ramajogayya Sastry.m4a",
+  src: "music/telugu/Chuttamalle (From  Devara Part 1 ) - Shilpa Rao, Anirudh Ravichander, Ramajogayya Sastry.m4a",
   cover: "https://c.saavncdn.com/411/Chuttamalle-From-Devara-Part-1-Telugu-2024-20240805181008-500x500.jpg",
 }, 
 {

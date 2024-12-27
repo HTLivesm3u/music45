@@ -443,6 +443,12 @@ export const marathiSongs = [
     cover: "https://a10.gaanacdn.com/gn_img/albums/Rz4W8vKxD5/z4W85D90bx/size_m.webp",
   },
   {
+    title:"Shivba Raja",
+    artist:"Avadhoot Gandhi, Devdutta Manisha Baji",
+    src:"music/marathi/Shivba Raja - From  Sher Shivraj  - Avadhoot Gandhi, Devdutta Manisha Baji.m4a",
+    cover:"https://c.saavncdn.com/180/Sher-Shivraj-Marathi-2022-20220422095918-500x500.jpg",
+  },
+  {
     title: "Sukh Kalale",
     artist: "Ajay-Atul, Shreya Ghoshal",
     src: "music/marathi/Sukh Kalale - Ajay-Atul, Shreya Ghoshal.m4a",

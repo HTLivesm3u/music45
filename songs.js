@@ -12,6 +12,12 @@ export const hindiSongs = [
     cover:"https://c.saavncdn.com/994/Tamasha-Hindi-2015-500x500.jpg",
   },
   {
+    title: "Akhiyaan Gulaab",
+    artist: "Mitraz",
+    src: "music/hindi/Akhiyaan Gulaab (From  Teri Baaton Mein Aisa Uljha Jiya ) - Mitraz.m4a",
+    cover: "https://c.saavncdn.com/214/Teri-Baaton-Mein-Aisa-Uljha-Jiya-Hindi-2024-20240205151011-500x500.jpg"
+}, 
+  {
     title:"Apna Bana Le",
     artist:"Sachin-Jigar, Arijit Singh, Amitabh Bhattacharya",
     src:"music/hindi/Apna Bana Le - Sachin-Jigar, Arijit Singh, Amitabh Bhattacharya.m4a",
@@ -47,6 +53,13 @@ export const hindiSongs = [
     src:"music/hindi/Husn - Anuv Jain.m4a",
     cover:"https://c.saavncdn.com/436/Husn-Hindi-2023-20231129054140-500x500.jpg",
   },
+  {
+    title: "Ishq Hai",
+    artist: "Romy, Amarabha Banerjee, Varun Jain, Madhubanti Bagchi",
+    src: "music/hindi/Ishq Hai - Anurag Saikia, Raj Shekhar, Romy, Amarabha Banerjee, Varun Jain, Madhubanti Bagchi, Mismatched - Cast.m4a",
+    cover: "https://c.saavncdn.com/839/Mismatched-Season-3-Soundtrack-from-the-Netflix-Series-Hindi-2024-20241217204803-500x500.jpg", 
+}, 
+
   {
     title:"Jo Tum Mere Ho",
     artist:" Anuv Jain",
@@ -113,6 +126,13 @@ export const hindiSongs = [
     src:"music/hindi/Tujhe Kitna Chahne Lage (From  Kabir Singh ) - Arijit Singh, Mithoon.m4a",
     cover:"https://c.saavncdn.com/763/Tujhe-Kitna-Chahne-Lage-From-Kabir-Singh--Hindi-2019-20190531075012-500x500.jpg",
   },
+  {
+    title: "Tum Se",
+    artist: "Raghav Chaitanya, Varun Jain, Sachin-Jigar, Indraneel",
+    src: "music/hindi/Tum Se - Raghav Chaitanya, Varun Jain, Sachin-Jigar, Indraneel.m4a",
+    cover: "https://c.saavncdn.com/214/Teri-Baaton-Mein-Aisa-Uljha-Jiya-Hindi-2024-20240205151011-500x500.jpg"
+}, 
+  
 ];
 
 export const englishSongs = [
@@ -173,6 +193,12 @@ export const englishSongs = [
     src:"music/english/Heat Waves - Glass Animals.m4a",
     cover:"https://c.saavncdn.com/173/Dreamland-English-2020-20200806000748-500x500.jpg",
   },{
+    "title": "I Wanna Be Yours",
+    "artist": "Arctic Monkeys",
+    "src": "music/english/I Wanna Be Yours - Arctic Monkeys.m4a",
+    "cover": "https://c.saavncdn.com/795/AM-English-2013-20240402165515-500x500.jpg", 
+}, 
+{
     title:"In The Stars",
     artist:"Benson Boone",
     src:"music/english/In The Stars - Benson Boone.m4a",
@@ -417,6 +443,12 @@ export const marathiSongs = [
     cover: "https://a10.gaanacdn.com/gn_img/albums/Rz4W8vKxD5/z4W85D90bx/size_m.webp",
   },
   {
+    title:"Shivba Raja",
+    artist:"Avadhoot Gandhi, Devdutta Manisha Baji",
+    src:"music/marathi/Shivba Raja - From  Sher Shivraj  - Avadhoot Gandhi, Devdutta Manisha Baji.m4a",
+    cover:"https://c.saavncdn.com/180/Sher-Shivraj-Marathi-2022-20220422095918-500x500.jpg",
+  },
+  {
     title: "Sukh Kalale",
     artist: "Ajay-Atul, Shreya Ghoshal",
     src: "music/marathi/Sukh Kalale - Ajay-Atul, Shreya Ghoshal.m4a",
@@ -443,13 +475,13 @@ export const marathiSongs = [
   {
     title: "Tula Japnar Aahe - From Khari Biscuit",
     artist: "Adarsh Shinde, Ronkini Gupta",
-    src: "music/marathi/Tula Japnar Aahe - From Khari Biscuit - Adarsh Shinde, Ronkini Gupta.m4a",
+    src: "music/marathi/Tula Japnar Aahe - From  Khari Biscuit  - Adarsh Shinde, Ronkini Gupta.m4a",
     cover: "https://c.saavncdn.com/307/Khari-Biscuit-Marathi-2019-20191023094044-500x500.jpg",
   },
   {
     title: "Ved Tujha (From Ved)",
     artist: "Ajay-Atul, Ajay Gogavale",
-    src: "music/marathi/Ved Tujha (From Ved) - Ajay-Atul, Ajay Gogavale.m4a",
+    src: "music/marathi/Ved Tujha (From  Ved ) - Ajay-Atul, Ajay Gogavale.m4a",
     cover: "https://c.saavncdn.com/287/Ved-Marathi-2022-20221217150739-500x500.jpg",
   },
   {
@@ -462,5 +494,38 @@ export const marathiSongs = [
 ];
 
 export const teluguSongs = [
-    
+    {
+  title: "Arabic Kuthu - Halamithi Habibo (From Beast)",
+  artist: "Anirudh Ravichander, Jonita Gandhi",
+  src: "music/telugu/Arabic Kuthu - Halamithi Habibo (From  Beast ) - Anirudh Ravichander, Jonita Gandhi.m4a",
+  cover: "https://c.saavncdn.com/510/Beast-Tamil-2022-20220504184736-500x500.jpg",
+}, 
+  {
+  title: "Buttabomma - Telugu",
+  artist: "Armaan Malik, Thaman S",
+  src: "music/telugu/Buttabomma - Telugu - Armaan Malik, Thaman S.m4a",
+  cover: "https://c.saavncdn.com/517/Ala-Vaikunthapurramuloo-Telugu-2019-20200116144338-500x500.jpg",
+}, 
+{
+  title: "Chuttamalle (From Devara Part 1)",
+  artist: "Shilpa Rao, Anirudh Ravichander, Ramajogayya Sastry",
+  src: "music/telugu/Chuttamalle (From  Devara Part 1 ) - Shilpa Rao, Anirudh Ravichander, Ramajogayya Sastry.m4a",
+  cover: "https://c.saavncdn.com/411/Chuttamalle-From-Devara-Part-1-Telugu-2024-20240805181008-500x500.jpg",
+}, 
+{
+  title: "Crazy Feeling",
+  artist: "Prudhvi Chandra",
+  src: "music/telugu/Crazy Feeling - Prudhvi Chandra.m4a",
+  cover: "https://c.saavncdn.com/027/Nenu-Sailaja-Telugu-2015-500x500.jpg",
+}, {
+  title: "Hey Rangule (From Amaran) (Telugu)",
+  artist: "G. V. Prakash, Ramya Behara, Anurag Kulkarni, Ramajogayya Sastry",
+  src: "music/telugu/Hey Rangule (From  Amaran ) (Telugu) - G. V. Prakash, Ramya Behara, Anurag Kulkarni, Ramajogayya Sastry.m4a",
+  cover: "https://c.saavncdn.com/993/Amaran-Telugu-Tamil-2024-20241203174234-500x500.jpg",
+}, {
+    "title": "Inkem Inkem Inkem Kaavaale",
+    "artist": "Sid Sriram",
+    "src": "music/telugu/Inkem Inkem Inkem Kaavaale - Sid Sriram.m4a",
+    "cover": "https://c.saavncdn.com/237/Geetha-Govindam-Telugu-2018-20180921-500x500.jpg"}, 
+
     ];

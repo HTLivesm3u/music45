@@ -165,7 +165,7 @@ function updateMediaSession(song) {
   }
 }
 
-// Search for a song and show suggestions
+// Search functionality
 searchBar.addEventListener("input", () => {
   const query = searchBar.value.toLowerCase().trim();
   suggestionsList.innerHTML = ""; // Clear previous suggestions
@@ -195,6 +195,20 @@ searchBar.addEventListener("input", () => {
       suggestionsList.appendChild(suggestionItem);
     });
   }
+});
+
+// Hide suggestions list when clicking outside
+document.addEventListener("click", (event) => {
+  const isClickInside = searchBar.contains(event.target) || suggestionsList.contains(event.target);
+
+  if (!isClickInside) {
+    suggestionsList.innerHTML = ""; // Clear suggestions list
+  }
+});
+
+// Prevent hiding suggestions when clicking inside search or suggestions
+searchBar.addEventListener("focus", () => {
+  // Optionally keep the suggestions visible when focusing back
 });
 
 // Playlist selection buttons

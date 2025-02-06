@@ -59,7 +59,6 @@ function loadSong(song) {
     audio.play();
   }
   updateSongList();
-
 }
 
 
@@ -127,7 +126,6 @@ function togglePlayPause() {
     bannerPlayPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
   }
 }
-// Play/Pause Button Updates
 function updatePlayPauseButtons() {
   if (isPlaying) {
     playPauseBtn.textContent = "⏸️";
@@ -434,7 +432,6 @@ document.addEventListener("click", (event) => {
 // Update lock screen media information and handle mobile controls
 function updateMediaSession(song) {
   if ('mediaSession' in navigator) {
-    console.log("Setting Media Session"); // Debugging line
     navigator.mediaSession.metadata = new MediaMetadata({
       title: song.title,
       artist: song.artist,
@@ -450,28 +447,19 @@ function updateMediaSession(song) {
 
     // Handle mobile lock screen controls
     navigator.mediaSession.setActionHandler('play', () => {
-      console.log("Play Action Triggered"); // Debugging line
       audio.play();
       isPlaying = true;
       updatePlayPauseButtons(); // Update UI buttons accordingly
     });
 
     navigator.mediaSession.setActionHandler('pause', () => {
-      console.log("Pause Action Triggered"); // Debugging line
       audio.pause();
       isPlaying = false;
       updatePlayPauseButtons();
     });
 
-    navigator.mediaSession.setActionHandler('nexttrack', () => {
-      console.log("Next Track Action Triggered"); // Debugging line
-      playNextSong();
-    });
-
-    navigator.mediaSession.setActionHandler('previoustrack', () => {
-      console.log("Previous Track Action Triggered"); // Debugging line
-      playPrevSong();
-    });
+    navigator.mediaSession.setActionHandler('nexttrack', playNextSong);
+    navigator.mediaSession.setActionHandler('previoustrack', playPrevSong);
 
     // Seek forward
     navigator.mediaSession.setActionHandler('seekforward', () => {
@@ -482,10 +470,7 @@ function updateMediaSession(song) {
     navigator.mediaSession.setActionHandler('seekbackward', () => {
       audio.currentTime = Math.max(audio.currentTime - 10, 0);
     });
-
-    console.log("Media Session Set"); // Debugging line
-  } else {
-    console.log("Media Session is not supported in this browser or environment");
   }
 }
+
 

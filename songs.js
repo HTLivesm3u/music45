@@ -238,16 +238,7 @@ export const englishSongs = [
     artist: "Avicii",
     src: "music/english/The Nights - Avicii.m4a",
     cover: "https://c.saavncdn.com/544/The-Days-Nights-EP-English-2014-20241219231405-500x500.jpg"
-},{
-  title: "Zn Fodástica 2",
-  artist: "Oliveira Mc 011, DJ 7W, DJ MENOR NK",
-  src: "music/english/Zn Fodástica 2 - Oliveira Mc 011, DJ 7W, DJ MENOR NK.mp3",
-  cover: ""
-}
-
-
- 
-   
+}, 
 ];
 
 export const marathiSongs = [

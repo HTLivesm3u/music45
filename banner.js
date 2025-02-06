@@ -235,16 +235,49 @@ prevBtn.addEventListener("click", playPrevSong);
 // Shuffle and Repeat functionality
 document.getElementById("shuffle-btn").addEventListener("click", () => {
   isShuffle = !isShuffle;
+
   // Toggle button active state
   document.getElementById("shuffle-btn").classList.toggle("active", isShuffle);
+
+  // Show shuffle popup
+  showShufflePopup(isShuffle);
 });
+
+function showShufflePopup(isEnabled) {
+  const popup = document.getElementById("shuffle-popup");
+  const statusText = document.getElementById("shuffle-status");
+
+  statusText.textContent = isEnabled ? "ON" : "OFF";
+  popup.classList.add("active");
+
+  // Hide after 2 seconds
+  setTimeout(() => {
+    popup.classList.remove("active");
+  }, 2000);
+}
 
 document.getElementById("repeat-btn").addEventListener("click", () => {
   isRepeat = !isRepeat;
+
+  // Toggle button active state
   document.getElementById("repeat-btn").classList.toggle("active", isRepeat);
+
+  // Show Repeat popup
+  showRepeatPopup(isRepeat);
 });
 
+function showRepeatPopup(isEnabled) {
+  const popup = document.getElementById("repeat-popup");
+  const statusText = document.getElementById("repeat-status");
 
+  statusText.textContent = isEnabled ? "ON" : "OFF";
+  popup.classList.add("active");
+
+  // Hide after 2 seconds
+  setTimeout(() => {
+    popup.classList.remove("active");
+  }, 2000);
+}
 
 
 footerToggleBtn.addEventListener("click", () => {
@@ -290,6 +323,7 @@ bannerPlayPauseBtn.addEventListener("click", togglePlayPause);
 // Next button functionality
 nextBtn.addEventListener("click", playNextSong);
 
+
 // Play next song
 function playNextSong() {
   if (isShuffle) {
@@ -331,6 +365,7 @@ function playPrevSong() {
     audio.play();
   }
 }
+
 
 // Menu button to toggle the playlist menu
 menuBtn.addEventListener("click", () => {

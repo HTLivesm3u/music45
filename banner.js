@@ -47,22 +47,20 @@ function loadSong(song) {
   bannerArtistName.textContent = song.artist;
   bannerCoverImage.src = song.cover;
 
-  // Update duration in the banner
+  // Update the media session whenever a song is loaded
+  updateMediaSession(song);
+
   audio.onloadedmetadata = () => {
     durationElem.textContent = formatTime(audio.duration);
   };
-
-  // Update lock screen media session
-  updateMediaSession(song);
 
   // If it's already playing, play the song
   if (isPlaying) {
     audio.play();
   }
-
-  // Update the song list and highlight the now-playing song
   updateSongList();
 }
+
 
 
 
@@ -128,6 +126,16 @@ function togglePlayPause() {
     bannerPlayPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
   }
 }
+function updatePlayPauseButtons() {
+  if (isPlaying) {
+    playPauseBtn.textContent = "⏸️";
+    bannerPlayPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+  } else {
+    playPauseBtn.textContent = "▶️";
+    bannerPlayPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+  }
+}
+
 
 
 
@@ -441,15 +449,13 @@ function updateMediaSession(song) {
     navigator.mediaSession.setActionHandler('play', () => {
       audio.play();
       isPlaying = true;
-      playPauseBtn.textContent = '⏸️';
-      bannerPlayPauseBtn.textContent = '⏸️';
+      updatePlayPauseButtons(); // Update UI buttons accordingly
     });
 
     navigator.mediaSession.setActionHandler('pause', () => {
       audio.pause();
       isPlaying = false;
-      playPauseBtn.textContent = '▶️';
-      bannerPlayPauseBtn.textContent = '▶️';
+      updatePlayPauseButtons();
     });
 
     navigator.mediaSession.setActionHandler('nexttrack', playNextSong);
@@ -466,4 +472,5 @@ function updateMediaSession(song) {
     });
   }
 }
+
 

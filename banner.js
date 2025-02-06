@@ -282,17 +282,21 @@ function showRepeatPopup(isEnabled) {
 
 footerToggleBtn.addEventListener("click", () => {
   if (musicBanner.style.display === "block") {
-    // If the music banner is visible, hide it
-    musicBanner.style.display = "none";
+    musicBanner.style.display = "none"; // Close the music banner
+    history.pushState(null, null, window.location.href); // Update browser history
   } else {
-    // Show the music banner
-    musicBanner.style.display = "block";
-   
+    musicBanner.style.display = "block"; // Open the music banner
+    history.pushState({ musicBannerOpen: true }, null, window.location.href); // Update browser history
   }
 });
 
 
-
+window.addEventListener("popstate", () => {
+  // Check if the music banner is open
+  if (musicBanner.style.display === "block") {
+    musicBanner.style.display = "none"; // Close the music banner
+  }
+});
 
 // Close the Music Banner when the close button is clicked
 closeBannerBtn.addEventListener("click", () => {

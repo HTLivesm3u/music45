@@ -82,6 +82,12 @@ export const hindiSongs = [
     src:"/music/hindi/Maa - Shankar Mahadevan.m4a",
     cover:"https://c.saavncdn.com/643/Taare-Zameen-Par-Hindi-2007-20221206085820-500x500.jpg",
   },{
+    "title": "Millionaire",
+    "artist": "Yo Yo Honey Singh",
+    "src": "music/hindi/Millionaire - Yo Yo Honey Singh.m4a",
+    "cover": "https://c.saavncdn.com/173/GLORY-Hindi-2024-20250117161048-500x500.jpg"
+},
+  {
     title:"O Bedardeya (From Tu Jhoothi Main Makkaar )",
     artist:"Pritam, Arijit Singh, Amitabh Bhattacharya",
     src:"/music/hindi/O Bedardeya (From  Tu Jhoothi Main Makkaar ) - Pritam, Arijit Singh, Amitabh Bhattacharya.m4a",

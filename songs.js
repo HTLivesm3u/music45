@@ -233,7 +233,19 @@ export const englishSongs = [
     artist:"Gym Class Heroes, Adam Levine",
     src:"/music/english/Stereo Hearts (feat. Adam Levine) - Gym Class Heroes, Adam Levine.m4a",
     cover:"https://c.saavncdn.com/509/The-Papercut-Chronicles-II-English-2011-20200822053426-500x500.jpg",
-  }, 
+  }, {
+    title: "The Nights",
+    artist: "Avicii",
+    src: "music/english/The Nights - Avicii.m4a",
+    cover: "path/to/cover/image.jpg"
+},{
+  title: "Zn Fodástica 2",
+  artist: "Oliveira Mc 011, DJ 7W, DJ MENOR NK",
+  src: "music/english/Zn Fodástica 2 - Oliveira Mc 011, DJ 7W, DJ MENOR NK.mp3",
+  cover: "path/to/cover/image.jpg"
+}
+
+
  
    
 ];

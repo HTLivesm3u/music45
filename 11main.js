@@ -1,10 +1,11 @@
-// main.js
-import { songs } from './songs.js';
+// script.js
+import { hindiSongs, englishSongs, marathiSongs, teluguSongs } from './songs.js';
 
-let currentSongIndex = 0; // Start with the first song
+let currentSongIndex = 0;
 let isPlaying = false;
 let isShuffle = false;
 let isRepeat = false;
+let currentSongs = hindiSongs; // Default playlist is Hindi
 
 // HTML Elements
 const audio = document.getElementById("audio");
@@ -18,9 +19,7 @@ const progressBar = document.getElementById("progress-bar");
 const progress = document.getElementById("progress");
 const currentTimeEl = document.getElementById("current-time");
 const durationEl = document.getElementById("duration");
-const searchBar = document.getElementById("search-bar");
-const searchBtn = document.getElementById("search-btn");
-const suggestionsList = document.getElementById("suggestions-list");
+const downloadBtn = document.getElementById("download-btn");
 
 // Utility function to format time
 function formatTime(seconds) {
@@ -36,6 +35,10 @@ function loadSong(song) {
   artistName.textContent = song.artist;
   coverImage.src = song.cover;
   updateMediaSession(song); // Update lock screen metadata
+  if (isPlaying) {
+    audio.play();
+    playPauseBtn.textContent = "⏸️"; // Update play button to pause
+  }
 }
 
 // Play or pause functionality
@@ -54,24 +57,18 @@ function togglePlayPause() {
 // Play the next song
 function playNextSong() {
   if (isShuffle) {
-    currentSongIndex = Math.floor(Math.random() * songs.length);
+    currentSongIndex = Math.floor(Math.random() * currentSongs.length);
   } else {
-    currentSongIndex = (currentSongIndex + 1) % songs.length;
+    currentSongIndex = (currentSongIndex + 1) % currentSongs.length;
   }
-  loadSong(songs[currentSongIndex]);
-  if (isPlaying) {
-    audio.play();
-  }
+  loadSong(currentSongs[currentSongIndex]);
 }
 
 // Play the previous song
 function playPrevSong() {
   currentSongIndex =
-    (currentSongIndex - 1 + songs.length) % songs.length;
-  loadSong(songs[currentSongIndex]);
-  if (isPlaying) {
-    audio.play();
-  }
+    (currentSongIndex - 1 + currentSongs.length) % currentSongs.length;
+  loadSong(currentSongs[currentSongIndex]);
 }
 
 // Update progress bar
@@ -150,74 +147,16 @@ function updateMediaSession(song) {
     navigator.mediaSession.setActionHandler('previoustrack', playPrevSong);
   }
 }
-
-// Search for a song and show suggestions
-searchBar.addEventListener("input", () => {
-  const query = searchBar.value.toLowerCase().trim();
-  suggestionsList.innerHTML = ""; // Clear previous suggestions
-
-  if (query) {
-    const matches = songs.filter(
-      (song) =>
-        song.title.toLowerCase().includes(query) ||
-        song.artist.toLowerCase().includes(query)
-    );
-
-    matches.forEach((song) => {
-      const suggestionItem = document.createElement("li");
-      suggestionItem.textContent = `${song.title} - ${song.artist}`;
-      suggestionItem.addEventListener("click", () => {
-        const index = songs.findIndex(
-          (s) => s.title === song.title && s.artist === song.artist
-        );
-        currentSongIndex = index;
-        loadSong(song);
-        if (isPlaying) {
-          audio.play();
-        }
-        searchBar.value = "";
-        suggestionsList.innerHTML = "";
-      });
-      suggestionsList.appendChild(suggestionItem);
-    });
-  }
-});
-
-// Search Button Click
-searchBtn.addEventListener("click", () => {
-  const query = searchBar.value.toLowerCase().trim();
-  if (!query) return;
-
-  const songIndex = songs.findIndex(
-    (song) =>
-      song.title.toLowerCase().includes(query) ||
-      song.artist.toLowerCase().includes(query)
-  );
-
-  if (songIndex !== -1) {
-    currentSongIndex = songIndex;
-    loadSong(songs[currentSongIndex]);
-    if (isPlaying) {
-      audio.play();
-    }
-  } else {
-    alert("No matching song found!");
-  }
-
-  searchBar.value = "";
-  suggestionsList.innerHTML = "";
-});
-
-// Add event listener for the download button
-document.getElementById("download-btn").addEventListener("click", () => {
-  const currentSong = songs[currentSongIndex]; // Get the current song
+// Download functionality
+downloadBtn.addEventListener("click", () => {
+  const currentSong = currentSongs[currentSongIndex];
   const link = document.createElement("a");
-  link.href = currentSong.src;  // Set the link to the song's source
-  link.download = currentSong.title + " - " + currentSong.artist + ".mp3"; // Set the filename for download
-  document.body.appendChild(link); // Append link to body
-  link.click(); // Trigger the download
-  document.body.removeChild(link); // Remove the link after the click
+  link.href = currentSong.src;
+  link.download = `${currentSong.title} - ${currentSong.artist}.mp3`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 });
 
 // Load the first song on page load
-loadSong(songs[currentSongIndex]);
+loadSong(currentSongs[currentSongIndex]);

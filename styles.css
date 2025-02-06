@@ -13,7 +13,6 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  position: relative; /* Ensures child elements are correctly positioned */
 }
 
 /* Menu Button */
@@ -24,10 +23,10 @@ body {
   border: none;
   cursor: pointer;
   position: fixed;
-  top: 10px; /* Keep the button a bit from the top */
-  left: 10px; /* Keep the button to the left */
-  z-index: 1000; /* Make sure it's above other elements */
-  padding: 15px; /* Ensure it's large enough */
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  padding: 15px;
 }
 
 /* Playlist Menu */
@@ -45,13 +44,14 @@ body {
   border-radius: 0 10px 10px 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   transition: left 0.3s ease-in-out;
-  z-index: 999; /* Ensure the menu is below the button */
+  z-index: 999;
 }
 
 .playlist-menu.active {
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
+
 .playlist-menu button {
   background-color: #444;
   color: white;
@@ -64,6 +64,101 @@ body {
   text-align: left;
   transition: background-color 0.3s ease;
 }
+
+/* Footer Section */
+.footer-controls {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  background-color: #222;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.footer-song-info {
+  display: flex;
+  align-items: center;
+}
+
+.footer-cover {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.footer-song-title,
+.footer-artist-name {
+  font-size: 14px;
+}
+
+.footer-controls-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-play-pause-btn {
+  font-size: 20px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+/* Music Banner */
+.music-banner {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 100%;
+  background-color: #222;
+  color: white;
+  z-index: 999;
+  padding: 20px;
+  text-align: center;
+}
+
+#banner-content {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#banner-cover-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+#banner-song-title,
+#banner-artist-name {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+#banner-close {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
 /* Search Bar */
 .search-container {
   width: 100%;
@@ -93,218 +188,4 @@ body {
 
 #search-btn:hover {
   background-color: #1ed760;
-}
-
-/* Suggestions List */
-#suggestions-list {
-  list-style: none;
-  padding: 0;
-  margin: 30px 0 0;
-  background-color: #1c1c1c;
-  border: 1px solid #444;
-  border-radius: 5px;
-  max-width: 400px;
-  color: white;
-  position: absolute;
-  z-index: 10;
-}
-
-#suggestions-list li {
-  padding: 10px;
-  cursor: pointer;
-}
-
-#suggestions-list li:hover {
-  background-color: #333;
-}
-
-/* Music Banner */
-.music-banner {
-  width: 100%;
-  max-width: 400px;
-  background-color: #222;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  margin-top: 20px;
-}
-
-.cover img {
-  width: 100%;
-  max-width: 250px;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-.song-details {
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.song-details h2 {
-  font-size: 20px;
-  margin-bottom: 5px;
-}
-
-.song-details p {
-  font-size: 16px;
-  color: #bbb;
-}
-
-/* Progress Bar */
-.progress-container {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-  gap: 10px;
-}
-
-#progress-bar {
-  flex: 1;
-  height: 5px;
-  background-color: #444;
-  border-radius: 5px;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-#progress {
-  width: 0;
-  height: 100%;
-  background-color: #1db954;
-  transition: width 0.1s linear;
-}
-
-#current-time,
-#duration {
-  font-size: 14px;
-  color: #bbb;
-}
-
-/* Control Buttons */
-.controls {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  margin-top: 15px;
-}
-
-.control-btn {
-  font-size: 20px;
-  background: none;
-  color: white;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s;
-}
-
-.control-btn:hover {
-  background-color: #333;
-}
-
-.play {
-  width: 60px;
-  height: 60px;
-  font-size: 25px;
-  background-color: #1db954;
-  border-radius: 50%;
-  color: white;
-}
-
-.play:hover {
-  background-color: #1ed760;
-}
-
-/* Secondary Controls */
-.secondary-controls {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  margin-top: 15px;
-}
-
-.secondary-controls button {
-  background-color: #444;
-  color: white;
-  border: none;
-  padding: 10px;
-  font-size: 18px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.secondary-controls button:hover {
-  background-color: #1db954;
-}
-
-.secondary-controls button.active {
-  background-color: #1ed760;
-}
-
-/* Responsive Design */
-@media (max-width: 480px) {
-  body {
-    padding: 0;
-  }
-
-  /* Adjust the position of the playlist menu for mobile */
-  .playlist-menu {
-    top: 50%;
-    left: -100%;
-  }
-
-  .playlist-menu.active {
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-  }
-
-  /* Adjust the menu button to be visible on mobile */
-  .menu-btn {
-    left: 10px; /* Keep it to the left side */
-    top: 10px; /* Keep a small distance from the top */
-    font-size: 35px; /* Larger button size for better visibility */
-    padding: 15px; /* Increase padding */
-    z-index: 1001; /* Ensure it's above all elements */
-  }
-
-  /* Adjust layout for small screens */
-  .search-container {
-    max-width: 90%;
-  }
-
-  #search-bar {
-    font-size: 14px;
-    padding: 10px;
-  }
-
-  .song-details h2 {
-    font-size: 18px;
-  }
-
-  .song-details p {
-    font-size: 14px;
-  }
-
-  .control-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-  }
-
-  .play {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-  }
 }

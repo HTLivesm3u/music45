@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Banner</title>
+  <link rel="icon" type="image/webp" href="music/music45.webp">
+  <link rel="stylesheet" href="styles89.css">
+</head>
+<body>
+  <div id="banner" class="music-banner">
+    <div id="banner-song-info" class="banner-song-info">
+      <img id="banner-cover-image" class="banner-cover" src="cover1.jpg" alt="Cover" />
+      <p id="banner-song-title">Song Title 1</p>
+      <p id="banner-artist-name">Artist Name 1</p>
+    </div>
+    <div class="banner-controls-buttons">
+      <button id="banner-play-pause" class="banner-play-pause-btn">▶️</button>
+    </div>
+  </div>
+
+  <audio id="audio-banner"></audio>
+
+  <script type="module">
+    const audioBanner = document.getElementById("audio-banner");
+    const bannerPlayPauseBtn = document.getElementById("banner-play-pause");
+    const bannerSongTitle = document.getElementById("banner-song-title");
+    const bannerArtistName = document.getElementById("banner-artist-name");
+    const bannerCoverImage = document.getElementById("banner-cover-image");
+
+    const audioSrc = localStorage.getItem("audioSrc");
+    const isPlaying = localStorage.getItem("isPlaying") === "true";
+
+    if (audioSrc) {
+      audioBanner.src = audioSrc;
+      bannerSongTitle.textContent = "Song Title 1"; // Set dynamically
+      bannerArtistName.textContent = "Artist Name 1"; // Set dynamically
+      bannerCoverImage.src = "cover1.jpg"; // Set dynamically
+    }
+
+    function togglePlayPause() {
+      if (audioBanner.paused) {
+        audioBanner.play();
+        bannerPlayPauseBtn.textContent = "⏸️";
+        localStorage.setItem("isPlaying", "true");
+      } else {
+        audioBanner.pause();
+        bannerPlayPauseBtn.textContent = "▶️";
+        localStorage.setItem("isPlaying", "false");
+      }
+    }
+
+    // Ensure music continues playing based on previous state
+    if (audioSrc && isPlaying) {
+      audioBanner.play();
+    }
+
+    bannerPlayPauseBtn.addEventListener("click", togglePlayPause);
+  </script>
+</body>
+</html>

@@ -299,12 +299,7 @@ footerToggleBtn.addEventListener("click", () => {
 });
 
 
-window.addEventListener("popstate", () => {
-  // Check if the music banner is open
-  if (musicBanner.style.display === "block") {
-    musicBanner.style.display = "none"; // Close the music banner
-  }
-});
+
 
 // Close the Music Banner when the close button is clicked
 closeBannerBtn.addEventListener("click", () => {
@@ -474,3 +469,24 @@ function updateMediaSession(song) {
 }
 
 
+// Check if the music banner is open and close it when back button is pressed
+window.addEventListener("popstate", () => {
+  // Check if the music banner is visible
+  if (musicBanner.style.display === "block") {
+    musicBanner.style.display = "none"; // Close the music banner
+  }
+});
+
+// Function to navigate to the home screen
+function goToHomeScreen() {
+  // Close the music banner if it's open
+  if (musicBanner.style.display === "block") {
+    musicBanner.style.display = "none";
+  }
+
+  // Update the browser history to simulate the user is on the home screen
+  history.pushState({ page: "home" }, "Home", "/");
+}
+
+// Event listener for the home button (or any button that should trigger home screen navigation)
+document.getElementById("home-btn").addEventListener("click", goToHomeScreen);

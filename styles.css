@@ -134,8 +134,8 @@
     margin-bottom: 1.5rem;
   }
   #banner-cover-image{
-    width: 50%;
-    height: 50%;
+    width: 80%;
+    height: 80%;
     object-fit: cover;
     border-radius: 10px;
   }

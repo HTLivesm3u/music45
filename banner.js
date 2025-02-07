@@ -1,3 +1,4 @@
+
 import { hindiSongs, englishSongs, marathiSongs, teluguSongs } from './songs.js';
 
 let currentSongIndex = 0;
@@ -472,5 +473,3 @@ function updateMediaSession(song) {
     });
   }
 }
-
-

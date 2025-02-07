@@ -38,8 +38,17 @@ export const hindiSongs = [
     artist:" Anirudh Ravichander, Arijit Singh, Shilpa Rao, Kumaar", 
     src:"/music/hindi/Chaleya (From  Jawan ) - Anirudh Ravichander, Arijit Singh, Shilpa Rao, Kumaar.m4a", 
     cover:"https://upload.wikimedia.org/wikipedia/en/c/c9/Chaleya_album_cover.jpg", 
-  },
-  {
+  },{
+    "title": "Choo Lo",
+    "artist": "The Local Train",
+    "src": "music/hindi/Choo Lo - The Local Train.m4a",
+    "cover": "https://c.saavncdn.com/111/Aalas-Ka-Pedh-Hindi-2015-20231005005130-150x150.jpg"
+},{
+  "title": "Hawayein",
+  "artist": "Arijit Singh, Pritam",
+  "src": "music/hindi/Hawayein (From  Jab Harry Met Sejal ) - Pritam, Arijit Singh.m4a",
+  "cover": "https://c.saavncdn.com/584/Jab-Harry-Met-Sejal-Hindi-2017-20170803161007-500x500.jpg"
+}, {
     title:"Heeriye",
     artist:"Jasleen Royal, Arijit Singh, Dulquer Salmaan",
     src:"/music/hindi/Heeriye (feat. Arijit Singh) - Jasleen Royal, Arijit Singh, Dulquer Salmaan.m4a",
@@ -56,26 +65,38 @@ export const hindiSongs = [
     artist:"Anuv Jain",
     src:"/music/hindi/Husn - Anuv Jain.m4a",
     cover:"https://c.saavncdn.com/436/Husn-Hindi-2023-20231129054140-500x500.jpg",
-  },
+  },{
+    "title": "Ishq",
+    "artist": "Faheem Abdullah, Rauhan Malik, Amir Ameer",
+    "src": "music/hindi/Ishq - Faheem Abdullah, Rauhan Malik, Amir Ameer.m4a",
+    "cover": "https://c.saavncdn.com/306/Lost-Found-Hindi-2024-20240517153134-500x500.jpg"
+},
   {
     title: "Ishq Hai",
     artist: "Romy, Amarabha Banerjee, Varun Jain, Madhubanti Bagchi",
     src: "/music/hindi/Ishq Hai - Anurag Saikia, Raj Shekhar, Romy, Amarabha Banerjee, Varun Jain, Madhubanti Bagchi, Mismatched - Cast.m4a",
     cover: "https://c.saavncdn.com/839/Mismatched-Season-3-Soundtrack-from-the-Netflix-Series-Hindi-2024-20241217204803-500x500.jpg", 
-}, 
-
-  {
+},{
     title:"Jo Tum Mere Ho",
     artist:" Anuv Jain",
     src:"/music/hindi/Jo Tum Mere Ho - Anuv Jain.m4a",
     cover:"https://c.saavncdn.com/401/Jo-Tum-Mere-Ho-Hindi-2024-20240731053953-500x500.jpg",
-  },
-  {
+  },{
+    "title": "Kabhi Kabhi Aditi",
+    "artist": "Rashid Ali",
+    "src": "music/hindi/Kabhi Kabhi Aditi - Rashid Ali.m4a",
+    "cover": "https://c.saavncdn.com/033/Jaane-Tu-Ya-Jaane-Na-Hindi-2008-20221128173303-500x500.jpg"
+},{
     title:"Kaise Ab Kahein",
     artist:"Gaurav Chatterji, Aasa Singh, Hansika Pareek, Hrishi Giridhar, Pratik Gangavane",
     src:"/music/hindi/Kaise Ab Kahein - From  Gutar Gu  - Gaurav Chatterji, Aasa Singh, Hansika Pareek, Hrishi Giridhar, Pratik Gangavane.m4a",
     cover:"https://c.saavncdn.com/275/Kaise-Ab-Kahein-From-Gutar-Gu-Hindi-2023-20230425180122-500x500.jpg",
   },{
+    "title": "Khairiyat",
+    "artist": "Arijit Singh, Pritam",
+    "src": "music/hindi/Khairiyat - Pritam, Arijit Singh.m4a",
+    "cover": "https://c.saavncdn.com/937/Chhichhore-Hindi-2019-20190904104023-500x500.jpg"
+},{
     title:"Kun Faya Kun",
     artist:"A.R. Rahman, Javed Ali, Mohit Chauhan",
     src:"/music/hindi/Kun Faya Kun - A.R. Rahman, Javed Ali, Mohit Chauhan.m4a",
@@ -86,6 +107,11 @@ export const hindiSongs = [
     src:"/music/hindi/Maa - Shankar Mahadevan.m4a",
     cover:"https://c.saavncdn.com/643/Taare-Zameen-Par-Hindi-2007-20221206085820-500x500.jpg",
   },{
+    "title": "Main Agar Kahoon",
+    "artist": "Sonu Nigam, Shreya Ghoshal, Vishal-Shekhar",
+    "src": "music/hindi/Main Agar Kahoon - Vishal-Shekhar, Sonu Nigam, Shreya Ghoshal.m4a",
+    "cover": "https://c.saavncdn.com/179/Om-Shanti-Om-Hindi-2007-20241205141724-500x500.jpg"
+},{
     "title": "Millionaire",
     "artist": "Yo Yo Honey Singh",
     "src": "music/hindi/Millionaire - Yo Yo Honey Singh.m4a",
@@ -102,16 +128,41 @@ export const hindiSongs = [
     src:"/music/hindi/O Meri Laila - Atif Aslam, Jyotica Tangri.m4a",
     cover:"https://c.saavncdn.com/334/Laila-Majnu-Hindi-2018-20190506111426-500x500.jpg",
   },{
+    "title": "O Rangrez",
+    "artist": "Shreya Ghoshal, Javed Bashir, Yusuf Mohammed, Vajid Ali, Shankar-Ehsaan-Loy",
+    "src": "music/hindi/O Rangrez (From  Bhaag Milkha Bhaag ) - Shankar-Ehsaan-Loy, Shreya Ghoshal, Javed Bashir, Yusuf Mohammed, Vajid Ali.m4a",
+    "cover": "https://c.saavncdn.com/575/Bhaag-Milkha-Bhaag-Hindi-2013-20190607111645-500x500.jpg"
+},{
     title:"Pehle Bhi Main",
     artist:"Vishal Mishra, Raj Shekhar",
     src:"/music/hindi/Pehle Bhi Main - Vishal Mishra, Raj Shekhar.m4a",
     cover:"https://c.saavncdn.com/248/Pehle-Bhi-Main-Future-Bass-Hindi-2024-20240223181016-500x500.jpg",
   },{
+    "title": "Raanjhan",
+    "artist": "Sachet-Parampara, Parampara Tandon, Kausar Munir",
+    "src": "music/hindi/Raanjhan (From Do Patti ) - Sachet-Parampara, Parampara Tandon, Kausar Munir.m4a",
+    "cover": "path/to/cover/image.jpg"
+},{
     title:"Raataan Lambiyan(From Shershaah )",
     artist:"Tanishk Bagchi, Jubin Nautiyal, Asees Kaur",
     src:"/music/hindi/Raataan Lambiyan (From  Shershaah ) - Tanishk Bagchi, Jubin Nautiyal, Asees Kaur.m4a",
     cover:"https://c.saavncdn.com/238/Shershaah-Original-Motion-Picture-Soundtrack--Hindi-2021-20210815181610-500x500.jpg",
-  },
+  },{
+    "title": "Ratiyaan",
+    "artist": "Hansika Pareek, Sagnik Kolay, Soham Majumdar",
+    "src": "music/hindi/Ratiyaan - Hansika Pareek, Sagnik Kolay, Soham Majumdar.m4a",
+    "cover": "path/to/cover/image.jpg"
+},{
+  "title": "Roke Na Ruke Naina",
+  "artist": "Arijit Singh",
+  "src": "music/hindi/Roke Na Ruke Naina (From Badrinath Ki Dulhania ) - Arijit Singh.m4a",
+  "cover": "path/to/cover/image.jpg"
+},{
+  "title": "Sajni",
+  "artist": "Ram Sampath, Arijit Singh, Prashant Pandey",
+  "src": "music/hindi/Sajni (From Laapataa Ladies ) - Ram Sampath, Arijit Singh, Prashant Pandey.m4a",
+  "cover": "path/to/cover/image.jpg"
+},
   {
     title:"Saudebazi (Encore)",
     artist:"Pritam, Javed Ali",

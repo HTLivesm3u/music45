@@ -5,120 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Player</title>
     <link rel="stylesheet" href="11styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <audio id="audio" src="/music/hindi/Aankhon Mein Doob Jaane Ko - THE 9TEEN, Sandesh Shandilya.m4a"></audio>
-    <div class="music-player">
-        <div class="player-container">
-            <div class="player-container">
-                <!-- Add this close button just inside the player-container -->
-                <button class="close-btn" aria-label="Close music player">
-                    <i class="fas fa-times"></i>
+    <div class="player-footer">
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+
+        <div class="footer-content">
+            <!-- Now Playing -->
+            <div class="now-playing">
+                <img src="https://c.saavncdn.com/730/Aankhon-Mein-Doob-Jaane-Ko-Hindi-2024-20240816183310-500x500.jpg" alt="Album art" class="album-art">
+                <div class="song-info">
+                    <h3 class="song-title">Kabhi Kabhi Aditi</h3>
+                    <p class="artist-name">Rashid Ali</p>
+                </div>
+            </div>
+
+            <!-- Playback Controls -->
+            <div class="playback-controls">
+                <button class="control-btn" id="prevBtn">
+                    <i class="fas fa-step-backward"></i>
                 </button>
-            <!-- Album Art -->
-            <div class="album-cover">
-                <img src="https://c.saavncdn.com/730/Aankhon-Mein-Doob-Jaane-Ko-Hindi-2024-20240816183310-500x500.jpg" alt="Album art for Baban">
-            </div>
-
-            <!-- Song Info -->
-            <div class="song-info">
-                <h2>Saaj Hyo Tuza</h2>
-                <p>Onkarswaroop, Suhas Munde</p>
-            </div>
-
-            <!-- Update the progress bar div -->
-<div class="progress-container">
-  <div class="progress-bar">
-      <div id="progress" class="progress"></div>
-  </div>
-  <div class="time-stamps">
-      <span id="current-time">00:00</span>
-      <span id="duration">00:00</span>
-  </div>
-</div>
-            <!-- Main Controls -->
-            <div class="main-controls">
-                <button class="control-btn"><i class="fas fa-shuffle"></i></button>
-                <button class="control-btn"><i class="fas fa-backward"></i></button>
-                <button id="play-btn" class="play-btn"><i class="fas fa-play"></i></button>
-                <button class="control-btn"><i class="fas fa-forward"></i></button>
-                <button class="control-btn"><i class="fas fa-repeat"></i></button>
-            </div>
-
-            <!-- Secondary Controls -->
-            <div class="secondary-controls">
-                <button class="control-btn"><i class="fas fa-music"></i></button>
-                <button class="control-btn"><i class="fas fa-download"></i></button>
-                <button class="control-btn"><i class="fas fa-heart"></i></button>
-                <button class="control-btn"><i class="fas fa-clock-rotate-left"></i></button>
-            </div>
-
-            <!-- Bottom Buttons -->
-            <div class="bottom-buttons">
-                <button class="action-btn">
-                    <i class="fas fa-list"></i>
-                    Queue
+                <button class="control-btn play-btn" id="playBtn">
+                    <i class="fas fa-play" id="playIcon"></i>
                 </button>
-                <button class="action-btn">
-                    <i class="fas fa-microphone"></i>
-                    Lyrics
+                <button class="control-btn" id="nextBtn">
+                    <i class="fas fa-step-forward"></i>
                 </button>
             </div>
+
+            <!-- Navigation -->
+            
         </div>
     </div>
-    <script>
-      const audio = document.getElementById('audio');
-      const playBtn = document.getElementById('play-btn');
-      const progress = document.getElementById('progress');
-      const progressBar = document.querySelector('.progress-bar');
-      const currentTimeEl = document.getElementById('current-time');
-      const durationEl = document.getElementById('duration');
-  
-      // Play/Pause functionality
-      playBtn.addEventListener('click', () => {
-          if (audio.paused) {
-              audio.play();
-              playBtn.innerHTML = '<i class="fas fa-pause"></i>';
-          } else {
-              audio.pause();
-              playBtn.innerHTML = '<i class="fas fa-play"></i>';
-          }
-      });
-  
-      // Update progress bar
-      audio.addEventListener('timeupdate', updateProgress);
-  
-      function updateProgress() {
-          const { currentTime, duration } = audio;
-          const progressPercent = (currentTime / duration) * 100;
-          progress.style.width = `${progressPercent}%`;
-          
-          currentTimeEl.textContent = formatTime(currentTime);
-          durationEl.textContent = formatTime(duration);
-      }
-  
-      // Set progress bar on click
-      progressBar.addEventListener('click', setProgress);
-  
-      function setProgress(e) {
-          const width = this.clientWidth;
-          const clickX = e.offsetX;
-          const duration = audio.duration;
-          audio.currentTime = (clickX / width) * duration;
-      }
-  
-      // Format time to MM:SS
-      function formatTime(seconds) {
-          const minutes = Math.floor(seconds / 60);
-          const remainingSeconds = Math.floor(seconds % 60);
-          return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
-      }
-  
-      // Set duration when metadata is loaded
-      audio.addEventListener('loadedmetadata', () => {
-          durationEl.textContent = formatTime(audio.duration);
-      });
-  </script>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="11main.js"></script>
 </body>
 </html>

@@ -4,7 +4,11 @@ export const hindiSongs = [
     artist: "THE 9TEEN, Sandesh Shandilya",
     src: "/music/hindi/Aankhon Mein Doob Jaane Ko - THE 9TEEN, Sandesh Shandilya.m4a",
     cover: "https://c.saavncdn.com/730/Aankhon-Mein-Doob-Jaane-Ko-Hindi-2024-20240816183310-500x500.jpg",
-  },
+  },{
+    "title": "Aaoge Tum Kabhi",
+    "artist": "The Local Train",
+    "src": "music/hindi/Aaoge Tum Kabhi - The Local Train.m4a",
+    "cover": "https://c.saavncdn.com/111/Aalas-Ka-Pedh-Hindi-2015-20231005005130-150x150.jpg",},
   { id: 2,
     title:"Agar Tum Saath Ho",
     artist:"Alka Yagnik, Arijit Singh",

@@ -53,3 +53,16 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Select the "Trending" genre card (gradient-1)
+  const trendingCard = document.querySelector('.genre-card.gradient-1');
+
+  if (trendingCard) {
+      trendingCard.addEventListener('click', () => {
+          const url = '/index.html'; // Replace with your desired link
+          window.open(url, '_blank'); // Opens in a new tab
+      });
+  }
+});
+

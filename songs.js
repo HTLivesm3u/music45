@@ -59,6 +59,12 @@ export const hindiSongs = [
     "src": "music/hindi/Choo Lo - The Local Train.m4a",
     "cover": "https://c.saavncdn.com/111/Aalas-Ka-Pedh-Hindi-2015-20231005005130-150x150.jpg"
 },{
+    "title": "DUS DON",
+    "artist": "Dada Sadhu",
+    "src": "music/hindi/DUS DON (Official Video) Dada Sadhu _HR Gadi Number _Apni Akad Ko Apni Jeb Me Rakhe _(MP3_320K).mp3",
+    "cover": "https://c.saavncdn.com/644/Dus-Don-Haryanvi-2022-20220129072653-500x500.jpg"
+}
+,{
   "title": "Hawayein",
   "artist": "Arijit Singh, Pritam",
   "src": "music/hindi/Hawayein (From  Jab Harry Met Sejal ) - Pritam, Arijit Singh.m4a",

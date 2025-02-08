@@ -161,7 +161,7 @@ export const hindiSongs = [
   "title": "Sajni",
   "artist": "Ram Sampath, Arijit Singh, Prashant Pandey",
   "src": "music/hindi/Sajni (From Laapataa Ladies ) - Ram Sampath, Arijit Singh, Prashant Pandey.m4a",
-  "cover": "path/to/cover/image.jpg"
+  "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84a27b6a5504e2415688d69628"
 },
   {
     title:"Saudebazi (Encore)",

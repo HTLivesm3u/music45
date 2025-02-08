@@ -430,7 +430,14 @@ export const marathiSongs = [
     artist: "Vaishali Samant, Urmila Dhangar, Amitraj",
     src: "/music/marathi/Gulabachi Kali - Vaishali Samant, Urmila Dhangar, Amitraj.m4a",
     cover: "https://c.saavncdn.com/102/Tu-Hi-Re-Marathi-2015-20241119160647-500x500.jpg",
-  },
+  },{
+    "title": "HOODLIFE",
+    "artist": "SAMBATA, RIAR SAAB",
+    "producer": "Karan Kanchan",
+    "src": "music/marathi/HOODLIFE - SAMBATA _ RIAR SAAB _ PROD. BY KARAN KANCHAN _ OFFICIAL MUSIC VIDEO(MP3_320K).mp3",
+    "cover": "https://c.saavncdn.com/499/Hood-Life-Marathi-2024-20240917035215-500x500.jpg"
+}
+, 
   {
     title: "Haravali Pakhare",
     artist: "Shekhar Ravjiani",

@@ -604,6 +604,6 @@ export const teluguSongs = [
   {
     "title": "Why This Kolaveri Di",
     "artist": "Dhanush, Anirudh Ravichander",
-    "src": "music/hindi/3 - Why This Kolaveri Di Official Video _ Dhanush _ Anirudh Ravichander _ Shruti Haasan(MP3_320K).mp3",
+    "src": "music/telugu/3 - Why This Kolaveri Di Official Video _ Dhanush _ Anirudh Ravichander _ Shruti Haasan(MP3_320K).mp3",
     "cover": "https://c.saavncdn.com/244/3-Telugu-2012-500x500.jpg"}, 
     ];

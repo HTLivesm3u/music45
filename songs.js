@@ -165,6 +165,13 @@ export const hindiSongs = [
     "src": "music/hindi/O Rangrez (From  Bhaag Milkha Bhaag ) - Shankar-Ehsaan-Loy, Shreya Ghoshal, Javed Bashir, Yusuf Mohammed, Vajid Ali.m4a",
     "cover": "https://c.saavncdn.com/575/Bhaag-Milkha-Bhaag-Hindi-2013-20190607111645-500x500.jpg"
 },{
+    "title": "Pyaar Humara",
+    "artist": "King",
+    "producer": "Monopoly Moves",
+    "src": "music/hindi/PYAAR HUMARA _ King _ Monopoly Moves _ Official Music Video(MP3_320K).mp3",
+    "cover": "https://c.saavncdn.com/662/PYAAR-HUMARA-Hindi-2024-20240731044953-500x500.jpg"
+}
+,{
     title:"Pehle Bhi Main",
     artist:"Vishal Mishra, Raj Shekhar",
     src:"/music/hindi/Pehle Bhi Main - Vishal Mishra, Raj Shekhar.m4a",

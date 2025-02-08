@@ -230,7 +230,14 @@ export const hindiSongs = [
     artist: "Raghav Chaitanya, Varun Jain, Sachin-Jigar, Indraneel",
     src: "/music/hindi/Tum Se - Raghav Chaitanya, Varun Jain, Sachin-Jigar, Indraneel.m4a",
     cover: "https://c.saavncdn.com/214/Teri-Baaton-Mein-Aisa-Uljha-Jiya-Hindi-2024-20240205151011-500x500.jpg"
-}, 
+},{
+    "title": "Victory Anthem",
+    "artist": "Khushi × Lashcurry",
+    "producer": "AudiocrackerrBeatz1",
+    "src": "music/hindi/VICTORY ANTHEM- Khushi× _lashcurry  prod.by _AudiocrackerrBeatz1 -Official Audio-(MP3_320K).mp3",
+    "cover": "https://c.saavncdn.com/498/Victory-Anthem-Hindi-2024-20241217123245-500x500.jpg"
+}
+ 
   
 ];
 

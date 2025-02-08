@@ -241,8 +241,14 @@ export const hindiSongs = [
     "artist": "Vilen",
     "src": "music/hindi/Vilen - Ek Raat (Official Video)(MP3_320K).mp3",
     "cover": "https://c.saavncdn.com/080/Ek-Raat-Hindi-2023-20241205194941-500x500.jpg"
+},{
+    "title": "Ye Tune Kya Kiya",
+    "artist": "Pritam, Javed Bashir",
+    "src": "music/hindi/Ye Tune Kya Kiya - Pritam, Javed Bashir.m4a",
+    "cover": "https://c.saavncdn.com/243/Once-Upon-A-Time-In-Mumbaai-Dobara-2013-500x500.jpg"
 }
 , 
+
  
   
 ];

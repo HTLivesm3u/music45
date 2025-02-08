@@ -551,7 +551,14 @@ export const marathiSongs = [
     artist: "Devdutta Manisha Baji, Avadhoot Gupte",
     src: "/music/marathi/Raja Aala - Devdutta Manisha Baji, Avadhoot Gupte.m4a",
     cover: "https://c.saavncdn.com/994/Pawankhind-Marathi-2022-20220216231853-500x500.jpg",
-  },
+  },{
+    "title": "RX100",
+    "artist": "MC Gawthi",
+    "producer": "YD",
+    "src": "music/marathi/RX100 _ MC GAWTHI _ PROD.BY YD _ OFFCIAL MUSIC VIDEO(MP3_320K).mp3",
+    "cover": "path/to/cover/image.jpg"
+}
+, 
   {
     title: "Saang Na",
     artist: "Shekhar Ravjiani",

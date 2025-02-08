@@ -247,6 +247,12 @@ export const hindiSongs = [
     "src": "music/hindi/Ye Tune Kya Kiya - Pritam, Javed Bashir.m4a",
     "cover": "https://c.saavncdn.com/243/Once-Upon-A-Time-In-Mumbaai-Dobara-2013-500x500.jpg"
 }
+,{
+    "title": "Yeh Jism",
+    "artist": "Unknown (Check Credits)",
+    "src": "music/hindi/Yeh Jism Full Video Song ★ Jism 2 ★ Randeep Hooda_ Sunny Leone(MP3_320K).mp3",
+    "cover": "https://c.saavncdn.com/198/Jism-2-Hindi-2012-20211217161016-500x500.jpg"
+}
 , 
 
  

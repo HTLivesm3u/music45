@@ -600,6 +600,10 @@ export const teluguSongs = [
     "title": "Inkem Inkem Inkem Kaavaale",
     "artist": "Sid Sriram",
     "src": "/music/telugu/Inkem Inkem Inkem Kaavaale - Sid Sriram.m4a",
-    "cover": "https://c.saavncdn.com/237/Geetha-Govindam-Telugu-2018-20180921-500x500.jpg"}, 
-
+    "cover": "https://c.saavncdn.com/237/Geetha-Govindam-Telugu-2018-20180921-500x500.jpg"},
+  {
+    "title": "Why This Kolaveri Di",
+    "artist": "Dhanush, Anirudh Ravichander",
+    "src": "music/hindi/3 - Why This Kolaveri Di Official Video _ Dhanush _ Anirudh Ravichander _ Shruti Haasan(MP3_320K).mp3",
+    "cover": "https://c.saavncdn.com/244/3-Telugu-2012-500x500.jpg"}, 
     ];

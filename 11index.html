@@ -3,46 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Player</title>
+    <title>Music App</title>
     <link rel="stylesheet" href="11styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="player-footer">
-        <!-- Progress Bar -->
-        <div class="progress-container">
-            <div class="progress-bar"></div>
+    <div class="container">
+        <!-- Genre Grid -->
+        <div class="genre-grid">
+            <div class="genre-card gradient-1">Trending</div>
+            <div class="genre-card gradient-2">Malayalam</div>
+            <div class="genre-card gradient-3">Cooking & Dining</div>
+            <div class="genre-card gradient-4">Student</div>
+            <div class="genre-card gradient-5">Ambient</div>
+            <div class="genre-card gradient-6">Tamil</div>
         </div>
 
-        <div class="footer-content">
-            <!-- Now Playing -->
-            <div class="now-playing">
-                <img src="https://c.saavncdn.com/730/Aankhon-Mein-Doob-Jaane-Ko-Hindi-2024-20240816183310-500x500.jpg" alt="Album art" class="album-art">
-                <div class="song-info">
-                    <h3 class="song-title">Kabhi Kabhi Aditi</h3>
-                    <p class="artist-name">Rashid Ali</p>
+        <!-- Recently Played Section -->
+        <div class="recently-played">
+            <h2>Recently Played</h2>
+            <div class="scroll-container">
+                <div class="playlist-cards">
+                    <div class="playlist-card">
+                        <div class="image-container">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/footer%20change.jpg-mXx7FjBchHfByiFuDKXrrG6lExauN7.jpeg" alt="Hot Hits Hindi">
+                            <button class="play-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="5 3 19 12 5 21 5 3"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <h3>Hot Hits Hindi</h3>
+                        <p>Hottest Hindi music that India...</p>
+                    </div>
+                    <div class="playlist-card">
+                        <div class="image-container">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/footer%20change.jpg-mXx7FjBchHfByiFuDKXrrG6lExauN7.jpeg" alt="Trending Now Telugu">
+                            <button class="play-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="5 3 19 12 5 21 5 3"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <h3>Trending Now Telugu</h3>
+                        <p>Trending songs from Tollywood!</p>
+                    </div>
+                    <div class="playlist-card">
+                        <div class="image-container">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/footer%20change.jpg-mXx7FjBchHfByiFuDKXrrG6lExauN7.jpeg" alt="Sacred Games">
+                            <button class="play-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="5 3 19 12 5 21 5 3"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <h3>Sacred Games</h3>
+                        <p>Only for Sacred Games Heartthrobs</p>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Playback Controls -->
-            <div class="playback-controls">
-                <button class="control-btn" id="prevBtn">
-                    <i class="fas fa-step-backward"></i>
+        <!-- Playback Bar -->
+        <div class="playback-bar">
+            <div class="now-playing">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/footer%20change.jpg-mXx7FjBchHfByiFuDKXrrG6lExauN7.jpeg" alt="Current track">
+                <div class="track-info">
+                    <h3>Kabhi Kabhi Aditi</h3>
+                    <p>Rashid Ali</p>
+                </div>
+            </div>
+            <div class="controls">
+                <button class="control-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="19 20 9 12 19 4 19 20"/>
+                        <line x1="5" y1="19" x2="5" y2="5"/>
+                    </svg>
                 </button>
-                <button class="control-btn play-btn" id="playBtn">
-                    <i class="fas fa-play" id="playIcon"></i>
+                <button class="play-button-large">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="5 3 19 12 5 21 5 3"/>
+                    </svg>
                 </button>
-                <button class="control-btn" id="nextBtn">
-                    <i class="fas fa-step-forward"></i>
+                <button class="control-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="5 4 15 12 5 20 5 4"/>
+                        <line x1="19" y1="5" x2="19" y2="19"/>
+                    </svg>
                 </button>
             </div>
-
-            <!-- Navigation -->
-            
         </div>
     </div>
-
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="11main.js"></script>
 </body>
 </html>

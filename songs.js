@@ -8,7 +8,12 @@ export const hindiSongs = [
     "title": "Aaoge Tum Kabhi",
     "artist": "The Local Train",
     "src": "music/hindi/Aaoge Tum Kabhi - The Local Train.m4a",
-    "cover": "https://c.saavncdn.com/111/Aalas-Ka-Pedh-Hindi-2015-20231005005130-150x150.jpg",},
+    "cover": "https://c.saavncdn.com/111/Aalas-Ka-Pedh-Hindi-2015-20231005005130-150x150.jpg",},{
+    "title": "Ae Dil Hai Mushkil",
+    "artist": "Arijit Singh, Pritam",
+    "src": "music/hindi/Ae Dil Hai Mushkil Title Track Full Video - Ranbir_ Anushka_ Aishwarya_Arijit_Pritam(MP3_320K).mp3",
+    "cover": "https://c.saavncdn.com/257/Ae-Dil-Hai-Mushkil-Hindi-2016-500x500.jpg"
+}, 
   { id: 2,
     title:"Agar Tum Saath Ho",
     artist:"Alka Yagnik, Arijit Singh",

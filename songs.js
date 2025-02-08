@@ -32,7 +32,12 @@ export const hindiSongs = [
     artist:"Manan Bhardwaj, Bhupinder Babbal",
     src:"/music/hindi/Arjan Vailly (From  ANIMAL ) - Manan Bhardwaj, Bhupinder Babbal.m4a",
     cover:"https://c.saavncdn.com/092/ANIMAL-Hindi-2023-20231124191036-500x500.jpg",
-  },
+  },{
+    "title": "Badshah",
+    "artist": "Emiway Bantai, Abhijeet",
+    "src": "music/hindi/Badshah - Emiway Bantai, Abhijeet.m4a",
+    "cover": "https://c.saavncdn.com/882/Badshah-Hindi-2025-20250203105410-500x500.jpg"
+}, 
   {
     title:"Chaleya (from jawan)", 
     artist:" Anirudh Ravichander, Arijit Singh, Shilpa Rao, Kumaar", 

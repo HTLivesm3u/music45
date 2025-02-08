@@ -190,6 +190,12 @@ export const hindiSongs = [
   "src": "music/hindi/Roke Na Ruke Naina (From  Badrinath Ki Dulhania ) - Arijit Singh.m4a",
   "cover": "https://c.saavncdn.com/804/Badrinath-Ki-Dulhania-Full-Hindi-2017-500x500.jpg",
 },{
+    "title": "Saiyyan",
+    "artist": "Kailash Kher, Paresh Kamath, Naresh Kamath",
+    "src": "music/hindi/Saiyyan - Kailash Kher_ Paresh Kamath_ Naresh Kamath _ Jhoomo Re(MP3_320K).mp3",
+    "cover": "https://c.saavncdn.com/712/Saiyyan-Lofi-Hindi-2023-20230504112103-500x500.jpg"
+}
+,{
   "title": "Sajni",
   "artist": "Ram Sampath, Arijit Singh, Prashant Pandey",
   "src": "music/hindi/Sajni (From  Laapataa Ladies ) - Ram Sampath, Arijit Singh, Prashant Pandey.m4a",

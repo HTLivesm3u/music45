@@ -69,6 +69,11 @@ export const hindiSongs = [
     "artist": "Dada Sadhu",
     "src": "music/hindi/DUS DON (Official Video) Dada Sadhu _HR Gadi Number _Apni Akad Ko Apni Jeb Me Rakhe _(MP3_320K).mp3",
     "cover": "https://c.saavncdn.com/644/Dus-Don-Haryanvi-2022-20220129072653-500x500.jpg"
+},{
+    "title": "Galat Karam",
+    "artist": "Panther X Raga",
+    "src": "music/hindi/Panther X Raga - Galat Karam (Official Music Video)(MP3_320K).mp3",
+    "cover": "https://c.saavncdn.com/138/Flying-Towards-The-City-Hindi-2024-20240527180428-500x500.jpg"
 }
 ,{
   "title": "Hawayein",

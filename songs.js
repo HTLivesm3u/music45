@@ -59,6 +59,12 @@ export const hindiSongs = [
     "src": "music/hindi/Choo Lo - The Local Train.m4a",
     "cover": "https://c.saavncdn.com/111/Aalas-Ka-Pedh-Hindi-2015-20231005005130-150x150.jpg"
 },{
+    "title": "Dil Ibaadat",
+    "artist": "KK, Pritam",
+    "src": "music/hindi/KK _ Dil Ibaadat Kar Raha Hai (Lyrical Video) _ Emraan Hashmi _ Soha Ali Khan _ Pritam _ Tum Mile(MP3_320K).mp3",
+    "cover": "https://c.saavncdn.com/316/Tum-Mile-Hindi-2009-20190617160526-500x500.jpg"
+}
+,{
     "title": "DUS DON",
     "artist": "Dada Sadhu",
     "src": "music/hindi/DUS DON (Official Video) Dada Sadhu _HR Gadi Number _Apni Akad Ko Apni Jeb Me Rakhe _(MP3_320K).mp3",

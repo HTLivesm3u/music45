@@ -236,7 +236,13 @@ export const hindiSongs = [
     "producer": "AudiocrackerrBeatz1",
     "src": "music/hindi/VICTORY ANTHEM- Khushi× _lashcurry  prod.by _AudiocrackerrBeatz1 -Official Audio-(MP3_320K).mp3",
     "cover": "https://c.saavncdn.com/498/Victory-Anthem-Hindi-2024-20241217123245-500x500.jpg"
+},{
+    "title": "Ek Raat",
+    "artist": "Vilen",
+    "src": "music/hindi/Vilen - Ek Raat (Official Video)(MP3_320K).mp3",
+    "cover": "https://c.saavncdn.com/080/Ek-Raat-Hindi-2023-20241205194941-500x500.jpg"
 }
+, 
  
   
 ];

@@ -140,8 +140,8 @@ export const hindiSongs = [
   },{
     "title": "Raanjhan",
     "artist": "Sachet-Parampara, Parampara Tandon, Kausar Munir",
-    "src": "music/hindi/Raanjhan (From Do Patti ) - Sachet-Parampara, Parampara Tandon, Kausar Munir.m4a",
-    "cover": "path/to/cover/image.jpg"
+    "src": "music/hindi/Raanjhan (From  Do Patti ) - Sachet-Parampara, Parampara Tandon, Kausar Munir.m4a",
+    "cover": "https://c.saavncdn.com/436/Do-Patti-Hindi-2024-20241111121618-500x500.jpg"
 },{
     title:"Raataan Lambiyan(From Shershaah )",
     artist:"Tanishk Bagchi, Jubin Nautiyal, Asees Kaur",
@@ -151,17 +151,17 @@ export const hindiSongs = [
     "title": "Ratiyaan",
     "artist": "Hansika Pareek, Sagnik Kolay, Soham Majumdar",
     "src": "music/hindi/Ratiyaan - Hansika Pareek, Sagnik Kolay, Soham Majumdar.m4a",
-    "cover": "path/to/cover/image.jpg"
+    "cover": "https://c.saavncdn.com/076/Ratiyaan-Hindi-2024-20240704230200-500x500.jpg",
 },{
   "title": "Roke Na Ruke Naina",
   "artist": "Arijit Singh",
-  "src": "music/hindi/Roke Na Ruke Naina (From Badrinath Ki Dulhania ) - Arijit Singh.m4a",
-  "cover": "path/to/cover/image.jpg"
+  "src": "music/hindi/Roke Na Ruke Naina (From  Badrinath Ki Dulhania ) - Arijit Singh.m4a",
+  "cover": "https://c.saavncdn.com/804/Badrinath-Ki-Dulhania-Full-Hindi-2017-500x500.jpg",
 },{
   "title": "Sajni",
   "artist": "Ram Sampath, Arijit Singh, Prashant Pandey",
-  "src": "music/hindi/Sajni (From Laapataa Ladies ) - Ram Sampath, Arijit Singh, Prashant Pandey.m4a",
-  "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84a27b6a5504e2415688d69628"
+  "src": "music/hindi/Sajni (From  Laapataa Ladies ) - Ram Sampath, Arijit Singh, Prashant Pandey.m4a",
+  "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84a27b6a5504e2415688d69628",
 },
   {
     title:"Saudebazi (Encore)",

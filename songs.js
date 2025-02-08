@@ -556,7 +556,7 @@ export const marathiSongs = [
     "artist": "MC Gawthi",
     "producer": "YD",
     "src": "music/marathi/RX100 _ MC GAWTHI _ PROD.BY YD _ OFFCIAL MUSIC VIDEO(MP3_320K).mp3",
-    "cover": "path/to/cover/image.jpg"
+    "cover": "https://c.saavncdn.com/344/Rx100-Marathi-2022-20230301144922-500x500.jpg"
 }
 , 
   {

@@ -113,6 +113,7 @@ function addEventListeners() {
     });
 }
 
+<<<<<<< HEAD
 
 footerToggleBtn.addEventListener("click", () => {
   if (musicBanner.style.display === "block") {
@@ -121,6 +122,13 @@ footerToggleBtn.addEventListener("click", () => {
   } else {
     musicBanner.style.display = "block"; // Open the music banner
     history.pushState({ musicBannerOpen: true }, null, window.location.href); // Update browser history
+=======
+  if (trendingCard) {
+      trendingCard.addEventListener('click', () => {
+          const url = '/index.html'; // Replace with your desired link
+          window.open(url,); // Opens in a new tab
+      });
+>>>>>>> 8ee6dd04b5b46fd2efc3b5cb0bc06ca18d513a18
   }
 });
 

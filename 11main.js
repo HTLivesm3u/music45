@@ -52,10 +52,11 @@ function showPlaylist(event) {
 }
 
 window.addEventListener("popstate", (event) => {
-  if (event.state && event.state.page === "playlist") {
-      restoreGenres(); // Restore genre selection
+  if (!event.state || event.state.page !== "playlist") {
+      restoreGenres(); // Restore genres when going back
   }
 });
+
 
 
 // Function to restore the genre buttons

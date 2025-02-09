@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (trendingCard) {
       trendingCard.addEventListener('click', () => {
           const url = '/index.html'; // Replace with your desired link
-          window.open(url, '_blank'); // Opens in a new tab
+          window.open(url,); // Opens in a new tab
       });
   }
 });

@@ -29,60 +29,34 @@ function loadSong(song) {
 }
 
 // Update the song list with a "Now Playing" indicator
-function updateSongList() {
-  songList.innerHTML = ""; // Clear the current list
 
-  currentSongs.forEach((song, index) => {
-    const li = document.createElement("li");
-    const coverImg = document.createElement("img");
-    coverImg.src = song.cover;
-    coverImg.alt = song.title + " Cover";
-    coverImg.classList.add("song-cover");
-
-    const songDetails = document.createElement("span");
-    songDetails.textContent = `${song.title} - ${song.artist}`;
-
-    li.appendChild(coverImg);
-    li.appendChild(songDetails);
-
-    // Add the "Now Playing" indicator
-    if (index === currentSongIndex) {
-      const nowPlayingIcon = document.createElement("img");
-      nowPlayingIcon.src = "/music/nowplaying.png"; // Replace with your image path
-      nowPlayingIcon.alt = "Now Playing";
-      nowPlayingIcon.classList.add("now-playing-icon");
-      li.appendChild(nowPlayingIcon);
-
-      // Add a green border to indicate the current song
-      li.style.border = "2px solid green";
-    }
-
-    li.addEventListener("click", () => {
-      currentSongIndex = index;
-      loadSong(currentSongs[currentSongIndex]);
-    });
-
-    songList.appendChild(li);
-  });
-}
 
 // Function to handle button click
 function showPlaylist(event) {
-    const clickedButton = event.currentTarget;
-    const buttonId = clickedButton.id;
-    const playlist = getPlaylist(buttonId);
+  const clickedButton = event.currentTarget;
+  const buttonId = clickedButton.id;
+  const playlist = getPlaylist(buttonId);
 
-    // Replace all buttons with the playlist
-    genreContainer.innerHTML = `
-        <div class="song-list">
-            <ul class="song-list">${playlist}</ul>
-            <button class="back-button">🔙 Back</button>
-        </div>
-    `;
+  // Push new history state
+  history.pushState({ page: "playlist" }, "", "#playlist");
 
-    // Add event listener to Back button
-    document.querySelector(".back-button").addEventListener("click", restoreGenres);
+  // Replace all buttons with the playlist
+  genreContainer.innerHTML = `
+      <div class="song-list">
+          <ul class="song-list">${playlist}</ul>
+      </div>
+  `;
+
+  // Add event listener to Back button
+  document.querySelector(".back-button").addEventListener("click", restoreGenres);
 }
+
+window.addEventListener("popstate", (event) => {
+  if (event.state && event.state.page === "playlist") {
+      restoreGenres(); // Restore genre selection
+  }
+});
+
 
 // Function to restore the genre buttons
 function restoreGenres() {
@@ -95,16 +69,52 @@ function restoreGenres() {
     addEventListeners();
 }
 
+
+
 // Function to generate playlist HTML
 function getPlaylist(buttonId) {
-    let songs = [];
-    if (buttonId === "hindi-btn") songs = hindiSongs;
-    else if (buttonId === "english-btn") songs = englishSongs;
-    else if (buttonId === "marathi-btn") songs = marathiSongs;
-    else if (buttonId === "telugu-btn") songs = teluguSongs;
+  let songs = [];
+  if (buttonId === "hindi-btn") songs = hindiSongs;
+  else if (buttonId === "english-btn") songs = englishSongs;
+  else if (buttonId === "marathi-btn") songs = marathiSongs;
+  else if (buttonId === "telugu-btn") songs = teluguSongs;
 
-    return songs.map(song => `<li>${song.title} - ${song.artist}</li>`).join("");
+  const songList = document.createElement("ul");
+  songList.classList.add("song-list");
+
+  songs.forEach(song => {
+      const li = document.createElement("li");
+      li.classList.add("song-item");
+      li.setAttribute("data-src", song.src);
+
+      // Create Cover Image
+      const coverImg = document.createElement("img");
+      coverImg.src = song.cover;
+      coverImg.alt = song.title + " Cover";
+      coverImg.classList.add("song-cover");
+
+      // Create Title and Artist Text
+      const songText = document.createElement("span");
+      songText.textContent = `${song.title} - ${song.artist}`;
+
+      // Create Hidden Play Icon
+      const playIcon = document.createElement("img");
+      playIcon.src = "play-icon.png";
+      playIcon.alt = "Play Icon";
+      playIcon.classList.add("now-playing-icon");
+      playIcon.style.display = "none"; // Hide initially
+
+      // Append elements
+      li.appendChild(coverImg);
+      li.appendChild(songText);
+      li.appendChild(playIcon);
+
+      songList.appendChild(li);
+  });
+
+  return songList.outerHTML;
 }
+
 
 // Function to add event listeners to buttons
 function addEventListeners() {
@@ -112,23 +122,6 @@ function addEventListeners() {
         button.addEventListener("click", showPlaylist);
     });
 }
-
-footerToggleBtn.addEventListener("click", () => {
-  if (musicBanner.style.display === "block") {
-    musicBanner.style.display = "none"; // Close the music banner
-    history.pushState(null, null, window.location.href); // Update browser history
-  } else {
-    musicBanner.style.display = "block"; // Open the music banner
-    history.pushState({ musicBannerOpen: true }, null, window.location.href); // Update browser history
-    }  if (trendingCard) {
-      trendingCard.addEventListener('click', () => {
-          const url = '/index.html'; // Replace with your desired link
-          window.open(url,); // Opens in a new tab
-      });
-
-  }
-});
-
 
 // Initial setup
 addEventListeners();

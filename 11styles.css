@@ -14,6 +14,7 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   padding: 1rem;
+  background-color: #000000;
 }
 
 .genre-card {
@@ -69,15 +70,15 @@ body {
 }
 
 /* Song List */
-#song-list {
+.song-list {
   list-style: none;
   padding: 0;
-  max-height: 77vh;
-  overflow-y: auto;
+  max-height: 89vh;
+  width: 55vh;
   padding-right: 5px;
 }
 
-#song-list li {
+.song-list li {
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -88,11 +89,11 @@ body {
   transition: background-color 0.3s;
 }
 
-#song-list li:hover {
+.song-list li:hover {
   background-color: #444;
 }
 
-#song-list img.song-cover {
+.song-list img.song-cover {
   width: 40px;
   height: 40px;
   margin-right: 10px;

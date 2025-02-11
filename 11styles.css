@@ -251,3 +251,9 @@ body {
     gap: 1.5rem;
     margin-bottom: 1.5rem;
   }
+
+  @media (max-width: 768px) {
+    body {
+      padding: 0;
+    }
+  }

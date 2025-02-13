@@ -1,7 +1,6 @@
 import { hindiSongs, englishSongs, marathiSongs, teluguSongs } from './songs.js';
 
 const genreContainer = document.querySelector(".genre-grid");
-const footerSongInfo = document.getElementById("footer-song-info");
 const footerPlayPause = document.getElementById("footer-play-pause");
 const bannerPlayPause = document.getElementById("banner-play-pause");
 const footerSongTitle = document.getElementById("footer-song-title");
@@ -10,7 +9,7 @@ const footerCoverImage = document.getElementById("footer-cover-image");
 const bannerSongTitle = document.getElementById("banner-song-title");
 const bannerArtistName = document.getElementById("banner-artist-name");
 const bannerCoverImage = document.getElementById("banner-cover-image");
-const footerToggleBtn = document.getElementById("footer-toggle-btn");
+const footerToggleBtn = document.getElementById("footer-song-info");
 
 // Music banner controls
 const musicBanner = document.getElementById("music-banner");
@@ -37,11 +36,11 @@ function showPlaylist(event) {
     currentSongs = getPlaylist(buttonId);
 
     genreContainer.innerHTML = `
-        <button class="back-button">⬅ Back</button>
+        
         <ul class="song-list">${generatePlaylistHTML(currentSongs)}</ul>
     `;
 
-    document.querySelector(".back-button").addEventListener("click", restoreGenres);
+
     document.querySelectorAll(".song-item").forEach((item, index) => {
         item.addEventListener("click", () => playSong(index));
     });
@@ -98,7 +97,6 @@ function playSong(index) {
 function loadSong(song) {
     audio.src = song.src;
     updateUI(song);
-    updateMediaSession(song);
 }
 
 // Function to update UI with song details
@@ -110,7 +108,8 @@ function updateUI(song) {
     bannerArtistName.textContent = song.artist;
     bannerCoverImage.src = song.cover;
 
-    updatePlayPauseButtons();
+    footerPlayPause.textContent = "⏸";
+    bannerPlayPause.innerHTML = `<i class="fas fa-pause"></i>`;
 }
 
 // Play/Pause Toggle
@@ -121,21 +120,13 @@ function togglePlayPause() {
     if (isPlaying) {
         audio.pause();
         isPlaying = false;
+        footerPlayPause.textContent = "▶️";
+        bannerPlayPause.innerHTML = `<i class="fas fa-play"></i>`;
     } else {
         audio.play();
         isPlaying = true;
-    }
-    updatePlayPauseButtons();
-}
-
-// Function to update play/pause buttons
-function updatePlayPauseButtons() {
-    if (isPlaying) {
         footerPlayPause.textContent = "⏸";
         bannerPlayPause.innerHTML = `<i class="fas fa-pause"></i>`;
-    } else {
-        footerPlayPause.textContent = "▶️";
-        bannerPlayPause.innerHTML = `<i class="fas fa-play"></i>`;
     }
 }
 
@@ -173,6 +164,33 @@ function playPrevSong() {
     if (isPlaying) audio.play();
 }
 
+// Next & Previous Buttons
+nextBtn.addEventListener("click", playNextSong);
+prevBtn.addEventListener("click", playPrevSong);
+
+// Update progress bar
+audio.ontimeupdate = () => {
+  const progressPercent = (audio.currentTime / audio.duration) * 100;
+  progress.style.width = `${progressPercent}%`;
+  currentTimeElem.textContent = formatTime(audio.currentTime);
+};
+// Seek functionality
+progressBar.addEventListener("click", (e) => {
+  const width = progressBar.clientWidth;
+  const clickX = e.offsetX;
+  const duration = audio.duration;
+
+  audio.currentTime = (clickX / width) * duration;
+});
+// Automatically play the next song when the current one ends
+audio.addEventListener("ended", () => {
+  if (isRepeat) {
+    audio.play(); // Replay the current song
+  } else {
+    playNextSong();
+  }
+});
+
 // Download functionality
 downloadBtn.addEventListener("click", () => {
     const currentSong = currentSongs[currentSongIndex];
@@ -184,44 +202,28 @@ downloadBtn.addEventListener("click", () => {
     document.body.removeChild(link);
 });
 
-// Update Media Session API
-function updateMediaSession(song) {
-    if ("mediaSession" in navigator) {
-        navigator.mediaSession.metadata = new MediaMetadata({
-            title: song.title,
-            artist: song.artist,
-            artwork: [
-                { src: song.cover, sizes: "96x96", type: "image/png" },
-                { src: song.cover, sizes: "128x128", type: "image/png" },
-                { src: song.cover, sizes: "192x192", type: "image/png" },
-                { src: song.cover, sizes: "256x256", type: "image/png" },
-                { src: song.cover, sizes: "384x384", type: "image/png" },
-                { src: song.cover, sizes: "512x512", type: "image/png" },
-            ],
-        });
-
-        navigator.mediaSession.setActionHandler("play", () => {
-            audio.play();
-            isPlaying = true;
-            updatePlayPauseButtons();
-        });
-
-        navigator.mediaSession.setActionHandler("pause", () => {
-            audio.pause();
-            isPlaying = false;
-            updatePlayPauseButtons();
-        });
-
-        navigator.mediaSession.setActionHandler("nexttrack", playNextSong);
-        navigator.mediaSession.setActionHandler("previoustrack", playPrevSong);
-        navigator.mediaSession.setActionHandler("seekforward", () => {
-            audio.currentTime = Math.min(audio.currentTime + 10, audio.duration);
-        });
-        navigator.mediaSession.setActionHandler("seekbackward", () => {
-            audio.currentTime = Math.max(audio.currentTime - 10, 0);
-        });
+// Toggle music banner visibility
+footerToggleBtn.addEventListener("click", () => {
+    if (musicBanner.style.display === "block") {
+        musicBanner.style.display = "none";
+        history.pushState(null, null, window.location.href);
+    } else {
+        musicBanner.style.display = "block";
+        history.pushState({ musicBannerOpen: true }, null, window.location.href);
     }
-}
+});
+
+// Close the music banner when the close button is clicked
+closeBannerBtn.addEventListener("click", () => {
+    musicBanner.style.display = "none";
+});
+
+// Handle back button press to close music banner
+window.addEventListener("popstate", () => {
+    if (musicBanner.style.display === "block") {
+        musicBanner.style.display = "none";
+    }
+});
 
 // Initial event listener setup
 function addEventListeners() {
@@ -229,5 +231,49 @@ function addEventListeners() {
         button.addEventListener("click", showPlaylist);
     });
 }
+
+function updateMediaSession(song) {
+  if ('mediaSession' in navigator) {
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: song.title,
+      artist: song.artist,
+      artwork: [
+        { src: song.cover, sizes: '96x96', type: 'image/png' },
+        { src: song.cover, sizes: '128x128', type: 'image/png' },
+        { src: song.cover, sizes: '192x192', type: 'image/png' },
+        { src: song.cover, sizes: '256x256', type: 'image/png' },
+        { src: song.cover, sizes: '384x384', type: 'image/png' },
+        { src: song.cover, sizes: '512x512', type: 'image/png' },
+      ],
+    });
+
+    // Handle mobile lock screen controls
+    navigator.mediaSession.setActionHandler('play', () => {
+      audio.play();
+      isPlaying = true;
+      updatePlayPauseButtons(); // Update UI buttons accordingly
+    });
+
+    navigator.mediaSession.setActionHandler('pause', () => {
+      audio.pause();
+      isPlaying = false;
+      updatePlayPauseButtons();
+    });
+
+    navigator.mediaSession.setActionHandler('nexttrack', playNextSong);
+    navigator.mediaSession.setActionHandler('previoustrack', playPrevSong);
+
+    // Seek forward
+    navigator.mediaSession.setActionHandler('seekforward', () => {
+      audio.currentTime = Math.min(audio.currentTime + 10, audio.duration);
+    });
+
+    // Seek backward
+    navigator.mediaSession.setActionHandler('seekbackward', () => {
+      audio.currentTime = Math.max(audio.currentTime - 10, 0);
+    });
+  }
+}
+
 
 addEventListeners();

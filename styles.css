@@ -45,7 +45,17 @@
     color: #111827;
   }
   
-  
+  .beta{
+    font-size: 15px;
+    background: none;
+    color: #0000003b;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 30px;
+    left: 300px;
+    padding: 30px;
+  }
   /* Menu Button */
   .menu-btn {
   font-size: 30px;

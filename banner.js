@@ -13,6 +13,7 @@ const suggestionsList = document.getElementById("suggestions-list");
 const searchBar = document.getElementById("search-bar");
 const searchBtn = document.getElementById("search-btn");
 const menuBtn = document.getElementById("menu-btn");
+const betaBtn = document.getElementById("beta")
 const playlistMenu = document.getElementById("playlist-menu");
 const songList = document.getElementById("song-list");
 
@@ -473,3 +474,7 @@ function updateMediaSession(song) {
     });
   }
 }
+
+betaBtn.addEventListener("click", () => {
+  window.location.href = "/11index.html";
+});

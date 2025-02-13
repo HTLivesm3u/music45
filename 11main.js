@@ -35,11 +35,13 @@ function showPlaylist(event) {
     const buttonId = event.currentTarget.id;
     currentSongs = getPlaylist(buttonId);
 
+    // Change display styles dynamically
+    genreContainer.classList.remove("genre-grid");
+    genreContainer.classList.add("playlist-view");
+
     genreContainer.innerHTML = `
-        
         <ul class="song-list">${generatePlaylistHTML(currentSongs)}</ul>
     `;
-
 
     document.querySelectorAll(".song-item").forEach((item, index) => {
         item.addEventListener("click", () => playSong(index));
@@ -48,8 +50,11 @@ function showPlaylist(event) {
     history.pushState({ page: "playlist" }, "", "#playlist");
 }
 
-// Function to restore the genre buttons
+// Restore grid layout on home view
 function restoreGenres() {
+    genreContainer.classList.remove("playlist-view");
+    genreContainer.classList.add("genre-grid");
+
     genreContainer.innerHTML = `
         <div class="genre-card gradient-1" id="hindi-btn">Hindi</div>
         <div class="genre-card gradient-2" id="english-btn">English</div>
@@ -58,6 +63,8 @@ function restoreGenres() {
     `;
     addEventListeners();
 }
+
+
 
 // Handle browser back navigation
 window.addEventListener("popstate", (event) => {
@@ -96,21 +103,34 @@ function playSong(index) {
 // Function to load song data
 function loadSong(song) {
     audio.src = song.src;
-    updateUI(song);
-}
-
-// Function to update UI with song details
-function updateUI(song) {
     footerSongTitle.textContent = song.title;
     footerArtistName.textContent = song.artist;
     footerCoverImage.src = song.cover;
     bannerSongTitle.textContent = song.title;
     bannerArtistName.textContent = song.artist;
     bannerCoverImage.src = song.cover;
-
-    footerPlayPause.textContent = "⏸";
-    bannerPlayPause.innerHTML = `<i class="fas fa-pause"></i>`;
+  
+    // Update the media session whenever a song is loaded
+    updateMediaSession(song);
+  
+    audio.onloadedmetadata = () => {
+      durationElem.textContent = formatTime(audio.duration);
+    };
+  
+    // If it's already playing, play the song
+    if (isPlaying) {
+      audio.play();
+    }
+    updateSongList();
 }
+
+// Format time (e.g., 3:45)
+function formatTime(time) {
+    let minutes = Math.floor(time / 60);
+    let seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  }
+  
 
 // Play/Pause Toggle
 footerPlayPause.addEventListener("click", togglePlayPause);

@@ -2,7 +2,8 @@ import { hindiSongs, englishSongs, marathiSongs, teluguSongs } from './songs.js'
 
 const genreContainer = document.querySelector(".genre-grid");
 const footerPlayPause = document.getElementById("footer-play-pause");
-const bannerPlayPause = document.getElementById("banner-play-pause");
+const bannerPlayPauseBtn = document.getElementById("banner-play-pause");
+const bannerPlayPauseIcon = bannerPlayPauseBtn.querySelector("i"); // Selects <i>
 const footerSongTitle = document.getElementById("footer-song-title");
 const footerArtistName = document.getElementById("footer-artist-name");
 const footerCoverImage = document.getElementById("footer-cover-image");
@@ -122,7 +123,6 @@ function loadSong(song) {
       audio.play();
     }
     updateSongList();
-    showBannerLoading();
 }
 
 // Format time (e.g., 3:45)
@@ -206,10 +206,30 @@ audio.ontimeupdate = () => {
   progress.style.width = `${progressPercent}%`;
   currentTimeElem.textContent = formatTime(audio.currentTime);
 };
+// Function to show buffering icon
+function showBannerLoading() {
+    bannerPlayPauseIcon.classList.remove("fa-play", "fa-pause");
+    bannerPlayPauseIcon.classList.add("fa-spinner", "fa-spin"); // Show loading spinner
+    bannerPlayPauseBtn.disabled = true; // Disable button to prevent spam clicks
+}
 
-audio.addEventListener("canplay", hideBannerLoading);  // Song is ready
-audio.addEventListener("waiting", showBannerLoading);  // Buffering starts
-audio.addEventListener("playing", hideBannerLoading);  // Playback starts
+// Function to hide buffering icon and restore play/pause button
+function hideBannerLoading() {
+    bannerPlayPauseIcon.classList.remove("fa-spinner", "fa-spin");
+    bannerPlayPauseBtn.disabled = false; // Enable button
+
+    // Set the correct icon based on the play state
+    if (isPlaying) {
+        bannerPlayPauseIcon.classList.add("fa-pause");
+    } else {
+        bannerPlayPauseIcon.classList.add("fa-play");
+    }
+}
+
+// Attach event listeners to handle buffering
+audio.addEventListener("waiting", showBannerLoading);  // Song is buffering
+audio.addEventListener("canplay", hideBannerLoading);  // Song can be played
+audio.addEventListener("playing", hideBannerLoading);  // Song starts playing
 
 // Seek functionality
 progressBar.addEventListener("click", (e) => {
@@ -227,16 +247,6 @@ audio.addEventListener("ended", () => {
     playNextSong();
   }
 });
-
-function showBannerLoading() {
-    document.getElementById("banner-play-icon").style.display = "none";
-    document.getElementById("banner-loading-icon").style.display = "block";
-}
-
-function hideBannerLoading() {
-    document.getElementById("banner-loading-icon").style.display = "none";
-    document.getElementById("banner-play-icon").style.display = "block";
-}
 
 // Download functionality
 downloadBtn.addEventListener("click", () => {
@@ -332,6 +342,7 @@ function updatePlayPauseButtons() {
         bannerPlayPause.innerHTML = `<i class="fas fa-play"></i>`;
     }
 }
+
 
 
 

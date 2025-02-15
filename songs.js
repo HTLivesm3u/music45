@@ -148,6 +148,11 @@ export const hindiSongs = [
     "artist": "Yo Yo Honey Singh",
     "src": "music/hindi/Millionaire - Yo Yo Honey Singh.m4a",
     "cover": "https://c.saavncdn.com/173/GLORY-Hindi-2024-20250117161048-500x500.jpg"
+},{
+  "title": "Mitwa",
+  "artist": "Shankar-Ehsaan-Loy, Shankar Mahadevan, Caralisa Monteiro, Shafqat Amanat Ali",
+  "src": "music/hindi/Mitwa - Shankar-Ehsaan-Loy, Shankar Mahadevan, Caralisa Monteiro, Shafqat Amanat Ali.m4a",
+  "cover": "https://c.saavncdn.com/089/Kabhi-Alvida-Naa-Kehna-Hindi-2006-20190629135642-500x500.jpg"
 },
   {
     title:"O Bedardeya (From Tu Jhoothi Main Makkaar )",
@@ -225,7 +230,12 @@ export const hindiSongs = [
     artist:"Pritam, Arijit Singh, Amitabh Bhattacharya, Nikhita Gandhi",
     src:"/music/hindi/Tere Pyaar Mein - Pritam, Arijit Singh, Amitabh Bhattacharya, Nikhita Gandhi.m4a",
     cover:"https://c.saavncdn.com/903/Tu-Jhoothi-Main-Makkaar-Hindi-2023-20230316165419-500x500.jpg",
-  },
+  },{
+    "title": "Teri Deewani",
+    "artist": "Kailash Kher, Paresh Kamath, Naresh Kamath",
+    "src": "music/hindi/Teri Deewani - Kailash Kher, Paresh Kamath, Naresh Kamath.m4a",
+    "cover": "https://c.saavncdn.com/774/Teri-Deewani-Trending-Version-Hindi-2023-20230511151041-500x500.jpg"
+},
   {
     title:"Tujhe Kitna Chahne Lage (From  Kabir Singh )",
     artist:"Arijit Singh, Mithoon",

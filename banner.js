@@ -75,6 +75,7 @@ function formatTime(time) {
 
 
 // Update the song list with a "Now Playing" indicator
+// Update the song list with a "Now Playing" indicator
 function updateSongList() {
   songList.innerHTML = ""; // Clear the current list
 
@@ -86,7 +87,7 @@ function updateSongList() {
     coverImg.classList.add("song-cover");
 
     const songDetails = document.createElement("span");
-    songDetails.textContent = `${song.title} - ${song.artist}`;
+    songDetails.textContent = ${song.title} - ${song.artist};
 
     li.appendChild(coverImg);
     li.appendChild(songDetails);
@@ -104,7 +105,6 @@ function updateSongList() {
     }
 
     li.addEventListener("click", () => {
-      alert(`Now playing: ${song.title} by ${song.artist}`);
       currentSongIndex = index;
       loadSong(currentSongs[currentSongIndex]);
     });
@@ -112,7 +112,6 @@ function updateSongList() {
     songList.appendChild(li);
   });
 }
-
 
 
 

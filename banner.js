@@ -104,6 +104,7 @@ function updateSongList() {
     }
 
     li.addEventListener("click", () => {
+      alert(`Now playing: ${song.title} by ${song.artist}`);
       currentSongIndex = index;
       loadSong(currentSongs[currentSongIndex]);
     });
@@ -111,6 +112,7 @@ function updateSongList() {
     songList.appendChild(li);
   });
 }
+
 
 
 

@@ -345,6 +345,11 @@ export const englishSongs = [
     src:"/music/english/In The Stars - Benson Boone.m4a",
     cover:"https://c.saavncdn.com/046/In-The-Stars-English-2022-20240404090421-500x500.jpg",
   },{
+    title:"Lonely",
+    artist:"Akon",
+    src:"music/english/Lonely - Akon.m4a",
+    cover:"",
+  },{
     title:"Lover",
     artist:"Taylor Swift",
     src:"/music/english/Lover - Taylor Swift.m4a",

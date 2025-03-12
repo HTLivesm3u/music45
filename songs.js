@@ -348,7 +348,7 @@ export const englishSongs = [
     title:"Lonely",
     artist:"Akon",
     src:"music/english/Lonely - Akon.m4a",
-    cover:"",
+    cover:"https://c.saavncdn.com/909/Lonely-English-2005-20200606135745-500x500.jpg",
   },{
     title:"Lover",
     artist:"Taylor Swift",

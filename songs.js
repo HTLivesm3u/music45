@@ -331,8 +331,8 @@ export const englishSongs = [
   },{
     title:"Run It Up",
     artist:"HanuMankind",
-    src:"https://github.com/HTLivesm3u/music45/blob/main/music%2Fenglish%2FHanuMankind%20-%20Run%20It%20Up.mp3",
-    cover:"",
+    src:"music/english/HanuMankind - Run It Up.mp3",
+    cover:"https://c.saavncdn.com/084/Run-It-Up-English-2025-20250307235032-500x500.jpg",
   },,{
     title:"Heat Waves",
     artist:"Glass Animals",

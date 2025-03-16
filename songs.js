@@ -329,6 +329,11 @@ export const englishSongs = [
     src:"/music/english/Falling - Trevor Daniel.m4a",
     cover:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpkWnTLHpWnRoNQ3bZRGRPxkUSzWQVvGwuhMSJQrQ5rBD7z_Hb-Bt1WTFA&s=10",
   },{
+    title:"Run It Up",
+    artist:"HanuMankind",
+    src:"https://github.com/HTLivesm3u/music45/blob/main/music%2Fenglish%2FHanuMankind%20-%20Run%20It%20Up.mp3",
+    cover:"",
+  },,{
     title:"Heat Waves",
     artist:"Glass Animals",
     src:"/music/english/Heat Waves - Glass Animals.m4a",

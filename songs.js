@@ -5,6 +5,11 @@ export const hindiSongs = [
     src: "/music/hindi/Aankhon Mein Doob Jaane Ko - THE 9TEEN, Sandesh Shandilya.m4a",
     cover: "https://c.saavncdn.com/730/Aankhon-Mein-Doob-Jaane-Ko-Hindi-2024-20240816183310-500x500.jpg",
   },{
+    title:"Aashiq Tera",
+    artist:"Altamash Faridi,Sohail Sen,Mudassar Aziz",
+    src:"",
+    cover:"https://c.saavncdn.com/528/Happy-Bhag-Jayegi-Hindi-2016-20240925100916-500x500.jpg",
+  },{
     "title": "Aaoge Tum Kabhi",
     "artist": "The Local Train",
     "src": "music/hindi/Aaoge Tum Kabhi - The Local Train.m4a",

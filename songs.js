@@ -7,7 +7,7 @@ export const hindiSongs = [
   },{
     title:"Aashiq Tera",
     artist:"Altamash Faridi,Sohail Sen,Mudassar Aziz",
-    src:"",
+    src:"music/hindi/SOHAIL_SEN_Aashiq_Tera_From_Happy_Bhag_Jayegi.mp3",
     cover:"https://c.saavncdn.com/528/Happy-Bhag-Jayegi-Hindi-2016-20240925100916-500x500.jpg",
   },{
     "title": "Aaoge Tum Kabhi",

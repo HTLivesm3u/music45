@@ -706,6 +706,12 @@ export const teluguSongs = [
     artist:"Anirudh Ravichander, Dhee, Ananthakrrishnan, Super Subu",
     src:"music/telugu/Jujubee (From  Jailer ) - Anirudh Ravichander, Dhee, Ananthakrrishnan, Super Subu.m4a",
     cover:"https://i.scdn.co/image/ab67616d00001e023169949308d55f9a66776931",
+  },
+  {
+    title:"Kaavaalaa (From Jailer )",
+    artist:"Anirudh Ravichander, Shilpa Rao, Arunraja Kamaraj",
+    src:"music/telugu/Kaavaalaa (From  Jailer ) - Anirudh Ravichander, Shilpa Rao, Arunraja Kamaraj.m4a",
+    cover:"https://i.scdn.co/image/ab67616d00001e02ac515af787eb2080c7a0b129",
   },{
     "title": "Why This Kolaveri Di",
     "artist": "Dhanush, Anirudh Ravichander",

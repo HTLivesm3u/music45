@@ -701,78 +701,7 @@ export const teluguSongs = [
     "src": "/music/telugu/Inkem Inkem Inkem Kaavaale - Sid Sriram.m4a",
     "cover": "https://c.saavncdn.com/237/Geetha-Govindam-Telugu-2018-20180921-500x500.jpg"},
   
-  {
-    title:"Jujubee (From Jailer )",
-    artist:"Anirudh Ravichander, Dhee, Ananthakrrishnan, Super Subu",
-    src:"music/telugu/Jujubee (From  Jailer ) - Anirudh Ravichander, Dhee, Ananthakrrishnan, Super Subu.m4a",
-    cover:"https://i.scdn.co/image/ab67616d00001e023169949308d55f9a66776931",
-  },
-  {
-    title:"Kaavaalaa (From Jailer )",
-    artist:"Anirudh Ravichander, Shilpa Rao, Arunraja Kamaraj",
-    src:"music/telugu/Kaavaalaa (From  Jailer ) - Anirudh Ravichander, Shilpa Rao, Arunraja Kamaraj.m4a",
-    cover:"https://i.scdn.co/image/ab67616d00001e02ac515af787eb2080c7a0b129",
-  },
-  {
-    title:"Kissik (From Pushpa 2 The Rule )",
-    artist:"Sublahshini, Devi Sri Prasad, Chandra Bose",
-    src:"music/telugu/Kissik (From  Pushpa 2 The Rule ) [TELUGU] - Sublahshini, Devi Sri Prasad, Chandra Bose.m4a",
-    cover:"https://i.scdn.co/image/ab67616d00001e02f9e02b6c00650fd4f43c1db5",
-  },
-  {
-    title:"Kurchi Madathapetti (From  Guntur Kaaram )",
-    artist:"Thaman S, Sri Krishna, Sahithi Chaganti, Mahesh Babu, Saraswati Putra Ramajogayya Sastry",
-    src:"music/telugu/Kurchi Madathapetti (From  Guntur Kaaram )(Telugu) - Thaman S, Sri Krishna, Sahithi Chaganti, Mahesh Babu, Saraswati Putra Ramajogayya Sastry.m4a",
-    cover:"https://i.scdn.co/image/ab67616d00001e021b291d0933bd9890c1b354b7",
-  },
-  {
-    title:"Oo Antava Oo Oo Antava",
-    artist:"Indravathi Chauhan",
-    src:"music/telugu/Oo Antava Oo Oo Antava - Indravathi Chauhan.m4a",
-    cover:"https://i.scdn.co/image/ab67616d00001e025d10ca5f50f7e9abca322956",
-  },
-  {
-    title:"Peelings (From  Pushpa 2 The Rule )",
-    artist:"Shankarr Babu Kandukoori, Laxmi Dasa, Devi Sri Prasad, Chandra Bose, Siju Thuravoor",
-    src:"music/telugu/Peelings (From  Pushpa 2 The Rule ) [TELUGU] - Shankarr Babu Kandukoori, Laxmi Dasa, Devi Sri Prasad, Chandra Bose, Siju Thuravoor.m4a",
-    cover:"https://i.scdn.co/image/ab67616d00001e029c3b8606a83a49694b48a126",
-  },
-  {
-    title:"Ra Ra Reddy I Am Ready",
-    artist:"Lipsika Bhashyam, Aditya Iyengar",
-    src:"music/telugu/Ra Ra Reddy I Am Ready - Lipsika Bhashyam, Aditya Iyengar.m4a",
-    cover:"https://i.scdn.co/image/ab67616d00001e02bd2f058abc077acdb21302f0",
-  },
-  {
-    title:"Ramuloo Ramulaa",
-    artist:"Anurag Kulkarni, Mangli",
-    src:"music/telugu/Ramuloo Ramulaa - Anurag Kulkarni, Mangli.m4a",
-    cover:"https://i.scdn.co/image/ab67616d00001e02ec8e1f5da18069b24fb43694",
-  },
-  {
-    title:"Samajavaragamana",
-    artist:"Sid Sriram",
-    src:"music/telugu/Samajavaragamana - Sid Sriram.m4a",
-    cover:"https://i.scdn.co/image/ab67616d00001e026f3d477e1f31b354c5de3d56",
-  },
-  {
-    title:"Sooseki (From  Pushpa 2 The Rule )",
-    artist:"Shreya Ghoshal, Devi Sri Prasad, Chandra Bose",
-    src:"music/telugu/Sooseki (From  Pushpa 2 The Rule ) [TELUGU] - Shreya Ghoshal, Devi Sri Prasad, Chandra Bose.m4a",
-    cover:"https://i.scdn.co/image/ab67616d00001e02bde2708d57b1fbb64ca2a233",
-  },
-  {
-    title:"Vachindamma",
-    artist:"Sid Sriram",
-    src:"music/telugu/Vachindamma - Sid Sriram.m4a",
-    cover:"https://i.scdn.co/image/ab67616d00001e0251bfc89891715f271de71434",
-  },{
-  {
-    title:"Yenti Yenti",
-    artist:"Chinmayi",
-    src:"music/telugu/Yenti Yenti - Chinmayi.m4a",
-    cover:"https://i.scdn.co/image/ab67616d00001e0251bfc89891715f271de71434",
-  },{
+{
     "title": "Why This Kolaveri Di",
     "artist": "Dhanush, Anirudh Ravichander",
     "src": "music/telugu/3 - Why This Kolaveri Di Official Video _ Dhanush _ Anirudh Ravichander _ Shruti Haasan(MP3_320K).mp3",

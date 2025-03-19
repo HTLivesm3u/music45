@@ -700,7 +700,13 @@ export const teluguSongs = [
     "artist": "Sid Sriram",
     "src": "/music/telugu/Inkem Inkem Inkem Kaavaale - Sid Sriram.m4a",
     "cover": "https://c.saavncdn.com/237/Geetha-Govindam-Telugu-2018-20180921-500x500.jpg"},
+  
   {
+    title:"Jujubee (From Jailer )",
+    artist:"Anirudh Ravichander, Dhee, Ananthakrrishnan, Super Subu",
+    src:"music/telugu/Jujubee (From  Jailer ) - Anirudh Ravichander, Dhee, Ananthakrrishnan, Super Subu.m4a",
+    cover:"https://i.scdn.co/image/ab67616d00001e023169949308d55f9a66776931",
+  },{
     "title": "Why This Kolaveri Di",
     "artist": "Dhanush, Anirudh Ravichander",
     "src": "music/telugu/3 - Why This Kolaveri Di Official Video _ Dhanush _ Anirudh Ravichander _ Shruti Haasan(MP3_320K).mp3",

@@ -106,7 +106,7 @@ export const hindiSongs = [
   {
     title:"Ik Kudi",
     artist:"Arpit Bala,wolf.cryman",
-    src:"/music/hindi/Ik Kudi - wolf.cryman.mp3",
+    src:"music/hindi/Ik Kudi - wolf.cryman.mp3",
     cover:"https://i.scdn.co/image/ab67616d0000b273932ec46f187bf7e2d2aee2d1",
   },{
     "title": "Ishq",

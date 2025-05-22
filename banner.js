@@ -476,5 +476,5 @@ function updateMediaSession(song) {
 }
 
 betaBtn.addEventListener("click", () => {
-  window.location.href = "/11index.html";
+  window.location.href = "https://music45beta.vercel.app/index(1).html";
 });

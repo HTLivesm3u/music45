@@ -102,6 +102,12 @@ export const hindiSongs = [
     artist:"Anuv Jain",
     src:"/music/hindi/Husn - Anuv Jain.m4a",
     cover:"https://c.saavncdn.com/436/Husn-Hindi-2023-20231129054140-500x500.jpg",
+  },
+  {
+    title:"Ik Kudi",
+    artist:"Arpit Bala,wolf.cryman",
+    src:"/music/hindi/Ik Kudi - wolf.cryman.mp3",
+    cover:"https://i.scdn.co/image/ab67616d0000b273932ec46f187bf7e2d2aee2d1",
   },{
     "title": "Ishq",
     "artist": "Faheem Abdullah, Rauhan Malik, Amir Ameer",

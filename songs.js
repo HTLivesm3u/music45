@@ -380,7 +380,13 @@ export const englishSongs = [
     artist:"One Direction",
     src:"/music/english/Night Changes - One Direction.m4a",
     cover:"https://c.saavncdn.com/851/FOUR-Deluxe--English-2014-500x500.jpg",
-  }, {
+  }, 
+  {
+    title:"Pretty Little Baby",
+    artist:"Connie Francis",
+    src:"music/english/Pretty Little Baby - Stereo Mix - Connie Francis.mp3",
+    cover:"https://i.scdn.co/image/ab67616d00001e022557d7b4bf9ca1c289f40e97",
+  },{
     title:"STAY (with Justin Bieber)",
     artist:"The Kid LAROI, Justin Bieber",
     src:"/music/english/STAY (with Justin Bieber) - The Kid LAROI, Justin Bieber.m4a",
